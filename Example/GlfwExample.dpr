@@ -11,7 +11,7 @@ uses
   Macapi.OpenGL,
   {$ENDIF}
   System.Math.Vectors,
-  Neslib.Glfw3 in '..\DelphiGlfw\Neslib.Glfw3.pas';
+  Neslib.Glfw3 in '..\Glfw\Neslib.Glfw3.pas';
 
 type
   TVertex = record
