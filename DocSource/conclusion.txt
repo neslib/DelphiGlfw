@@ -1,7 +1,7 @@
 @shorttitle(License)
 @title(DelphiGlfw License)
 @preformatted(
-Copyright (c) 2016 by Erik van Bilsen
+Copyright (c) 2016-2022 by Erik van Bilsen
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

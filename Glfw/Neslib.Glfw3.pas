@@ -1350,14 +1350,18 @@ procedure glfwGetMonitorPhysicalSize(monitor: PGLFWmonitor; widthMM, heightMM: P
   The content scale may depend on both the monitor resolution and pixel
   density and on user settings. It may be very different from the raw DPI
   calculated from the physical size and current resolution.
+  
   Parameters:
     monitor: The monitor to query.
     xscale: Where to store the x-axis content scale, or <tt>nil</tt>.
     yscale: Where to store the y-axis content scale, or <tt>nil</tt>.
+    
   Possible errors include GLFW_NOT_INITIALIZED and GLFW_PLATFORM_ERROR.
   This function must only be called from the main thread.
+  
   SeeAlso:
     glfwGetWindowContentScale
+    
   Added in version 3.3. }
 procedure glfwGetMonitorContentScale(monitor: PGLFWmonitor; xscale, yscale: PSingle);
   cdecl external GLFW3_LIB name _PU + 'glfwGetMonitorContentScale';

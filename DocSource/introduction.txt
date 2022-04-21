@@ -1,9 +1,9 @@
 @shorttitle(About DelphiGlfw)
 @title(GLFW3 Language Bindings for Delphi)
 
-This repository contains Delphi language bindings and binaries for GLFW3 (http://www.glfw.org/) version 3.2.1.
+This repository contains Delphi language bindings and binaries for GLFW3 (http://www.glfw.org/) version 3.3.7.
 
-It supports Windows (32-bit and 64-bit) and macOS (32-bit).
+It supports Windows (32-bit and 64-bit) and Intel macOS (64-bit).
 
 @section(1 _Source Source Code)
 
@@ -19,24 +19,4 @@ This repository contains pre-compiled dynamic libraries for Windows and macOS. T
 
 To deploy your GLFW3 application:
 * For Windows: place the <tt>glfw3_32.dll</tt> (32-bit) or <tt>glfw3_64.dll</tt> (64-bit) file in the same directory as the executable.
-* For macOS: add the file <tt>libglfw.3.2.dylib</tt> to the Delphi Deployment Manager and set the Remote Path to <tt>Contents\MacOS\</tt>
-
-@section(1 _Updating Updating the Dynamic Libraries)
-
-If you want to use a newer version of the dynamic libraries than those provided in this repository, then follow these steps:
-
-@section(2 _UpdatingWindows For Windows)
-
-It is easiest to download the pre-compiled binaries from http://www.glfw.org/download.html. You can download both the 32-bit and 64-bit libraries here.
-
-The downloaded zip file will contain multiple DLLs in different folders such as <tt>lib-mingw</tt> and <tt>lib-vc2015</tt>. You should use the DLL from the <tt>lib-mingw</tt> folder, since that one doesn't have any dependencies on a specific Visual Studio Runtime.
-
-Note that the download for the 32-bit DLLs may also contain a <tt>lib-mingw-w64</tt> folder. However, that folder does *not* contain a 64-bit DLL. You should download the 64-bit binaries for that.
-
-Rename the DLL to <tt>glfw3_32.dll</tt> or <tt>glfw3_64.dll</tt>, depending on platform.
-
-@section(2 _UpdatingMac For macOS)
-
-Follow the instructions on the Compiling GLFW page (http://www.glfw.org/docs/latest/compile.html).
-
-Be sure to enable the <tt>BUILD_SHARED_LIBS</tt> option to build a dynamic library.
+* For macOS: add the file <tt>libglfw.3.dylib</tt> to the Delphi Deployment Manager and set the Remote Path to <tt>Contents\MacOS\</tt>. You must also make sure that the location of the dylib file is added to the search path of your project or library path in your environment options (only for the "MacOS 64-Bit" configuration).

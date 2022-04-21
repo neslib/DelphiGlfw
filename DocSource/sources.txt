@@ -1,1 +1,1 @@
-..\DelphiGlfw\Neslib.Glfw3.pas
+..\Glfw\Neslib.Glfw3.pas
