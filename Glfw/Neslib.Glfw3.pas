@@ -1,7 +1,7 @@
 unit Neslib.Glfw3;
 { GLFW3 language bindings for Delphi }
 
-{ Copyright (c) 2016 by Erik van Bilsen
+{ Copyright (c) 2016-2022 by Erik van Bilsen
   All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -49,22 +49,22 @@ const
   GLFW3_LIB = 'glfw3_64.dll';
   { @exclude }
   _PU = '';
-  {$ELSEIF Defined(MACOS) and not Defined(IOS)}
+  {$ELSEIF Defined(MACOS64) and not Defined(IOS)}
   { @exclude }
-  GLFW3_LIB = 'libglfw.3.2.dylib';
+  GLFW3_LIB = 'libglfw.3.dylib';
   { @exclude }
-  _PU = '_';
+  _PU = '';
   {$ELSE}
     {$MESSAGE Error 'Unsupported platform'}
   {$ENDIF}
 
 {$REGION 'glfw3.h'}
 {*************************************************************************
- * GLFW 3.2 - www.glfw.org
+ * GLFW 3.3 - www.glfw.org
  * A library for OpenGL, window and input
  *------------------------------------------------------------------------
  * Copyright (c) 2002-2006 Marcus Geelnard
- * Copyright (c) 2006-2016 Camilla Berglund <elmindreda@glfw.org>
+ * Copyright (c) 2006-2019 Camilla Löwy <elmindreda@glfw.org>
  *
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -101,14 +101,14 @@ const
 
     This is incremented when features are added to the API but it remains
     backward-compatible. }
-  GLFW_VERSION_MINOR = 2;
+  GLFW_VERSION_MINOR = 3;
 
 const
   { The revision number of the GLFW library.
 
     This is incremented when a bug fix release is made that does not contain any
     API changes. }
-  GLFW_VERSION_REVISION = 1;
+  GLFW_VERSION_REVISION = 7;
 
 const
   { One.
@@ -137,6 +137,18 @@ const
 const
   { The key was held down until it repeated. }
   GLFW_REPEAT = 2;
+
+const
+  { Joystick hat states. }
+  GLFW_HAT_CENTERED   = 0;
+  GLFW_HAT_UP         = 1;
+  GLFW_HAT_RIGHT      = 2;
+  GLFW_HAT_DOWN       = 4;
+  GLFW_HAT_LEFT       = 8;
+  GLFW_HAT_RIGHT_UP   = GLFW_HAT_RIGHT or GLFW_HAT_UP;
+  GLFW_HAT_RIGHT_DOWN = GLFW_HAT_RIGHT or GLFW_HAT_DOWN;
+  GLFW_HAT_LEFT_UP    = GLFW_HAT_LEFT  or GLFW_HAT_UP;
+  GLFW_HAT_LEFT_DOWN  = GLFW_HAT_LEFT  or GLFW_HAT_DOWN;
 
 const
   { The unknown key }
@@ -287,6 +299,16 @@ const
   GLFW_MOD_SUPER = $0008;
 
 const
+  { If this bit is set the Caps Lock key is enabled and the
+    GLFW_LOCK_KEY_MODS input mode is set. }
+  GLFW_MOD_CAPS_LOCK = $0010;
+
+const
+  { If this bit is set the Num Lock key is enabled and the
+    GLFW_LOCK_KEY_MODS input mode is set. }
+  GLFW_MOD_NUM_LOCK = $0020;
+
+const
   { Mouse buttons }
   GLFW_MOUSE_BUTTON_1 = 0;
   GLFW_MOUSE_BUTTON_2 = 1;
@@ -321,7 +343,45 @@ const
   GLFW_JOYSTICK_16 = 15;
   GLFW_JOYSTICK_LAST = GLFW_JOYSTICK_16;
 
+const
+  { Gamepad buttons. }
+  GLFW_GAMEPAD_BUTTON_A            = 0;
+  GLFW_GAMEPAD_BUTTON_B            = 1;
+  GLFW_GAMEPAD_BUTTON_X            = 2;
+  GLFW_GAMEPAD_BUTTON_Y            = 3;
+  GLFW_GAMEPAD_BUTTON_LEFT_BUMPER  = 4;
+  GLFW_GAMEPAD_BUTTON_RIGHT_BUMPER = 5;
+  GLFW_GAMEPAD_BUTTON_BACK         = 6;
+  GLFW_GAMEPAD_BUTTON_START        = 7;
+  GLFW_GAMEPAD_BUTTON_GUIDE        = 8;
+  GLFW_GAMEPAD_BUTTON_LEFT_THUMB   = 9;
+  GLFW_GAMEPAD_BUTTON_RIGHT_THUMB  = 10;
+  GLFW_GAMEPAD_BUTTON_DPAD_UP      = 11;
+  GLFW_GAMEPAD_BUTTON_DPAD_RIGHT   = 12;
+  GLFW_GAMEPAD_BUTTON_DPAD_DOWN    = 13;
+  GLFW_GAMEPAD_BUTTON_DPAD_LEFT    = 14;
+  GLFW_GAMEPAD_BUTTON_LAST         = GLFW_GAMEPAD_BUTTON_DPAD_LEFT;
+
+  GLFW_GAMEPAD_BUTTON_CROSS    = GLFW_GAMEPAD_BUTTON_A;
+  GLFW_GAMEPAD_BUTTON_CIRCLE   = GLFW_GAMEPAD_BUTTON_B;
+  GLFW_GAMEPAD_BUTTON_SQUARE   = GLFW_GAMEPAD_BUTTON_X;
+  GLFW_GAMEPAD_BUTTON_TRIANGLE = GLFW_GAMEPAD_BUTTON_Y;
+
+const
+  { Gamepad axes. }
+  GLFW_GAMEPAD_AXIS_LEFT_X        = 0;
+  GLFW_GAMEPAD_AXIS_LEFT_Y        = 1;
+  GLFW_GAMEPAD_AXIS_RIGHT_X       = 2;
+  GLFW_GAMEPAD_AXIS_RIGHT_Y       = 3;
+  GLFW_GAMEPAD_AXIS_LEFT_TRIGGER  = 4;
+  GLFW_GAMEPAD_AXIS_RIGHT_TRIGGER = 5;
+  GLFW_GAMEPAD_AXIS_LAST          = GLFW_GAMEPAD_AXIS_RIGHT_TRIGGER;
+
 { Error codes }
+
+const
+ { No error has occurred. }
+ GLFW_NO_ERROR = 0;
 
 const
   { GLFW has not been initialized.
@@ -448,6 +508,10 @@ const
   GLFW_AUTO_ICONIFY = $00020006;
   GLFW_FLOATING = $00020007;
   GLFW_MAXIMIZED = $00020008;
+  GLFW_CENTER_CURSOR = $00020009;
+  GLFW_TRANSPARENT_FRAMEBUFFER = $0002000A;
+  GLFW_HOVERED = $0002000B;
+  GLFW_FOCUS_ON_SHOW = $0002000C;
 
   GLFW_RED_BITS = $00021001;
   GLFW_GREEN_BITS = $00021002;
@@ -477,6 +541,12 @@ const
   GLFW_CONTEXT_RELEASE_BEHAVIOR = $00022009;
   GLFW_CONTEXT_NO_ERROR = $0002200A;
   GLFW_CONTEXT_CREATION_API = $0002200B;
+  GLFW_SCALE_TO_MONITOR = $0002200C;
+  GLFW_COCOA_RETINA_FRAMEBUFFER = $00023001;
+  GLFW_COCOA_FRAME_NAME = $00023002;
+  GLFW_COCOA_GRAPHICS_SWITCHING = $00023003;
+  GLFW_X11_CLASS_NAME = $00024001;
+  GLFW_X11_INSTANCE_NAME = $00024002;
 
   GLFW_NO_API = 0;
   GLFW_OPENGL_API = $00030001;
@@ -493,6 +563,8 @@ const
   GLFW_CURSOR = $00033001;
   GLFW_STICKY_KEYS = $00033002;
   GLFW_STICKY_MOUSE_BUTTONS = $00033003;
+  GLFW_LOCK_KEY_MODS = $00033004;
+  GLFW_RAW_MOUSE_MOTION = $00033005;
 
   GLFW_CURSOR_NORMAL = $00034001;
   GLFW_CURSOR_HIDDEN = $00034002;
@@ -504,6 +576,7 @@ const
 
   GLFW_NATIVE_CONTEXT_API = $00036001;
   GLFW_EGL_CONTEXT_API = $00036002;
+  GLFW_OSMESA_CONTEXT_API = $00036003;
 
 { Standard cursor shapes }
 
@@ -534,6 +607,9 @@ const
 const
   GLFW_CONNECTED = $00040001;
   GLFW_DISCONNECTED = $00040002;
+  GLFW_JOYSTICK_HAT_BUTTONS = $00050001;
+  GLFW_COCOA_CHDIR_RESOURCES = $00051001;
+  GLFW_COCOA_MENUBAR = $00051002;
 
   GLFW_DONT_CARE = -1;
 
@@ -670,6 +746,22 @@ type
   TGLFWwindowiconifyfun = procedure(window: PGLFWwindow; iconified: Integer); cdecl;
 
 type
+  { The function pointer type for window maximize callbacks.
+
+    Parameters:
+      window: The window that was maximized or restored.
+      maximized: <tt>GLFW_TRUE</tt> if the window was maximized, or
+        <tt>GLFW_FALSE</tt> if it was restored.
+
+    SeeAlso:
+      glfwSetWindowMaximizeCallback
+
+    Added in version 3.3. }
+  TGLFWwindowmaximizefun = procedure(window: PGLFWwindow; maximized: Integer); cdecl;
+
+{ ? End of 3.3.7 }
+
+type
   { The function signature for framebuffer resize callbacks.
 
     Parameters:
@@ -682,6 +774,22 @@ type
 
     Added in version 3.0. }
   TGLFWframebuffersizefun = procedure(window: PGLFWwindow; width, height: Integer); cdecl;
+
+type
+  { The function pointer type for window content scale callbacks.
+
+    This is the function pointer type for window content scale callbacks.
+
+    Parameters:
+      window: The window whose content scale changed.
+      xscale: The new x-axis content scale of the window.
+      yscale: The new y-axis content scale of the window.
+
+    SeeAlso:
+      glfwSetWindowContentScaleCallback
+
+    Added in version 3.3. }
+  TGLFWwindowcontentscalefun = procedure(window: PGLFWwindow; xscale, yscale: Single); cdecl;
 
 type
   { The function signature for mouse button callbacks.
@@ -875,6 +983,26 @@ type
   PGLFWimage = ^TGLFWimage;
   PPGLFWimage = ^PGLFWimage;
 
+type
+  { Gamepad input state .
+
+    This describes the input state of a gamepad.
+
+    SeeAlso:
+      glfwGetGamepadState
+
+    Added in version 3.3. }
+  TGLFWgamepadstate = record
+    { The states of each gamepad button, <tt>GLFW_PRESS</tt> or
+      <tt>GLFW_RELEASE</tt>. }
+    buttons: array [0..14] of Byte;
+
+    { The states of each gamepad axis, in the range -1.0 to 1.0 inclusive. }
+    axes: array [0..5] of Single;
+  end;
+  PGLFWgamepadstate = ^TGLFWgamepadstate;
+  PPGLFWgamepadstate = ^PGLFWgamepadstate;
+
 {************************************************************************
  * GLFW API functions
  ************************************************************************}
@@ -941,6 +1069,36 @@ function glfwInit(): Integer;
 procedure glfwTerminate();
   cdecl external GLFW3_LIB name _PU + 'glfwTerminate';
 
+{ Sets the specified init hint to the desired value.
+
+  This function sets hints for the next initialization of GLFW.
+
+  The values you set hints to are never reset by GLFW, but they only take
+  effect during initialization. Once GLFW has been initialized, any values
+  you set will be ignored until the library is terminated and initialized
+  again.
+
+  Some hints are platform specific. These may be set on any platform but they
+  will only affect their specific platform. Other platforms will ignore them.
+  Setting these hints requires no platform specific headers or functions.
+
+  Parameters:
+    hint: The init hint to set.
+    value: The new value of the init hint.
+
+  Possible errors include GLFW_INVALID_ENUM and GLFW_INVALID_VALUE.
+
+  This function may be called before glfwInit.
+
+  This function must only be called from the main thread.
+
+  SeeAlso:
+    glfwInit
+
+  Added in version 3.3. }
+procedure glfwInitHint(hint, value: Integer);
+  cdecl external GLFW3_LIB name _PU + 'glfwInitHint';
+
 { Retrieves the version of the GLFW library.
 
   This function retrieves the major, minor and revision numbers of the GLFW
@@ -991,6 +1149,34 @@ procedure glfwGetVersion(major, minor, rev: PInteger);
   Added in version 3.0. }
 function glfwGetVersionString(): PAnsiChar;
   cdecl external GLFW3_LIB name _PU + 'glfwGetVersionString';
+
+{ Returns and clears the last error for the calling thread.
+
+  This function returns and clears the error codeof the last error that occurred
+  on the calling thread, and optionally a UTF-8 encoded human-readable
+  description of it. If no error has occurred since the last call, it returns
+  GLFW_NO_ERROR (zero) and the description pointer is set to <tt>nil</tt>.
+
+  Parameters:
+    description: Where to store the error description pointer, or <tt>nil</tt>.
+
+  Returns:
+    The last error code for the calling thread, or GLFW_NO_ERROR (zero).
+
+  The returned string is allocated and freed by GLFW. You should not free it
+  yourself. It is guaranteed to be valid only until the next error occurs or the
+  library is terminated.
+
+  This function may be called before glfwInit.
+
+  This function may be called from any thread.
+
+  SeeAlso:
+    glfwSetErrorCallback
+
+  Added in version 3.3. }
+function glfwGetError(const description: PPAnsiChar): Integer;
+  cdecl external GLFW3_LIB name _PU + 'glfwGetError';
 
 { Sets the error callback.
 
@@ -1095,6 +1281,33 @@ function glfwGetPrimaryMonitor(): PGLFWmonitor;
 procedure glfwGetMonitorPos(monitor: PGLFWmonitor; xpos, ypos: PInteger);
   cdecl external GLFW3_LIB name _PU + 'glfwGetMonitorPos';
 
+{ Retrieves the work area of the monitor.
+
+  This function returns the position, in screen coordinates, of the upper-left
+  corner of the work area of the specified monitor along with the work area
+  size in screen coordinates. The work area is defined as the area of the
+  monitor not occluded by the operating system task bar where present. If no
+  task bar exists then the work area is the monitor resolution in screen
+  coordinates.
+
+  Any or all of the position and size arguments may be <tt>nil</tt>. If an error
+  occurs, all non-<tt>nil</tt> position and size arguments will be set to zero.
+
+  Parameters:
+    monitor: The monitor to query.
+    xpos: Where to store the monitor x-coordinate, or <tt>nil</tt>.
+    ypos: Where to store the monitor y-coordinate, or <tt>nil</tt>.
+    width: Where to store the monitor width, or <tt>nil</tt>.
+    height: Where to store the monitor height, or <tt>nil</tt>.
+
+  Possible errors include GLFW_NOT_INITIALIZED and GLFW_PLATFORM_ERROR.
+
+  This function must only be called from the main thread.
+
+  Added in version 3.3. }
+procedure glfwGetMonitorWorkarea(monitor: PGLFWmonitor; xpos, ypos, width, height: PInteger);
+  cdecl external GLFW3_LIB name _PU + 'glfwGetMonitorWorkarea';
+
 { Returns the physical size of the monitor.
 
   This function returns the size, in millimetres, of the display area of the
@@ -1125,6 +1338,30 @@ procedure glfwGetMonitorPos(monitor: PGLFWmonitor; xpos, ypos: PInteger);
 procedure glfwGetMonitorPhysicalSize(monitor: PGLFWmonitor; widthMM, heightMM: PInteger);
   cdecl external GLFW3_LIB name _PU + 'glfwGetMonitorPhysicalSize';
 
+{ Retrieves the content scale for the specified monitor.
+
+  This function retrieves the content scale for the specified monitor. The
+  content scale is the ratio between the current DPI and the platform's
+  default DPI. This is especially important for text and any UI elements. If
+  the pixel dimensions of your UI scaled by this look appropriate on your
+  machine then it should appear at a reasonable size on other machines
+  regardless of their DPI and scaling settings. This relies on the system DPI
+  and scaling settings being somewhat correct.
+  The content scale may depend on both the monitor resolution and pixel
+  density and on user settings. It may be very different from the raw DPI
+  calculated from the physical size and current resolution.
+  Parameters:
+    monitor: The monitor to query.
+    xscale: Where to store the x-axis content scale, or <tt>nil</tt>.
+    yscale: Where to store the y-axis content scale, or <tt>nil</tt>.
+  Possible errors include GLFW_NOT_INITIALIZED and GLFW_PLATFORM_ERROR.
+  This function must only be called from the main thread.
+  SeeAlso:
+    glfwGetWindowContentScale
+  Added in version 3.3. }
+procedure glfwGetMonitorContentScale(monitor: PGLFWmonitor; xscale, yscale: PSingle);
+  cdecl external GLFW3_LIB name _PU + 'glfwGetMonitorContentScale';
+
 { Returns the name of the specified monitor.
 
   This function returns a human-readable name, encoded as UTF-8, of the
@@ -1149,6 +1386,52 @@ procedure glfwGetMonitorPhysicalSize(monitor: PGLFWmonitor; widthMM, heightMM: P
   Added in version 3.0. }
 function glfwGetMonitorName(monitor: PGLFWmonitor): PAnsiChar;
   cdecl external GLFW3_LIB name _PU + 'glfwGetMonitorName';
+
+{ Sets the user pointer of the specified monitor.
+
+  This function sets the user-defined pointer of the specified monitor. The
+  current value is retained until the monitor is disconnected. The initial
+  value is <tt>nil</tt>.
+
+  This function may be called from the monitor callback, even for a monitor
+  that is being disconnected.
+
+  Parameter:
+    monitor: The monitor whose pointer to set.
+    value: The new value.
+
+  Possible errors include GLFW_NOT_INITIALIZED.
+
+  This function may be called from any thread. Access is not synchronized.
+
+  SeeAlso:
+    glfwGetMonitorUserPointer
+
+  Added in version 3.3. }
+procedure glfwSetMonitorUserPointer(monitor: PGLFWmonitor; value: Pointer);
+  cdecl external GLFW3_LIB name _PU + 'glfwSetMonitorUserPointer';
+
+{ Returns the user pointer of the specified monitor.
+
+  This function returns the current value of the user-defined pointer of the
+  specified monitor. The initial value is <tt>nil</tt>.
+
+  This function may be called from the monitor callback, even for a monitor
+  that is being disconnected.
+
+  Parameters:
+    monitor: The monitor whose pointer to return.
+
+  Possible errors include GLFW_NOT_INITIALIZED.
+
+  This function may be called from any thread. Access is not synchronized.
+
+  SeeAlso:
+    glfwSetMonitorUserPointer
+
+  Added in version 3.3. }
+function glfwGetMonitorUserPointer(monitor: PGLFWmonitor): Pointer;
+  cdecl external GLFW3_LIB name _PU + 'glfwGetMonitorUserPointer';
 
 { Sets the monitor configuration callback.
 
@@ -1336,6 +1619,41 @@ procedure glfwDefaultWindowHints();
   Added in version 3.0. Replaces <tt>glfwOpenWindowHint</tt>. }
 procedure glfwWindowHint(hint: Integer; value: Integer);
   cdecl external GLFW3_LIB name _PU + 'glfwWindowHint';
+
+{ Sets the specified window hint to the desired value.
+
+  This function sets hints for the next call to glfwCreateWindow. The hints,
+  once set, retain their values until changed by a call to this function or
+  glfwDefaultWindowHints, or until the library is terminated.
+
+  Only string type hints can be set with this function. Integer value hints
+  are set with glfwWindowHint.
+
+  This function does not check whether the specified hint values are valid.
+  If you set hints to invalid values this will instead be reported by the next
+  call to glfwCreateWindow.
+
+  Some hints are platform specific. These may be set on any platform but they
+  will only affect their specific platform. Other platforms will ignore them.
+  Setting these hints requires no platform specific headers or functions.
+
+  Parameters:
+    hint: The window hint to set.
+    value: The new value of the window hint.
+
+  Possible errors include GLFW_NOT_INITIALIZED and GLFW_INVALID_ENUM.
+
+  The specified string is copied before this function returns.
+
+  This function must only be called from the main thread.
+
+  SeeAlso:
+    glfwWindowHint
+    glfwDefaultWindowHints
+
+  Added in version 3.3. }
+procedure glfwWindowHintString(hint: Integer; const value: PAnsiChar);
+  cdecl external GLFW3_LIB name _PU + 'glfwWindowHintString';
 
 { Creates a window and its associated context.
 
@@ -1809,6 +2127,91 @@ procedure glfwGetFramebufferSize(window: PGLFWwindow; width, height: PInteger);
 procedure glfwGetWindowFrameSize(window: PGLFWwindow; left, top, right, bottom: PInteger);
   cdecl external GLFW3_LIB name _PU + 'glfwGetWindowFrameSize';
 
+{ Retrieves the content scale for the specified window.
+
+  This function retrieves the content scale for the specified window. The
+  content scale is the ratio between the current DPI and the platform's
+  default DPI. This is especially important for text and any UI elements. If
+  the pixel dimensions of your UI scaled by this look appropriate on your
+  machine then it should appear at a reasonable size on other machines
+  regardless of their DPI and scaling settings. This relies on the system DPI
+  and scaling settings being somewhat correct.
+
+  On systems where each monitors can have its own content scale, the window
+  content scale will depend on which monitor the system considers the window
+  to be on.
+
+  Parameters:
+    window: The window to query.
+    xscale: Where to store the x-axis content scale, or <tt>nil</tt>.
+    yscale: Where to store the y-axis content scale, or <tt>nil</tt>.
+
+  Possible errors include GLFW_NOT_INITIALIZED and GLFW_PLATFORM_ERROR.
+
+  This function must only be called from the main thread.
+
+  SeeAlso:
+    glfwSetWindowContentScaleCallback
+    glfwGetMonitorContentScale
+
+  Added in version 3.3. }
+procedure glfwGetWindowContentScale(window: PGLFWwindow; xscale, yscale: PSingle);
+  cdecl external GLFW3_LIB name _PU + 'glfwGetWindowContentScale';
+
+{ Returns the opacity of the whole window.
+
+  This function returns the opacity of the window, including any decorations.
+
+  The opacity (or alpha) value is a positive finite number between zero and
+  one, where zero is fully transparent and one is fully opaque. If the system
+  does not support whole window transparency, this function always returns one.
+
+  The initial opacity value for newly created windows is one.
+
+  Parameters:
+    window: The window to query.
+
+  Returns:
+    The opacity value of the specified window.
+
+  Possible errors include GLFW_NOT_INITIALIZED and GLFW_PLATFORM_ERROR.
+
+  This function must only be called from the main thread.
+
+  SeeAlso:
+    glfwSetWindowOpacity
+
+  Added in version 3.3. }
+function glfwGetWindowOpacity(window: PGLFWwindow): Single;
+  cdecl external GLFW3_LIB name _PU + 'glfwGetWindowOpacity';
+
+{ Sets the opacity of the whole window.
+
+  This function sets the opacity of the window, including any decorations.
+
+  The opacity (or alpha) value is a positive finite number between zero and
+  one, where zero is fully transparent and one is fully opaque.
+
+  The initial opacity value for newly created windows is one.
+
+  A window created with framebuffer transparency may not use whole window
+  transparency. The results of doing this are undefined.
+
+  Parameters:
+    window: The window to set the opacity for.
+    opacity :The desired opacity of the specified window.
+
+  Possible errors include GLFW_NOT_INITIALIZED and GLFW_PLATFORM_ERROR.
+
+  This function must only be called from the main thread.
+
+  SeeAlso:
+    glfwGetWindowOpacity
+
+  Added in version 3.3. }
+procedure glfwSetWindowOpacity(window: PGLFWwindow; opacity: Single);
+  cdecl external GLFW3_LIB name _PU + 'glfwSetWindowOpacity';
+
 { Iconifies the specified window.
 
   This function iconifies (minimizes) the specified window if it was
@@ -1942,6 +2345,29 @@ procedure glfwHideWindow(window: PGLFWwindow);
 procedure glfwFocusWindow(window: PGLFWwindow);
   cdecl external GLFW3_LIB name _PU + 'glfwFocusWindow';
 
+{ Requests user attention to the specified window.
+
+  This function requests user attention to the specified window. On
+  platforms where this is not supported, attention is requested to the
+  application as a whole.
+
+  Once the user has given attention, usually by focusing the window or
+  application, the system will end the request automatically.
+
+  Parameters:
+    window: The window to request attention to.
+
+  Possible errors include GLFW_NOT_INITIALIZED and GLFW_PLATFORM_ERROR.
+
+  MacOS: Attention is requested to the application as a whole, not the specific
+  window.
+
+  This function must only be called from the main thread.
+
+  Added in version 3.3. }
+procedure glfwRequestWindowAttention(window: PGLFWwindow);
+  cdecl external GLFW3_LIB name _PU + 'glfwRequestWindowAttention';
+
 { Returns the monitor that the window uses for full screen mode.
 
   This function returns the handle of the monitor that the specified window is
@@ -2039,6 +2465,39 @@ procedure glfwSetWindowMonitor(window: PGLFWwindow; monitor: PGLFWmonitor; xpos,
   <tt>glfwGetGLVersion</tt>. }
 function glfwGetWindowAttrib(window: PGLFWwindow; attrib: Integer): Integer;
   cdecl external GLFW3_LIB name _PU + 'glfwGetWindowAttrib';
+
+{ Sets an attribute of the specified window.
+
+  This function sets the value of an attribute of the specified window.
+
+  The supported attributes are GLFW_DECORATED, GLFW_RESIZABLE, GLFW_FLOATING,
+  GLFW_AUTO_ICONIFY and GLFW_FOCUS_ON_SHOW.
+
+  Some of these attributes are ignored for full screen windows. The new
+  value will take effect if the window is later made windowed.
+
+  Some of these attributes are ignored for windowed mode windows. The new
+  value will take effect if the window is later made full screen.
+
+  Parameters:
+    window: The window to set the attribute for.
+    attrib: A supported window attribute.
+    value: <tt>GLFW_TRUE</tt> or <tt>GLFW_FALSE</tt>.
+
+  Possible errors include GLFW_NOT_INITIALIZED, GLFW_INVALID_ENUM,
+  GLFW_INVALID_VALUE and GLFW_PLATFORM_ERROR.
+
+  Calling glfwGetWindowAttrib will always return the latest value, even if that
+  value is ignored by the current mode of the window.
+
+  This function must only be called from the main thread.
+
+  SeeAlso:
+    glfwGetWindowAttrib
+
+  Added in version 3.3. }
+procedure glfwSetWindowAttrib(window: PGLFWwindow; attrib, value: Integer);
+  cdecl external GLFW3_LIB name _PU + 'glfwSetWindowAttrib';
 
 { Sets the user pointer of the specified window.
 
@@ -2233,6 +2692,28 @@ function glfwSetWindowFocusCallback(window: PGLFWwindow; cbfun: TGLFWwindowfocus
 function glfwSetWindowIconifyCallback(window: PGLFWwindow; cbfun: TGLFWwindowiconifyfun): TGLFWwindowiconifyfun;
   cdecl external GLFW3_LIB name _PU + 'glfwSetWindowIconifyCallback';
 
+{ Sets the maximize callback for the specified window.
+
+  This function sets the maximization callback of the specified window, which
+  is called when the window is maximized or restored.
+
+  Parameters:
+    window: The window whose callback to set.
+    callback: The new callback, or <tt>nil</tt> to remove the currently set
+      callback.
+
+  Returns:
+    The previously set callback, or <tt>nil</tt> if no callback was set or the
+    library had not been initialized.
+
+  Possible errors include GLFW_NOT_INITIALIZED.
+
+  This function must only be called from the main thread.
+
+  Added in version 3.3. }
+function glfwSetWindowMaximizeCallback(window: PGLFWwindow; cbfun: TGLFWwindowmaximizefun): TGLFWwindowmaximizefun;
+  cdecl external GLFW3_LIB name _PU + 'glfwSetWindowMaximizeCallback';
+
 { Sets the framebuffer resize callback for the specified window.
 
   This function sets the framebuffer resize callback of the specified window,
@@ -2254,6 +2735,31 @@ function glfwSetWindowIconifyCallback(window: PGLFWwindow; cbfun: TGLFWwindowico
   Added in version 3.0. }
 function glfwSetFramebufferSizeCallback(window: PGLFWwindow; cbfun: TGLFWframebuffersizefun): TGLFWframebuffersizefun;
   cdecl external GLFW3_LIB name _PU + 'glfwSetFramebufferSizeCallback';
+
+{ Sets the window content scale callback for the specified window.
+
+  This function sets the window content scale callback of the specified window,
+  which is called when the content scale of the specified window changes.
+
+  Parameters:
+    window: The window whose callback to set.
+    callback: The new callback, or <tt>nil</tt> to remove the currently set
+      callback.
+
+  Returns:
+    The previously set callback, or <tt>nil</tt> if no callback was set or the
+    library had not been initialized.
+
+  Possible errors include GLFW_NOT_INITIALIZED.
+
+  This function must only be called from the main thread.
+
+  SeeAlso:
+    glfwGetWindowContentScale
+
+  Added in version 3.3. }
+function glfwSetWindowContentScaleCallback(window: PGLFWwindow; cbfun: TGLFWwindowcontentscalefun): TGLFWwindowcontentscalefun;
+  cdecl external GLFW3_LIB name _PU + 'glfwSetWindowContentScaleCallback';
 
 { Processes all pending events.
 
@@ -2462,6 +2968,34 @@ function glfwGetInputMode(window: PGLFWwindow; mode: Integer): Integer;
 procedure glfwSetInputMode(window: PGLFWwindow; mode, value: Integer);
   cdecl external GLFW3_LIB name _PU + 'glfwSetInputMode';
 
+{ Returns whether raw mouse motion is supported.
+
+  This function returns whether raw mouse motion is supported on the current
+  system. This status does not change after GLFW has been initialized so you
+  only need to check this once. If you attempt to enable raw motion on
+  a system that does not support it, GLFW_PLATFORM_ERROR will be emitted.
+
+  Raw mouse motion is closer to the actual motion of the mouse across
+  a surface. It is not affected by the scaling and acceleration applied to
+  the motion of the desktop cursor. That processing is suitable for a cursor
+  while raw motion is better for controlling for example a 3D camera. Because
+  of this, raw mouse motion is only provided when the cursor is disabled.
+
+  Returns:
+    <tt>GLFW_TRUE</tt> if raw mouse motion is supported on the current machine,
+    or <tt>GLFW_FALSE</tt> otherwise.
+
+  Possible errors include GLFW_NOT_INITIALIZED.
+
+  This function must only be called from the main thread.
+
+  SeeAlso:
+    glfwSetInputMode
+
+  Added in version 3.3. }
+function glfwRawMouseMotionSupported: Integer;
+  cdecl external GLFW3_LIB name _PU + 'glfwRawMouseMotionSupported';
+
 { Returns the localized name of the specified printable key.
 
   This function returns the localized name of the specified printable key.
@@ -2516,6 +3050,29 @@ procedure glfwSetInputMode(window: PGLFWwindow; mode, value: Integer);
   Added in version 3.2. }
 function glfwGetKeyName(key: Integer; scancode: Integer): PAnsiChar;
   cdecl external GLFW3_LIB name _PU + 'glfwGetKeyName';
+
+{ Returns the platform-specific scancode of the specified key.
+
+  This function returns the platform-specific scancode of the specified key.
+
+  If the key is <tt>GLFW_KEY_UNKNOWN</tt> or does not exist on the keyboard this
+  method will return <tt>-1</tt>.
+
+  Parameters:
+    key: Any named key
+
+  Returns:
+    The platform-specific scancode for the key, or <tt>-1</tt> if an
+    error occurred.
+
+  Possible errors include GLFW_NOT_INITIALIZED, GLFW_INVALID_ENUM and
+  GLFW_PLATFORM_ERROR.
+
+  This function may be called from any thread.
+
+  Added in version 3.3. }
+function glfwGetKeyScancode(key: Integer): Integer;
+  cdecl external GLFW3_LIB name _PU + 'glfwGetKeyScancode';
 
 { Returns the last reported state of a keyboard key for the specified
   window.
@@ -3078,6 +3635,53 @@ function glfwGetJoystickAxes(joy: Integer; out count: Integer): PSingle;
 function glfwGetJoystickButtons(joy: Integer; out count: Integer): PByte;
   cdecl external GLFW3_LIB name _PU + 'glfwGetJoystickButtons';
 
+{ Returns the state of all hats of the specified joystick.
+
+  This function returns the state of all hats of the specified joystick.
+  Each element in the array is one of the following values:
+
+  Name                | Value
+  ----                | -----
+  GLFW_HAT_CENTERED   | 0
+  GLFW_HAT_UP         | 1
+  GLFW_HAT_RIGHT      | 2
+  GLFW_HAT_DOWN       | 4
+  GLFW_HAT_LEFT       | 8
+  GLFW_HAT_RIGHT_UP   | GLFW_HAT_RIGHT or GLFW_HAT_UP
+  GLFW_HAT_RIGHT_DOWN | GLFW_HAT_RIGHT or GLFW_HAT_DOWN
+  GLFW_HAT_LEFT_UP    | GLFW_HAT_LEFT or GLFW_HAT_UP
+  GLFW_HAT_LEFT_DOWN  | GLFW_HAT_LEFT or GLFW_HAT_DOWN
+
+  The diagonal directions are bitwise combinations of the primary (up, right,
+  down and left) directions and you can test for these individually by ANDing
+  it with the corresponding direction.
+
+  If the specified joystick is not present this function will return
+  <tt>nil</tt> but will not generate an error. This can be used instead of first
+  calling glfwJoystickPresent.
+
+  Parameters:
+    jid: The joystick to query.
+    count: Where to store the number of hat states in the returned array.
+      This is set to zero if the joystick is not present or an error occurred.
+
+  Returns:
+    An array of hat states, or <tt>nil</tt> if the joystick is not present or
+    an error occurred.
+
+  Possible errors include GLFW_NOT_INITIALIZED, GLFW_INVALID_ENUM and
+  GLFW_PLATFORM_ERROR.
+
+  The returned array is allocated and freed by GLFW. You should not free it
+  yourself. It is valid until the specified joystick is disconnected, this
+  function is called again for that joystick or the library is terminated.
+
+  This function must only be called from the main thread.
+
+  Added in version 3.3. }
+function glfwGetJoystickHats(joy: Integer; out count: Integer): PByte;
+  cdecl external GLFW3_LIB name _PU + 'glfwGetJoystickHats';
+
 { Returns the name of the specified joystick.
 
   This function returns the name, encoded as UTF-8, of the specified joystick.
@@ -3108,6 +3712,120 @@ function glfwGetJoystickButtons(joy: Integer; out count: Integer): PByte;
 function glfwGetJoystickName(joy: Integer): PAnsiChar;
   cdecl external GLFW3_LIB name _PU + 'glfwGetJoystickName';
 
+{ Returns the SDL compatible GUID of the specified joystick.
+
+  This function returns the SDL compatible GUID, as a UTF-8 encoded
+  hexadecimal string, of the specified joystick. The returned string is
+  allocated and freed by GLFW. You should not free it yourself.
+
+  The GUID is what connects a joystick to a gamepad mapping. A connected
+  joystick will always have a GUID even if there is no gamepad mapping
+  assigned to it.
+
+  If the specified joystick is not present this function will return
+  <tt>nil</tt> but will not generate an error. This can be used instead of first
+  calling glfwJoystickPresent.
+
+  The GUID uses the format introduced in SDL 2.0.5. This GUID tries to
+  uniquely identify the make and model of a joystick but does not identify
+  a specific unit, e.g. all wired Xbox 360 controllers will have the same
+  GUID on that platform. The GUID for a unit may vary between platforms
+  depending on what hardware information the platform specific APIs provide.
+
+  Parameters:
+    jid: The joystick to query.
+
+  Returns:
+    The UTF-8 encoded GUID of the joystick, or <tt>nil</tt> if the joystick
+    is not present or an error occurred.
+
+  Possible errors include GLFW_NOT_INITIALIZED, GLFW_INVALID_ENUM and
+  GLFW_PLATFORM_ERROR.
+
+  The returned string is allocated and freed by GLFW. You should not free it
+  yourself. It is valid until the specified joystick is disconnected or the
+  library is terminated.
+
+  This function must only be called from the main thread.
+
+  Added in version 3.3. }
+function glfwGetJoystickGUID(joy: Integer): PAnsiChar;
+  cdecl external GLFW3_LIB name _PU + 'glfwGetJoystickGUID';
+
+{ Sets the user pointer of the specified joystick.
+
+  This function sets the user-defined pointer of the specified joystick. The
+  current value is retained until the joystick is disconnected. The initial
+  value is <tt>nil</tt>.
+
+  This function may be called from the joystick callback, even for a joystick
+  that is being disconnected.
+
+  Parameters:
+    jid: The joystick whose pointer to set.
+    value: The new value.
+
+  Possible errors include GLFW_NOT_INITIALIZED.
+
+  This function may be called from any thread. Access is not synchronized.
+
+  SeeAlso:
+    glfwGetJoystickUserPointer
+
+  Added in version 3.3. }
+procedure glfwSetJoystickUserPointer(joy: Integer; value: Pointer);
+  cdecl external GLFW3_LIB name _PU + 'glfwSetJoystickUserPointer';
+
+{ Returns the user pointer of the specified joystick.
+
+  This function returns the current value of the user-defined pointer of the
+  specified joystick. The initial value is <tt>nil</tt>.
+
+  This function may be called from the joystick callback, even for a joystick
+  that is being disconnected.
+
+  Parameters:
+    jid: The joystick whose pointer to return.
+
+  Possible errors include GLFW_NOT_INITIALIZED.
+
+  This function may be called from any thread. Access is not synchronized.
+
+  SeeAlso:
+    glfwSetJoystickUserPointer
+
+  Added in version 3.3. }
+function glfwGetJoystickUserPointer(joy: Integer): Pointer;
+  cdecl external GLFW3_LIB name _PU + 'glfwGetJoystickUserPointer';
+
+{ Returns whether the specified joystick has a gamepad mapping.
+
+  This function returns whether the specified joystick is both present and has
+  a gamepad mapping.
+
+  If the specified joystick is present but does not have a gamepad mapping
+  this function will return <tt>GLFW_FALSE</tt> but will not generate an error.
+  Call glfwJoystickPresent to check if a joystick is present regardless of
+  whether it has a mapping.
+
+  Parameters:
+    jid: The joystick to query.
+
+  Returns:
+    <tt>GLFW_TRUE</tt> if a joystick is both present and has a gamepad mapping,
+    or <tt>GLFW_FALSE</tt> otherwise.
+
+  Possible errors include GLFW_NOT_INITIALIZED and GLFW_INVALID_ENUM.
+
+  This function must only be called from the main thread.
+
+  SeeAlso:
+    glfwGetGamepadState
+
+  Added in version 3.3. }
+function glfwJoystickIsGamepad(joy: Integer): Integer;
+  cdecl external GLFW3_LIB name _PU + 'glfwJoystickIsGamepad';
+
 { Sets the joystick configuration callback.
 
   This function sets the joystick configuration callback, or removes the
@@ -3129,6 +3847,107 @@ function glfwGetJoystickName(joy: Integer): PAnsiChar;
   Added in version 3.2. }
 function glfwSetJoystickCallback(cbfun: TGLFWjoystickfun): TGLFWjoystickfun;
   cdecl external GLFW3_LIB name _PU + 'glfwSetJoystickCallback';
+
+{ Adds the specified SDL_GameControllerDB gamepad mappings.
+
+  This function parses the specified ASCII encoded string and updates the
+  internal list with any gamepad mappings it finds. This string may
+  contain either a single gamepad mapping or many mappings separated by
+  newlines. The parser supports the full format of the `gamecontrollerdb.txt`
+  source file including empty lines and comments.
+
+  If there is already a gamepad mapping for a given GUID in the internal list,
+  it will be replaced by the one passed to this function. If the library is
+  terminated and re-initialized the internal list will revert to the built-in
+  default.
+
+  Parameters:
+    str: The string containing the gamepad mappings.
+
+  Returns:
+    <tt>GLFW_TRUE</tt> if successful, or <tt>GLFW_FALSE</tt> if an
+    erroroccurred.
+
+  Possible errors include GLFW_NOT_INITIALIZED and GLFW_INVALID_VALUE.
+
+  This function must only be called from the main thread.
+
+  SeeAlso:
+    glfwJoystickIsGamepad
+    glfwGetGamepadName
+
+  Added in version 3.3. }
+function glfwUpdateGamepadMappings(const str: PAnsiString): Integer;
+  cdecl external GLFW3_LIB name _PU + 'glfwUpdateGamepadMappings';
+
+{ Returns the human-readable gamepad name for the specified joystick.
+
+  This function returns the human-readable name of the gamepad from the
+  gamepad mapping assigned to the specified joystick.
+
+  If the specified joystick is not present or does not have a gamepad mapping
+  this function will return <tt>nil</tt> but will not generate an error. Call
+  glfwJoystickPresent to check whether it is present regardless of
+  whether it has a mapping.
+
+  Parameters:
+    jid: The joystick to query.
+
+  Returns:
+    The UTF-8 encoded name of the gamepad, or <tt>nil</tt> if the joystick is
+    not present, does not have a mapping or an erroroccurred.
+
+  Possible errors include GLFW_NOT_INITIALIZED and GLFW_INVALID_ENUM.
+
+  The returned string is allocated and freed by GLFW. You should not free it
+  yourself. It is valid until the specified joystick is disconnected, the
+  gamepad mappings are updated or the library is terminated.
+
+  This function must only be called from the main thread.
+
+  SeeAlso:
+    glfwJoystickIsGamepad
+
+  Added in version 3.3. }
+function glfwGetGamepadName(jid: Integer): PAnsiString;
+  cdecl external GLFW3_LIB name _PU + 'glfwGetGamepadName';
+
+{ Retrieves the state of the specified joystick remapped as a gamepad.
+
+  This function retrieves the state of the specified joystick remapped to
+  an Xbox-like gamepad.
+
+  If the specified joystick is not present or does not have a gamepad mapping
+  this function will return <tt>GLFW_FALSE</tt> but will not generate an error.
+  Call glfwJoystickPresent to check whether it is present regardless of
+  whether it has a mapping.
+
+  The Guide button may not be available for input as it is often hooked by the
+  system or the Steam client.
+
+  Not all devices have all the buttons or axes provided by TGLFWgamepadstate.
+  Unavailable buttons and axes will always report <tt>GLFW_RELEASE</tt> and 0.0
+  respectively.
+
+  Parameters:
+    jid: The joystick to query.
+    state: The gamepad input state of the joystick.
+
+  Returns:
+    <tt>GLFW_TRUE</tt> if successful, or <tt>GLFW_FALSE</tt> if no joystick is
+    connected, it has no gamepad mapping or an error occurred.
+
+  Possible errors include GLFW_NOT_INITIALIZED and GLFW_INVALID_ENUM.
+
+  This function must only be called from the main thread.
+
+  SeeAlso:
+    glfwUpdateGamepadMappings
+    glfwJoystickIsGamepad
+
+  Added in version 3.3. }
+function glfwGetGamepadState(jid: Integer; state: PGLFWgamepadstate): Integer;
+  cdecl external GLFW3_LIB name _PU + 'glfwGetGamepadState';
 
 { Sets the clipboard to the specified string.
 
