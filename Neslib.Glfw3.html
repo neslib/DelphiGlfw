@@ -33,6 +33,10 @@
 <td class="itemname">record&nbsp;<a class="bold" href="Neslib.Glfw3.TGLFWimage.html"><code>TGLFWimage</code></a></td>
 <td class="itemdesc">Image data.</td>
 </tr>
+<tr class="list2">
+<td class="itemname">record&nbsp;<a class="bold" href="Neslib.Glfw3.TGLFWgamepadstate.html"><code>TGLFWgamepadstate</code></a></td>
+<td class="itemdesc">Gamepad input state .</td>
+</tr>
 </table>
 <a name="PasDoc-FuncsProcs"></a><h3 class="summary">Functions and Procedures</h3>
 <table class="summary wide_list">
@@ -43,10 +47,16 @@
 <td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwTerminate">glfwTerminate</a></b>(); cdecl  external GLFW3_LIB name _PU + 'glfwTerminate';</code></td>
 </tr>
 <tr class="list">
-<td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwGetVersion">glfwGetVersion</a></b>(major, minor, rev: PInteger); cdecl  external GLFW3_LIB name _PU + 'glfwGetVersion';</code></td>
+<td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwInitHint">glfwInitHint</a></b>(hint, value: Integer); cdecl  external GLFW3_LIB name _PU + 'glfwInitHint';</code></td>
 </tr>
 <tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwGetVersion">glfwGetVersion</a></b>(major, minor, rev: PInteger); cdecl  external GLFW3_LIB name _PU + 'glfwGetVersion';</code></td>
+</tr>
+<tr class="list">
 <td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwGetVersionString">glfwGetVersionString</a></b>(): PAnsiChar; cdecl  external GLFW3_LIB name _PU + 'glfwGetVersionString';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwGetError">glfwGetError</a></b>(const description: PPAnsiChar): Integer; cdecl  external GLFW3_LIB name _PU + 'glfwGetError';</code></td>
 </tr>
 <tr class="list">
 <td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwSetErrorCallback">glfwSetErrorCallback</a></b>(cbfun: <a  href="Neslib.Glfw3.html#TGLFWerrorfun">TGLFWerrorfun</a>): <a  href="Neslib.Glfw3.html#TGLFWerrorfun">TGLFWerrorfun</a>; cdecl  external GLFW3_LIB name _PU + 'glfwSetErrorCallback';</code></td>
@@ -61,10 +71,22 @@
 <td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwGetMonitorPos">glfwGetMonitorPos</a></b>(monitor: <a  href="Neslib.Glfw3.html#PGLFWmonitor">PGLFWmonitor</a>; xpos, ypos: PInteger); cdecl  external GLFW3_LIB name _PU + 'glfwGetMonitorPos';</code></td>
 </tr>
 <tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwGetMonitorWorkarea">glfwGetMonitorWorkarea</a></b>(monitor: <a  href="Neslib.Glfw3.html#PGLFWmonitor">PGLFWmonitor</a>; xpos, ypos, width, height: PInteger); cdecl  external GLFW3_LIB name _PU + 'glfwGetMonitorWorkarea';</code></td>
+</tr>
+<tr class="list2">
 <td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwGetMonitorPhysicalSize">glfwGetMonitorPhysicalSize</a></b>(monitor: <a  href="Neslib.Glfw3.html#PGLFWmonitor">PGLFWmonitor</a>; widthMM, heightMM: PInteger); cdecl  external GLFW3_LIB name _PU + 'glfwGetMonitorPhysicalSize';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwGetMonitorContentScale">glfwGetMonitorContentScale</a></b>(monitor: <a  href="Neslib.Glfw3.html#PGLFWmonitor">PGLFWmonitor</a>; xscale, yscale: PSingle); cdecl  external GLFW3_LIB name _PU + 'glfwGetMonitorContentScale';</code></td>
 </tr>
 <tr class="list2">
 <td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwGetMonitorName">glfwGetMonitorName</a></b>(monitor: <a  href="Neslib.Glfw3.html#PGLFWmonitor">PGLFWmonitor</a>): PAnsiChar; cdecl  external GLFW3_LIB name _PU + 'glfwGetMonitorName';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwSetMonitorUserPointer">glfwSetMonitorUserPointer</a></b>(monitor: <a  href="Neslib.Glfw3.html#PGLFWmonitor">PGLFWmonitor</a>; value: Pointer); cdecl  external GLFW3_LIB name _PU + 'glfwSetMonitorUserPointer';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwGetMonitorUserPointer">glfwGetMonitorUserPointer</a></b>(monitor: <a  href="Neslib.Glfw3.html#PGLFWmonitor">PGLFWmonitor</a>): Pointer; cdecl  external GLFW3_LIB name _PU + 'glfwGetMonitorUserPointer';</code></td>
 </tr>
 <tr class="list">
 <td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwSetMonitorCallback">glfwSetMonitorCallback</a></b>(cbfun: <a  href="Neslib.Glfw3.html#TGLFWmonitorfun">TGLFWmonitorfun</a>): <a  href="Neslib.Glfw3.html#TGLFWmonitorfun">TGLFWmonitorfun</a>; cdecl  external GLFW3_LIB name _PU + 'glfwSetMonitorCallback';</code></td>
@@ -91,46 +113,58 @@
 <td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwWindowHint">glfwWindowHint</a></b>(hint: Integer; value: Integer); cdecl  external GLFW3_LIB name _PU + 'glfwWindowHint';</code></td>
 </tr>
 <tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwWindowHintString">glfwWindowHintString</a></b>(hint: Integer; const value: PAnsiChar); cdecl  external GLFW3_LIB name _PU + 'glfwWindowHintString';</code></td>
+</tr>
+<tr class="list2">
 <td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwCreateWindow">glfwCreateWindow</a></b>(width: Integer; height: Integer; const title: PAnsiChar; monitor: <a  href="Neslib.Glfw3.html#PGLFWmonitor">PGLFWmonitor</a>; share: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>): <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; cdecl  external GLFW3_LIB name _PU + 'glfwCreateWindow';</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwDestroyWindow">glfwDestroyWindow</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>); cdecl  external GLFW3_LIB name _PU + 'glfwDestroyWindow';</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwWindowShouldClose">glfwWindowShouldClose</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>): Integer; cdecl  external GLFW3_LIB name _PU + 'glfwWindowShouldClose';</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwSetWindowShouldClose">glfwSetWindowShouldClose</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; value: Integer); cdecl  external GLFW3_LIB name _PU + 'glfwSetWindowShouldClose';</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwSetWindowTitle">glfwSetWindowTitle</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; const title: PAnsiChar); cdecl  external GLFW3_LIB name _PU + 'glfwSetWindowTitle';</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwSetWindowIcon">glfwSetWindowIcon</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; count: Integer; const images: <a  href="Neslib.Glfw3.html#PGLFWimage">PGLFWimage</a>); cdecl  external GLFW3_LIB name _PU + 'glfwSetWindowIcon';</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwGetWindowPos">glfwGetWindowPos</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; xpos, ypos: PInteger); cdecl  external GLFW3_LIB name _PU + 'glfwGetWindowPos';</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwSetWindowPos">glfwSetWindowPos</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; xpos, ypos: Integer); cdecl  external GLFW3_LIB name _PU + 'glfwSetWindowPos';</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwGetWindowSize">glfwGetWindowSize</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; width, height: PInteger); cdecl  external GLFW3_LIB name _PU + 'glfwGetWindowSize';</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwSetWindowSizeLimits">glfwSetWindowSizeLimits</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; minwidth, minheight, maxwidth, maxheight: Integer); cdecl  external GLFW3_LIB name _PU + 'glfwSetWindowSizeLimits';</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwSetWindowAspectRatio">glfwSetWindowAspectRatio</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; numer, denom: Integer); cdecl  external GLFW3_LIB name _PU + 'glfwSetWindowAspectRatio';</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwSetWindowSize">glfwSetWindowSize</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; width, height: Integer); cdecl  external GLFW3_LIB name _PU + 'glfwSetWindowSize';</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwGetFramebufferSize">glfwGetFramebufferSize</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; width, height: PInteger); cdecl  external GLFW3_LIB name _PU + 'glfwGetFramebufferSize';</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwGetWindowFrameSize">glfwGetWindowFrameSize</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; left, top, right, bottom: PInteger); cdecl  external GLFW3_LIB name _PU + 'glfwGetWindowFrameSize';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwGetWindowContentScale">glfwGetWindowContentScale</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; xscale, yscale: PSingle); cdecl  external GLFW3_LIB name _PU + 'glfwGetWindowContentScale';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwGetWindowOpacity">glfwGetWindowOpacity</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>): Single; cdecl  external GLFW3_LIB name _PU + 'glfwGetWindowOpacity';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwSetWindowOpacity">glfwSetWindowOpacity</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; opacity: Single); cdecl  external GLFW3_LIB name _PU + 'glfwSetWindowOpacity';</code></td>
 </tr>
 <tr class="list">
 <td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwIconifyWindow">glfwIconifyWindow</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>); cdecl  external GLFW3_LIB name _PU + 'glfwIconifyWindow';</code></td>
@@ -151,13 +185,19 @@
 <td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwFocusWindow">glfwFocusWindow</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>); cdecl  external GLFW3_LIB name _PU + 'glfwFocusWindow';</code></td>
 </tr>
 <tr class="list">
-<td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwGetWindowMonitor">glfwGetWindowMonitor</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>): <a  href="Neslib.Glfw3.html#PGLFWmonitor">PGLFWmonitor</a>; cdecl  external GLFW3_LIB name _PU + 'glfwGetWindowMonitor';</code></td>
+<td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwRequestWindowAttention">glfwRequestWindowAttention</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>); cdecl  external GLFW3_LIB name _PU + 'glfwRequestWindowAttention';</code></td>
 </tr>
 <tr class="list2">
-<td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwSetWindowMonitor">glfwSetWindowMonitor</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; monitor: <a  href="Neslib.Glfw3.html#PGLFWmonitor">PGLFWmonitor</a>; xpos, ypos, width, height, refreshRate: Integer); cdecl  external GLFW3_LIB name _PU + 'glfwSetWindowMonitor';</code></td>
+<td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwGetWindowMonitor">glfwGetWindowMonitor</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>): <a  href="Neslib.Glfw3.html#PGLFWmonitor">PGLFWmonitor</a>; cdecl  external GLFW3_LIB name _PU + 'glfwGetWindowMonitor';</code></td>
 </tr>
 <tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwSetWindowMonitor">glfwSetWindowMonitor</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; monitor: <a  href="Neslib.Glfw3.html#PGLFWmonitor">PGLFWmonitor</a>; xpos, ypos, width, height, refreshRate: Integer); cdecl  external GLFW3_LIB name _PU + 'glfwSetWindowMonitor';</code></td>
+</tr>
+<tr class="list2">
 <td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwGetWindowAttrib">glfwGetWindowAttrib</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; attrib: Integer): Integer; cdecl  external GLFW3_LIB name _PU + 'glfwGetWindowAttrib';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwSetWindowAttrib">glfwSetWindowAttrib</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; attrib, value: Integer); cdecl  external GLFW3_LIB name _PU + 'glfwSetWindowAttrib';</code></td>
 </tr>
 <tr class="list2">
 <td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwSetWindowUserPointer">glfwSetWindowUserPointer</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; pointer: Pointer); cdecl  external GLFW3_LIB name _PU + 'glfwSetWindowUserPointer';</code></td>
@@ -184,7 +224,13 @@
 <td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwSetWindowIconifyCallback">glfwSetWindowIconifyCallback</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; cbfun: <a  href="Neslib.Glfw3.html#TGLFWwindowiconifyfun">TGLFWwindowiconifyfun</a>): <a  href="Neslib.Glfw3.html#TGLFWwindowiconifyfun">TGLFWwindowiconifyfun</a>; cdecl  external GLFW3_LIB name _PU + 'glfwSetWindowIconifyCallback';</code></td>
 </tr>
 <tr class="list2">
+<td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwSetWindowMaximizeCallback">glfwSetWindowMaximizeCallback</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; cbfun: <a  href="Neslib.Glfw3.html#TGLFWwindowmaximizefun">TGLFWwindowmaximizefun</a>): <a  href="Neslib.Glfw3.html#TGLFWwindowmaximizefun">TGLFWwindowmaximizefun</a>; cdecl  external GLFW3_LIB name _PU + 'glfwSetWindowMaximizeCallback';</code></td>
+</tr>
+<tr class="list">
 <td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwSetFramebufferSizeCallback">glfwSetFramebufferSizeCallback</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; cbfun: <a  href="Neslib.Glfw3.html#TGLFWframebuffersizefun">TGLFWframebuffersizefun</a>): <a  href="Neslib.Glfw3.html#TGLFWframebuffersizefun">TGLFWframebuffersizefun</a>; cdecl  external GLFW3_LIB name _PU + 'glfwSetFramebufferSizeCallback';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwSetWindowContentScaleCallback">glfwSetWindowContentScaleCallback</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; cbfun: <a  href="Neslib.Glfw3.html#TGLFWwindowcontentscalefun">TGLFWwindowcontentscalefun</a>): <a  href="Neslib.Glfw3.html#TGLFWwindowcontentscalefun">TGLFWwindowcontentscalefun</a>; cdecl  external GLFW3_LIB name _PU + 'glfwSetWindowContentScaleCallback';</code></td>
 </tr>
 <tr class="list">
 <td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwPollEvents">glfwPollEvents</a></b>(); cdecl  external GLFW3_LIB name _PU + 'glfwPollEvents';</code></td>
@@ -205,7 +251,13 @@
 <td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwSetInputMode">glfwSetInputMode</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; mode, value: Integer); cdecl  external GLFW3_LIB name _PU + 'glfwSetInputMode';</code></td>
 </tr>
 <tr class="list">
+<td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwRawMouseMotionSupported">glfwRawMouseMotionSupported</a></b>: Integer; cdecl  external GLFW3_LIB name _PU + 'glfwRawMouseMotionSupported';</code></td>
+</tr>
+<tr class="list2">
 <td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwGetKeyName">glfwGetKeyName</a></b>(key: Integer; scancode: Integer): PAnsiChar; cdecl  external GLFW3_LIB name _PU + 'glfwGetKeyName';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwGetKeyScancode">glfwGetKeyScancode</a></b>(key: Integer): Integer; cdecl  external GLFW3_LIB name _PU + 'glfwGetKeyScancode';</code></td>
 </tr>
 <tr class="list2">
 <td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwGetKey">glfwGetKey</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; key: Integer): Integer; cdecl  external GLFW3_LIB name _PU + 'glfwGetKey';</code></td>
@@ -265,10 +317,34 @@
 <td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwGetJoystickButtons">glfwGetJoystickButtons</a></b>(joy: Integer; out count: Integer): PByte; cdecl  external GLFW3_LIB name _PU + 'glfwGetJoystickButtons';</code></td>
 </tr>
 <tr class="list">
-<td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwGetJoystickName">glfwGetJoystickName</a></b>(joy: Integer): PAnsiChar; cdecl  external GLFW3_LIB name _PU + 'glfwGetJoystickName';</code></td>
+<td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwGetJoystickHats">glfwGetJoystickHats</a></b>(joy: Integer; out count: Integer): PByte; cdecl  external GLFW3_LIB name _PU + 'glfwGetJoystickHats';</code></td>
 </tr>
 <tr class="list2">
+<td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwGetJoystickName">glfwGetJoystickName</a></b>(joy: Integer): PAnsiChar; cdecl  external GLFW3_LIB name _PU + 'glfwGetJoystickName';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwGetJoystickGUID">glfwGetJoystickGUID</a></b>(joy: Integer): PAnsiChar; cdecl  external GLFW3_LIB name _PU + 'glfwGetJoystickGUID';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwSetJoystickUserPointer">glfwSetJoystickUserPointer</a></b>(joy: Integer; value: Pointer); cdecl  external GLFW3_LIB name _PU + 'glfwSetJoystickUserPointer';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwGetJoystickUserPointer">glfwGetJoystickUserPointer</a></b>(joy: Integer): Pointer; cdecl  external GLFW3_LIB name _PU + 'glfwGetJoystickUserPointer';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwJoystickIsGamepad">glfwJoystickIsGamepad</a></b>(joy: Integer): Integer; cdecl  external GLFW3_LIB name _PU + 'glfwJoystickIsGamepad';</code></td>
+</tr>
+<tr class="list">
 <td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwSetJoystickCallback">glfwSetJoystickCallback</a></b>(cbfun: <a  href="Neslib.Glfw3.html#TGLFWjoystickfun">TGLFWjoystickfun</a>): <a  href="Neslib.Glfw3.html#TGLFWjoystickfun">TGLFWjoystickfun</a>; cdecl  external GLFW3_LIB name _PU + 'glfwSetJoystickCallback';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwUpdateGamepadMappings">glfwUpdateGamepadMappings</a></b>(const str: PAnsiString): Integer; cdecl  external GLFW3_LIB name _PU + 'glfwUpdateGamepadMappings';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwGetGamepadName">glfwGetGamepadName</a></b>(jid: Integer): PAnsiString; cdecl  external GLFW3_LIB name _PU + 'glfwGetGamepadName';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="Neslib.Glfw3.html#glfwGetGamepadState">glfwGetGamepadState</a></b>(jid: Integer; state: <a  href="Neslib.Glfw3.html#PGLFWgamepadstate">PGLFWgamepadstate</a>): Integer; cdecl  external GLFW3_LIB name _PU + 'glfwGetGamepadState';</code></td>
 </tr>
 <tr class="list">
 <td class="itemcode"><code>procedure <b><a  href="Neslib.Glfw3.html#glfwSetClipboardString">glfwSetClipboardString</a></b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; const text: PAnsiChar); cdecl  external GLFW3_LIB name _PU + 'glfwSetClipboardString';</code></td>
@@ -379,7 +455,13 @@
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#TGLFWwindowiconifyfun">TGLFWwindowiconifyfun</a></b> = procedure(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; iconified: Integer); cdecl;</code></td>
 </tr>
 <tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#TGLFWwindowmaximizefun">TGLFWwindowmaximizefun</a></b> = procedure(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; maximized: Integer); cdecl;</code></td>
+</tr>
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#TGLFWframebuffersizefun">TGLFWframebuffersizefun</a></b> = procedure(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; width, height: Integer); cdecl;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#TGLFWwindowcontentscalefun">TGLFWwindowcontentscalefun</a></b> = procedure(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; xscale, yscale: Single); cdecl;</code></td>
 </tr>
 <tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#TGLFWmousebuttonfun">TGLFWmousebuttonfun</a></b> = procedure(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; button, action, mods: Integer); cdecl;</code></td>
@@ -429,6 +511,12 @@
 <tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#PPGLFWimage">PPGLFWimage</a></b> = &circ;<a  href="Neslib.Glfw3.html#PGLFWimage">PGLFWimage</a>;</code></td>
 </tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#PGLFWgamepadstate">PGLFWgamepadstate</a></b> = &circ;<a  href="Neslib.Glfw3.TGLFWgamepadstate.html">TGLFWgamepadstate</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#PPGLFWgamepadstate">PPGLFWgamepadstate</a></b> = &circ;<a  href="Neslib.Glfw3.html#PGLFWgamepadstate">PGLFWgamepadstate</a>;</code></td>
+</tr>
 </table>
 <a name="PasDoc-Constants"></a><h3 class="summary">Constants</h3>
 <table class="summary wide_list">
@@ -436,10 +524,10 @@
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_VERSION_MAJOR">GLFW_VERSION_MAJOR</a></b> = 3;</code></td>
 </tr>
 <tr class="list2">
-<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_VERSION_MINOR">GLFW_VERSION_MINOR</a></b> = 2;</code></td>
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_VERSION_MINOR">GLFW_VERSION_MINOR</a></b> = 3;</code></td>
 </tr>
 <tr class="list">
-<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_VERSION_REVISION">GLFW_VERSION_REVISION</a></b> = 1;</code></td>
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_VERSION_REVISION">GLFW_VERSION_REVISION</a></b> = 7;</code></td>
 </tr>
 <tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_TRUE">GLFW_TRUE</a></b> = 1;</code></td>
@@ -457,664 +545,820 @@
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_REPEAT">GLFW_REPEAT</a></b> = 2;</code></td>
 </tr>
 <tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_HAT_CENTERED">GLFW_HAT_CENTERED</a></b>   = 0;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_HAT_UP">GLFW_HAT_UP</a></b>         = 1;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_HAT_RIGHT">GLFW_HAT_RIGHT</a></b>      = 2;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_HAT_DOWN">GLFW_HAT_DOWN</a></b>       = 4;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_HAT_LEFT">GLFW_HAT_LEFT</a></b>       = 8;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_HAT_RIGHT_UP">GLFW_HAT_RIGHT_UP</a></b>   = <a  href="Neslib.Glfw3.html#GLFW_HAT_RIGHT">GLFW_HAT_RIGHT</a> or <a  href="Neslib.Glfw3.html#GLFW_HAT_UP">GLFW_HAT_UP</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_HAT_RIGHT_DOWN">GLFW_HAT_RIGHT_DOWN</a></b> = <a  href="Neslib.Glfw3.html#GLFW_HAT_RIGHT">GLFW_HAT_RIGHT</a> or <a  href="Neslib.Glfw3.html#GLFW_HAT_DOWN">GLFW_HAT_DOWN</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_HAT_LEFT_UP">GLFW_HAT_LEFT_UP</a></b>    = <a  href="Neslib.Glfw3.html#GLFW_HAT_LEFT">GLFW_HAT_LEFT</a>  or <a  href="Neslib.Glfw3.html#GLFW_HAT_UP">GLFW_HAT_UP</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_HAT_LEFT_DOWN">GLFW_HAT_LEFT_DOWN</a></b>  = <a  href="Neslib.Glfw3.html#GLFW_HAT_LEFT">GLFW_HAT_LEFT</a>  or <a  href="Neslib.Glfw3.html#GLFW_HAT_DOWN">GLFW_HAT_DOWN</a>;</code></td>
+</tr>
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_UNKNOWN">GLFW_KEY_UNKNOWN</a></b> = -1;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_SPACE">GLFW_KEY_SPACE</a></b> = 32;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_APOSTROPHE">GLFW_KEY_APOSTROPHE</a></b> = 39;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_COMMA">GLFW_KEY_COMMA</a></b> = 44;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_MINUS">GLFW_KEY_MINUS</a></b> = 45;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_PERIOD">GLFW_KEY_PERIOD</a></b> = 46;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_SLASH">GLFW_KEY_SLASH</a></b> = 47;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_0">GLFW_KEY_0</a></b> = 48;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_1">GLFW_KEY_1</a></b> = 49;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_2">GLFW_KEY_2</a></b> = 50;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_3">GLFW_KEY_3</a></b> = 51;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_4">GLFW_KEY_4</a></b> = 52;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_5">GLFW_KEY_5</a></b> = 53;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_6">GLFW_KEY_6</a></b> = 54;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_7">GLFW_KEY_7</a></b> = 55;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_8">GLFW_KEY_8</a></b> = 56;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_9">GLFW_KEY_9</a></b> = 57;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_SEMICOLON">GLFW_KEY_SEMICOLON</a></b> = 59;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_EQUAL">GLFW_KEY_EQUAL</a></b> = 61;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_A">GLFW_KEY_A</a></b> = 65;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_B">GLFW_KEY_B</a></b> = 66;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_C">GLFW_KEY_C</a></b> = 67;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_D">GLFW_KEY_D</a></b> = 68;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_E">GLFW_KEY_E</a></b> = 69;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F">GLFW_KEY_F</a></b> = 70;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_G">GLFW_KEY_G</a></b> = 71;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_H">GLFW_KEY_H</a></b> = 72;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_I">GLFW_KEY_I</a></b> = 73;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_J">GLFW_KEY_J</a></b> = 74;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_K">GLFW_KEY_K</a></b> = 75;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_L">GLFW_KEY_L</a></b> = 76;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_M">GLFW_KEY_M</a></b> = 77;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_N">GLFW_KEY_N</a></b> = 78;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_O">GLFW_KEY_O</a></b> = 79;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_P">GLFW_KEY_P</a></b> = 80;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_Q">GLFW_KEY_Q</a></b> = 81;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_R">GLFW_KEY_R</a></b> = 82;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_S">GLFW_KEY_S</a></b> = 83;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_T">GLFW_KEY_T</a></b> = 84;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_U">GLFW_KEY_U</a></b> = 85;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_V">GLFW_KEY_V</a></b> = 86;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_W">GLFW_KEY_W</a></b> = 87;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_X">GLFW_KEY_X</a></b> = 88;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_Y">GLFW_KEY_Y</a></b> = 89;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_Z">GLFW_KEY_Z</a></b> = 90;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_LEFT_BRACKET">GLFW_KEY_LEFT_BRACKET</a></b> = 91;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_BACKSLASH">GLFW_KEY_BACKSLASH</a></b> = 92;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_RIGHT_BRACKET">GLFW_KEY_RIGHT_BRACKET</a></b> = 93;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_GRAVE_ACCENT">GLFW_KEY_GRAVE_ACCENT</a></b> = 96;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_WORLD_1">GLFW_KEY_WORLD_1</a></b> = 161;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_WORLD_2">GLFW_KEY_WORLD_2</a></b> = 162;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_ESCAPE">GLFW_KEY_ESCAPE</a></b> = 256;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_ENTER">GLFW_KEY_ENTER</a></b> = 257;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_TAB">GLFW_KEY_TAB</a></b> = 258;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_BACKSPACE">GLFW_KEY_BACKSPACE</a></b> = 259;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_INSERT">GLFW_KEY_INSERT</a></b> = 260;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_DELETE">GLFW_KEY_DELETE</a></b> = 261;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_RIGHT">GLFW_KEY_RIGHT</a></b> = 262;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_LEFT">GLFW_KEY_LEFT</a></b> = 263;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_DOWN">GLFW_KEY_DOWN</a></b> = 264;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_UP">GLFW_KEY_UP</a></b> = 265;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_PAGE_UP">GLFW_KEY_PAGE_UP</a></b> = 266;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_PAGE_DOWN">GLFW_KEY_PAGE_DOWN</a></b> = 267;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_HOME">GLFW_KEY_HOME</a></b> = 268;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_END">GLFW_KEY_END</a></b> = 269;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_CAPS_LOCK">GLFW_KEY_CAPS_LOCK</a></b> = 280;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_SCROLL_LOCK">GLFW_KEY_SCROLL_LOCK</a></b> = 281;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_NUM_LOCK">GLFW_KEY_NUM_LOCK</a></b> = 282;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_PRINT_SCREEN">GLFW_KEY_PRINT_SCREEN</a></b> = 283;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_PAUSE">GLFW_KEY_PAUSE</a></b> = 284;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F1">GLFW_KEY_F1</a></b> = 290;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F2">GLFW_KEY_F2</a></b> = 291;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F3">GLFW_KEY_F3</a></b> = 292;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F4">GLFW_KEY_F4</a></b> = 293;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F5">GLFW_KEY_F5</a></b> = 294;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F6">GLFW_KEY_F6</a></b> = 295;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F7">GLFW_KEY_F7</a></b> = 296;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F8">GLFW_KEY_F8</a></b> = 297;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F9">GLFW_KEY_F9</a></b> = 298;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F10">GLFW_KEY_F10</a></b> = 299;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F11">GLFW_KEY_F11</a></b> = 300;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F12">GLFW_KEY_F12</a></b> = 301;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F13">GLFW_KEY_F13</a></b> = 302;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F14">GLFW_KEY_F14</a></b> = 303;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F15">GLFW_KEY_F15</a></b> = 304;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F16">GLFW_KEY_F16</a></b> = 305;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F17">GLFW_KEY_F17</a></b> = 306;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F18">GLFW_KEY_F18</a></b> = 307;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F19">GLFW_KEY_F19</a></b> = 308;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F20">GLFW_KEY_F20</a></b> = 309;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F21">GLFW_KEY_F21</a></b> = 310;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F22">GLFW_KEY_F22</a></b> = 311;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F23">GLFW_KEY_F23</a></b> = 312;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F24">GLFW_KEY_F24</a></b> = 313;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_F25">GLFW_KEY_F25</a></b> = 314;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_KP_0">GLFW_KEY_KP_0</a></b> = 320;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_KP_1">GLFW_KEY_KP_1</a></b> = 321;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_KP_2">GLFW_KEY_KP_2</a></b> = 322;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_KP_3">GLFW_KEY_KP_3</a></b> = 323;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_KP_4">GLFW_KEY_KP_4</a></b> = 324;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_KP_5">GLFW_KEY_KP_5</a></b> = 325;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_KP_6">GLFW_KEY_KP_6</a></b> = 326;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_KP_7">GLFW_KEY_KP_7</a></b> = 327;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_KP_8">GLFW_KEY_KP_8</a></b> = 328;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_KP_9">GLFW_KEY_KP_9</a></b> = 329;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_KP_DECIMAL">GLFW_KEY_KP_DECIMAL</a></b> = 330;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_KP_DIVIDE">GLFW_KEY_KP_DIVIDE</a></b> = 331;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_KP_MULTIPLY">GLFW_KEY_KP_MULTIPLY</a></b> = 332;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_KP_SUBTRACT">GLFW_KEY_KP_SUBTRACT</a></b> = 333;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_KP_ADD">GLFW_KEY_KP_ADD</a></b> = 334;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_KP_ENTER">GLFW_KEY_KP_ENTER</a></b> = 335;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_KP_EQUAL">GLFW_KEY_KP_EQUAL</a></b> = 336;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_LEFT_SHIFT">GLFW_KEY_LEFT_SHIFT</a></b> = 340;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_LEFT_CONTROL">GLFW_KEY_LEFT_CONTROL</a></b> = 341;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_LEFT_ALT">GLFW_KEY_LEFT_ALT</a></b> = 342;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_LEFT_SUPER">GLFW_KEY_LEFT_SUPER</a></b> = 343;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_RIGHT_SHIFT">GLFW_KEY_RIGHT_SHIFT</a></b> = 344;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_RIGHT_CONTROL">GLFW_KEY_RIGHT_CONTROL</a></b> = 345;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_RIGHT_ALT">GLFW_KEY_RIGHT_ALT</a></b> = 346;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_RIGHT_SUPER">GLFW_KEY_RIGHT_SUPER</a></b> = 347;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_MENU">GLFW_KEY_MENU</a></b> = 348;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_KEY_LAST">GLFW_KEY_LAST</a></b> = <a  href="Neslib.Glfw3.html#GLFW_KEY_MENU">GLFW_KEY_MENU</a>;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_MOD_SHIFT">GLFW_MOD_SHIFT</a></b> = $0001;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_MOD_CONTROL">GLFW_MOD_CONTROL</a></b> = $0002;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_MOD_ALT">GLFW_MOD_ALT</a></b> = $0004;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_MOD_SUPER">GLFW_MOD_SUPER</a></b> = $0008;</code></td>
 </tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_MOD_CAPS_LOCK">GLFW_MOD_CAPS_LOCK</a></b> = $0010;</code></td>
+</tr>
 <tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_MOD_NUM_LOCK">GLFW_MOD_NUM_LOCK</a></b> = $0020;</code></td>
+</tr>
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_MOUSE_BUTTON_1">GLFW_MOUSE_BUTTON_1</a></b> = 0;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_MOUSE_BUTTON_2">GLFW_MOUSE_BUTTON_2</a></b> = 1;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_MOUSE_BUTTON_3">GLFW_MOUSE_BUTTON_3</a></b> = 2;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_MOUSE_BUTTON_4">GLFW_MOUSE_BUTTON_4</a></b> = 3;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_MOUSE_BUTTON_5">GLFW_MOUSE_BUTTON_5</a></b> = 4;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_MOUSE_BUTTON_6">GLFW_MOUSE_BUTTON_6</a></b> = 5;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_MOUSE_BUTTON_7">GLFW_MOUSE_BUTTON_7</a></b> = 6;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_MOUSE_BUTTON_8">GLFW_MOUSE_BUTTON_8</a></b> = 7;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_MOUSE_BUTTON_LAST">GLFW_MOUSE_BUTTON_LAST</a></b> = <a  href="Neslib.Glfw3.html#GLFW_MOUSE_BUTTON_8">GLFW_MOUSE_BUTTON_8</a>;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_MOUSE_BUTTON_LEFT">GLFW_MOUSE_BUTTON_LEFT</a></b> = <a  href="Neslib.Glfw3.html#GLFW_MOUSE_BUTTON_1">GLFW_MOUSE_BUTTON_1</a>;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_MOUSE_BUTTON_RIGHT">GLFW_MOUSE_BUTTON_RIGHT</a></b> = <a  href="Neslib.Glfw3.html#GLFW_MOUSE_BUTTON_2">GLFW_MOUSE_BUTTON_2</a>;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_MOUSE_BUTTON_MIDDLE">GLFW_MOUSE_BUTTON_MIDDLE</a></b> = <a  href="Neslib.Glfw3.html#GLFW_MOUSE_BUTTON_3">GLFW_MOUSE_BUTTON_3</a>;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_JOYSTICK_1">GLFW_JOYSTICK_1</a></b> = 0;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_JOYSTICK_2">GLFW_JOYSTICK_2</a></b> = 1;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_JOYSTICK_3">GLFW_JOYSTICK_3</a></b> = 2;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_JOYSTICK_4">GLFW_JOYSTICK_4</a></b> = 3;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_JOYSTICK_5">GLFW_JOYSTICK_5</a></b> = 4;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_JOYSTICK_6">GLFW_JOYSTICK_6</a></b> = 5;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_JOYSTICK_7">GLFW_JOYSTICK_7</a></b> = 6;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_JOYSTICK_8">GLFW_JOYSTICK_8</a></b> = 7;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_JOYSTICK_9">GLFW_JOYSTICK_9</a></b> = 8;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_JOYSTICK_10">GLFW_JOYSTICK_10</a></b> = 9;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_JOYSTICK_11">GLFW_JOYSTICK_11</a></b> = 10;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_JOYSTICK_12">GLFW_JOYSTICK_12</a></b> = 11;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_JOYSTICK_13">GLFW_JOYSTICK_13</a></b> = 12;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_JOYSTICK_14">GLFW_JOYSTICK_14</a></b> = 13;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_JOYSTICK_15">GLFW_JOYSTICK_15</a></b> = 14;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_JOYSTICK_16">GLFW_JOYSTICK_16</a></b> = 15;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_JOYSTICK_LAST">GLFW_JOYSTICK_LAST</a></b> = <a  href="Neslib.Glfw3.html#GLFW_JOYSTICK_16">GLFW_JOYSTICK_16</a>;</code></td>
 </tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_A">GLFW_GAMEPAD_BUTTON_A</a></b>            = 0;</code></td>
+</tr>
 <tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_B">GLFW_GAMEPAD_BUTTON_B</a></b>            = 1;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_X">GLFW_GAMEPAD_BUTTON_X</a></b>            = 2;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_Y">GLFW_GAMEPAD_BUTTON_Y</a></b>            = 3;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_LEFT_BUMPER">GLFW_GAMEPAD_BUTTON_LEFT_BUMPER</a></b>  = 4;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_RIGHT_BUMPER">GLFW_GAMEPAD_BUTTON_RIGHT_BUMPER</a></b> = 5;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_BACK">GLFW_GAMEPAD_BUTTON_BACK</a></b>         = 6;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_START">GLFW_GAMEPAD_BUTTON_START</a></b>        = 7;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_GUIDE">GLFW_GAMEPAD_BUTTON_GUIDE</a></b>        = 8;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_LEFT_THUMB">GLFW_GAMEPAD_BUTTON_LEFT_THUMB</a></b>   = 9;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_RIGHT_THUMB">GLFW_GAMEPAD_BUTTON_RIGHT_THUMB</a></b>  = 10;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_DPAD_UP">GLFW_GAMEPAD_BUTTON_DPAD_UP</a></b>      = 11;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_DPAD_RIGHT">GLFW_GAMEPAD_BUTTON_DPAD_RIGHT</a></b>   = 12;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_DPAD_DOWN">GLFW_GAMEPAD_BUTTON_DPAD_DOWN</a></b>    = 13;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_DPAD_LEFT">GLFW_GAMEPAD_BUTTON_DPAD_LEFT</a></b>    = 14;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_LAST">GLFW_GAMEPAD_BUTTON_LAST</a></b>         = <a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_DPAD_LEFT">GLFW_GAMEPAD_BUTTON_DPAD_LEFT</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_CROSS">GLFW_GAMEPAD_BUTTON_CROSS</a></b>    = <a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_A">GLFW_GAMEPAD_BUTTON_A</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_CIRCLE">GLFW_GAMEPAD_BUTTON_CIRCLE</a></b>   = <a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_B">GLFW_GAMEPAD_BUTTON_B</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_SQUARE">GLFW_GAMEPAD_BUTTON_SQUARE</a></b>   = <a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_X">GLFW_GAMEPAD_BUTTON_X</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_TRIANGLE">GLFW_GAMEPAD_BUTTON_TRIANGLE</a></b> = <a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_Y">GLFW_GAMEPAD_BUTTON_Y</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_AXIS_LEFT_X">GLFW_GAMEPAD_AXIS_LEFT_X</a></b>        = 0;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_AXIS_LEFT_Y">GLFW_GAMEPAD_AXIS_LEFT_Y</a></b>        = 1;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_AXIS_RIGHT_X">GLFW_GAMEPAD_AXIS_RIGHT_X</a></b>       = 2;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_AXIS_RIGHT_Y">GLFW_GAMEPAD_AXIS_RIGHT_Y</a></b>       = 3;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_AXIS_LEFT_TRIGGER">GLFW_GAMEPAD_AXIS_LEFT_TRIGGER</a></b>  = 4;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_AXIS_RIGHT_TRIGGER">GLFW_GAMEPAD_AXIS_RIGHT_TRIGGER</a></b> = 5;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_AXIS_LAST">GLFW_GAMEPAD_AXIS_LAST</a></b>          = <a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_AXIS_RIGHT_TRIGGER">GLFW_GAMEPAD_AXIS_RIGHT_TRIGGER</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_NO_ERROR">GLFW_NO_ERROR</a></b> = 0;</code></td>
+</tr>
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_NOT_INITIALIZED">GLFW_NOT_INITIALIZED</a></b> = $00010001;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_NO_CURRENT_CONTEXT">GLFW_NO_CURRENT_CONTEXT</a></b> = $00010002;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_INVALID_ENUM">GLFW_INVALID_ENUM</a></b> = $00010003;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_INVALID_VALUE">GLFW_INVALID_VALUE</a></b> = $00010004;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_OUT_OF_MEMORY">GLFW_OUT_OF_MEMORY</a></b> = $00010005;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_API_UNAVAILABLE">GLFW_API_UNAVAILABLE</a></b> = $00010006;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_VERSION_UNAVAILABLE">GLFW_VERSION_UNAVAILABLE</a></b> = $00010007;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_PLATFORM_ERROR">GLFW_PLATFORM_ERROR</a></b> = $00010008;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_FORMAT_UNAVAILABLE">GLFW_FORMAT_UNAVAILABLE</a></b> = $00010009;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_NO_WINDOW_CONTEXT">GLFW_NO_WINDOW_CONTEXT</a></b> = $0001000A;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_FOCUSED">GLFW_FOCUSED</a></b> = $00020001;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_ICONIFIED">GLFW_ICONIFIED</a></b> = $00020002;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_RESIZABLE">GLFW_RESIZABLE</a></b> = $00020003;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_VISIBLE">GLFW_VISIBLE</a></b> = $00020004;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_DECORATED">GLFW_DECORATED</a></b> = $00020005;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_AUTO_ICONIFY">GLFW_AUTO_ICONIFY</a></b> = $00020006;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_FLOATING">GLFW_FLOATING</a></b> = $00020007;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_MAXIMIZED">GLFW_MAXIMIZED</a></b> = $00020008;</code></td>
 </tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_CENTER_CURSOR">GLFW_CENTER_CURSOR</a></b> = $00020009;</code></td>
+</tr>
 <tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_TRANSPARENT_FRAMEBUFFER">GLFW_TRANSPARENT_FRAMEBUFFER</a></b> = $0002000A;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_HOVERED">GLFW_HOVERED</a></b> = $0002000B;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_FOCUS_ON_SHOW">GLFW_FOCUS_ON_SHOW</a></b> = $0002000C;</code></td>
+</tr>
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_RED_BITS">GLFW_RED_BITS</a></b> = $00021001;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_GREEN_BITS">GLFW_GREEN_BITS</a></b> = $00021002;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_BLUE_BITS">GLFW_BLUE_BITS</a></b> = $00021003;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_ALPHA_BITS">GLFW_ALPHA_BITS</a></b> = $00021004;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_DEPTH_BITS">GLFW_DEPTH_BITS</a></b> = $00021005;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_STENCIL_BITS">GLFW_STENCIL_BITS</a></b> = $00021006;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_ACCUM_RED_BITS">GLFW_ACCUM_RED_BITS</a></b> = $00021007;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_ACCUM_GREEN_BITS">GLFW_ACCUM_GREEN_BITS</a></b> = $00021008;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_ACCUM_BLUE_BITS">GLFW_ACCUM_BLUE_BITS</a></b> = $00021009;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_ACCUM_ALPHA_BITS">GLFW_ACCUM_ALPHA_BITS</a></b> = $0002100A;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_AUX_BUFFERS">GLFW_AUX_BUFFERS</a></b> = $0002100B;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_STEREO">GLFW_STEREO</a></b> = $0002100C;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_SAMPLES">GLFW_SAMPLES</a></b> = $0002100D;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_SRGB_CAPABLE">GLFW_SRGB_CAPABLE</a></b> = $0002100E;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_REFRESH_RATE">GLFW_REFRESH_RATE</a></b> = $0002100F;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_DOUBLEBUFFER">GLFW_DOUBLEBUFFER</a></b> = $00021010;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_CLIENT_API">GLFW_CLIENT_API</a></b> = $00022001;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_CONTEXT_VERSION_MAJOR">GLFW_CONTEXT_VERSION_MAJOR</a></b> = $00022002;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_CONTEXT_VERSION_MINOR">GLFW_CONTEXT_VERSION_MINOR</a></b> = $00022003;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_CONTEXT_REVISION">GLFW_CONTEXT_REVISION</a></b> = $00022004;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_CONTEXT_ROBUSTNESS">GLFW_CONTEXT_ROBUSTNESS</a></b> = $00022005;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_OPENGL_FORWARD_COMPAT">GLFW_OPENGL_FORWARD_COMPAT</a></b> = $00022006;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_OPENGL_DEBUG_CONTEXT">GLFW_OPENGL_DEBUG_CONTEXT</a></b> = $00022007;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_OPENGL_PROFILE">GLFW_OPENGL_PROFILE</a></b> = $00022008;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_CONTEXT_RELEASE_BEHAVIOR">GLFW_CONTEXT_RELEASE_BEHAVIOR</a></b> = $00022009;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_CONTEXT_NO_ERROR">GLFW_CONTEXT_NO_ERROR</a></b> = $0002200A;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_CONTEXT_CREATION_API">GLFW_CONTEXT_CREATION_API</a></b> = $0002200B;</code></td>
 </tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_SCALE_TO_MONITOR">GLFW_SCALE_TO_MONITOR</a></b> = $0002200C;</code></td>
+</tr>
 <tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_COCOA_RETINA_FRAMEBUFFER">GLFW_COCOA_RETINA_FRAMEBUFFER</a></b> = $00023001;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_COCOA_FRAME_NAME">GLFW_COCOA_FRAME_NAME</a></b> = $00023002;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_COCOA_GRAPHICS_SWITCHING">GLFW_COCOA_GRAPHICS_SWITCHING</a></b> = $00023003;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_X11_CLASS_NAME">GLFW_X11_CLASS_NAME</a></b> = $00024001;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_X11_INSTANCE_NAME">GLFW_X11_INSTANCE_NAME</a></b> = $00024002;</code></td>
+</tr>
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_NO_API">GLFW_NO_API</a></b> = 0;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_OPENGL_API">GLFW_OPENGL_API</a></b> = $00030001;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_OPENGL_ES_API">GLFW_OPENGL_ES_API</a></b> = $00030002;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_NO_ROBUSTNESS">GLFW_NO_ROBUSTNESS</a></b> = 0;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_NO_RESET_NOTIFICATION">GLFW_NO_RESET_NOTIFICATION</a></b> = $00031001;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_LOSE_CONTEXT_ON_RESET">GLFW_LOSE_CONTEXT_ON_RESET</a></b> = $00031002;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_OPENGL_ANY_PROFILE">GLFW_OPENGL_ANY_PROFILE</a></b> = 0;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_OPENGL_CORE_PROFILE">GLFW_OPENGL_CORE_PROFILE</a></b> = $00032001;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_OPENGL_COMPAT_PROFILE">GLFW_OPENGL_COMPAT_PROFILE</a></b> = $00032002;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_CURSOR">GLFW_CURSOR</a></b> = $00033001;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_STICKY_KEYS">GLFW_STICKY_KEYS</a></b> = $00033002;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_STICKY_MOUSE_BUTTONS">GLFW_STICKY_MOUSE_BUTTONS</a></b> = $00033003;</code></td>
 </tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_LOCK_KEY_MODS">GLFW_LOCK_KEY_MODS</a></b> = $00033004;</code></td>
+</tr>
 <tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_RAW_MOUSE_MOTION">GLFW_RAW_MOUSE_MOTION</a></b> = $00033005;</code></td>
+</tr>
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_CURSOR_NORMAL">GLFW_CURSOR_NORMAL</a></b> = $00034001;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_CURSOR_HIDDEN">GLFW_CURSOR_HIDDEN</a></b> = $00034002;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_CURSOR_DISABLED">GLFW_CURSOR_DISABLED</a></b> = $00034003;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_ANY_RELEASE_BEHAVIOR">GLFW_ANY_RELEASE_BEHAVIOR</a></b> = 0;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_RELEASE_BEHAVIOR_FLUSH">GLFW_RELEASE_BEHAVIOR_FLUSH</a></b> = $00035001;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_RELEASE_BEHAVIOR_NONE">GLFW_RELEASE_BEHAVIOR_NONE</a></b> = $00035002;</code></td>
 </tr>
-<tr class="list">
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_NATIVE_CONTEXT_API">GLFW_NATIVE_CONTEXT_API</a></b> = $00036001;</code></td>
 </tr>
-<tr class="list2">
+<tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_EGL_CONTEXT_API">GLFW_EGL_CONTEXT_API</a></b> = $00036002;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_OSMESA_CONTEXT_API">GLFW_OSMESA_CONTEXT_API</a></b> = $00036003;</code></td>
 </tr>
 <tr class="list">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_ARROW_CURSOR">GLFW_ARROW_CURSOR</a></b> = $00036001;</code></td>
@@ -1141,6 +1385,15 @@
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_DISCONNECTED">GLFW_DISCONNECTED</a></b> = $00040002;</code></td>
 </tr>
 <tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_JOYSTICK_HAT_BUTTONS">GLFW_JOYSTICK_HAT_BUTTONS</a></b> = $00050001;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_COCOA_CHDIR_RESOURCES">GLFW_COCOA_CHDIR_RESOURCES</a></b> = $00051001;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_COCOA_MENUBAR">GLFW_COCOA_MENUBAR</a></b> = $00051002;</code></td>
+</tr>
+<tr class="list2">
 <td class="itemcode"><code><b><a  href="Neslib.Glfw3.html#GLFW_DONT_CARE">GLFW_DONT_CARE</a></b> = -1;</code></td>
 </tr>
 </table>
@@ -1207,6 +1460,43 @@ Terminates the GLFW library.
 </table>
 <table class="detail wide_list">
 <tr class="list">
+<td class="itemcode"><a name="glfwInitHint"></a><code>procedure <b>glfwInitHint</b>(hint, value: Integer); cdecl  external GLFW3_LIB name _PU + 'glfwInitHint';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Sets the specified init hint to the desired value.
+
+<p>This function sets hints for the next initialization of GLFW.
+
+<p>The values you set hints to are never reset by GLFW, but they only take effect during initialization. Once GLFW has been initialized, any values you set will be ignored until the library is terminated and initialized again.
+
+<p>Some hints are platform specific. These may be set on any platform but they will only affect their specific platform. Other platforms will ignore them. Setting these hints requires no platform specific headers or functions.
+
+<p> 
+
+<p>Possible errors include <a class="normal" href="Neslib.Glfw3.html#GLFW_INVALID_ENUM">GLFW_INVALID_ENUM</a> and <a class="normal" href="Neslib.Glfw3.html#GLFW_INVALID_VALUE">GLFW_INVALID_VALUE</a>.
+
+<p>This function may be called before <a class="normal" href="Neslib.Glfw3.html#glfwInit">glfwInit</a>.
+
+<p>This function must only be called from the main thread.
+
+<p> Added in version 3.3.</p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>hint</dt>
+<dd>The init hint to set.</dd>
+<dt>value</dt>
+<dd>The new value of the init hint.</dd>
+</dl>
+<h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="Neslib.Glfw3.html#glfwInit">glfwInit</a></dt>
+  <dd>Initializes the GLFW library.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
 <td class="itemcode"><a name="glfwGetVersion"></a><code>procedure <b>glfwGetVersion</b>(major, minor, rev: PInteger); cdecl  external GLFW3_LIB name _PU + 'glfwGetVersion';</code></td>
 </tr>
 <tr><td colspan="1">
@@ -1264,6 +1554,38 @@ Returns a string describing the compile-time configuration.
 <dl class="see_also">
   <dt><a class="normal" href="Neslib.Glfw3.html#glfwGetVersion">glfwGetVersion</a></dt>
   <dd>Retrieves the version of the GLFW library.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="glfwGetError"></a><code>function <b>glfwGetError</b>(const description: PPAnsiChar): Integer; cdecl  external GLFW3_LIB name _PU + 'glfwGetError';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns and clears the last error for the calling thread.
+
+<p>This function returns and clears the error codeof the last error that occurred on the calling thread, and optionally a UTF-8 encoded human-readable description of it. If no error has occurred since the last call, it returns <a class="normal" href="Neslib.Glfw3.html#GLFW_NO_ERROR">GLFW_NO_ERROR</a> (zero) and the description pointer is set to <code>nil</code>.
+
+<p>
+
+<p> The returned string is allocated and freed by GLFW. You should not free it yourself. It is guaranteed to be valid only until the next error occurs or the library is terminated.
+
+<p>This function may be called before <a class="normal" href="Neslib.Glfw3.html#glfwInit">glfwInit</a>.
+
+<p>This function may be called from any thread.
+
+<p> Added in version 3.3.</p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>description</dt>
+<dd>Where to store the error description pointer, or <code>nil</code>.</dd>
+</dl>
+<h6 class="description_section">Returns</h6>
+<p class="return">The last error code for the calling thread, or <a class="normal" href="Neslib.Glfw3.html#GLFW_NO_ERROR">GLFW_NO_ERROR</a> (zero).</p><h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="Neslib.Glfw3.html#glfwSetErrorCallback">glfwSetErrorCallback</a></dt>
+  <dd>Sets the error callback.</dd>
 </dl>
 </td></tr>
 </table>
@@ -1387,6 +1709,40 @@ Returns the position of the monitor's viewport on the virtual screen.
 </table>
 <table class="detail wide_list">
 <tr class="list">
+<td class="itemcode"><a name="glfwGetMonitorWorkarea"></a><code>procedure <b>glfwGetMonitorWorkarea</b>(monitor: <a  href="Neslib.Glfw3.html#PGLFWmonitor">PGLFWmonitor</a>; xpos, ypos, width, height: PInteger); cdecl  external GLFW3_LIB name _PU + 'glfwGetMonitorWorkarea';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Retrieves the work area of the monitor.
+
+<p>This function returns the position, in screen coordinates, of the upper-left corner of the work area of the specified monitor along with the work area size in screen coordinates. The work area is defined as the area of the monitor not occluded by the operating system task bar where present. If no task bar exists then the work area is the monitor resolution in screen coordinates.
+
+<p>Any or all of the position and size arguments may be <code>nil</code>. If an error occurs, all non-<code>nil</code> position and size arguments will be set to zero.
+
+<p>    
+
+<p>Possible errors include <a class="normal" href="Neslib.Glfw3.html#GLFW_NOT_INITIALIZED">GLFW_NOT_INITIALIZED</a> and <a class="normal" href="Neslib.Glfw3.html#GLFW_PLATFORM_ERROR">GLFW_PLATFORM_ERROR</a>.
+
+<p>This function must only be called from the main thread.
+
+<p>Added in version 3.3.</p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>monitor</dt>
+<dd>The monitor to query.</dd>
+<dt>xpos</dt>
+<dd>Where to store the monitor x-coordinate, or <code>nil</code>.</dd>
+<dt>ypos</dt>
+<dd>Where to store the monitor y-coordinate, or <code>nil</code>.</dd>
+<dt>width</dt>
+<dd>Where to store the monitor width, or <code>nil</code>.</dd>
+<dt>height</dt>
+<dd>Where to store the monitor height, or <code>nil</code>.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
 <td class="itemcode"><a name="glfwGetMonitorPhysicalSize"></a><code>procedure <b>glfwGetMonitorPhysicalSize</b>(monitor: <a  href="Neslib.Glfw3.html#PGLFWmonitor">PGLFWmonitor</a>; widthMM, heightMM: PInteger); cdecl  external GLFW3_LIB name _PU + 'glfwGetMonitorPhysicalSize';</code></td>
 </tr>
 <tr><td colspan="1">
@@ -1421,6 +1777,37 @@ Returns the physical size of the monitor.
 </table>
 <table class="detail wide_list">
 <tr class="list">
+<td class="itemcode"><a name="glfwGetMonitorContentScale"></a><code>procedure <b>glfwGetMonitorContentScale</b>(monitor: <a  href="Neslib.Glfw3.html#PGLFWmonitor">PGLFWmonitor</a>; xscale, yscale: PSingle); cdecl  external GLFW3_LIB name _PU + 'glfwGetMonitorContentScale';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Retrieves the content scale for the specified monitor.
+
+<p>This function retrieves the content scale for the specified monitor. The content scale is the ratio between the current DPI and the platform's default DPI. This is especially important for text and any UI elements. If the pixel dimensions of your UI scaled by this look appropriate on your machine then it should appear at a reasonable size on other machines regardless of their DPI and scaling settings. This relies on the system DPI and scaling settings being somewhat correct. The content scale may depend on both the monitor resolution and pixel density and on user settings. It may be very different from the raw DPI calculated from the physical size and current resolution.
+
+<p>  
+
+<p>Possible errors include <a class="normal" href="Neslib.Glfw3.html#GLFW_NOT_INITIALIZED">GLFW_NOT_INITIALIZED</a> and <a class="normal" href="Neslib.Glfw3.html#GLFW_PLATFORM_ERROR">GLFW_PLATFORM_ERROR</a>. This function must only be called from the main thread.
+
+<p> Added in version 3.3.</p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>monitor</dt>
+<dd>The monitor to query.</dd>
+<dt>xscale</dt>
+<dd>Where to store the x-axis content scale, or <code>nil</code>.</dd>
+<dt>yscale</dt>
+<dd>Where to store the y-axis content scale, or <code>nil</code>.</dd>
+</dl>
+<h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="Neslib.Glfw3.html#glfwGetWindowContentScale">glfwGetWindowContentScale</a></dt>
+  <dd>Retrieves the content scale for the specified window.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
 <td class="itemcode"><a name="glfwGetMonitorName"></a><code>function <b>glfwGetMonitorName</b>(monitor: <a  href="Neslib.Glfw3.html#PGLFWmonitor">PGLFWmonitor</a>): PAnsiChar; cdecl  external GLFW3_LIB name _PU + 'glfwGetMonitorName';</code></td>
 </tr>
 <tr><td colspan="1">
@@ -1445,6 +1832,63 @@ Returns the name of the specified monitor.
 </dl>
 <h6 class="description_section">Returns</h6>
 <p class="return">The UTF-8 encoded name of the monitor, or <code>nil</code> if an error occurred.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="glfwSetMonitorUserPointer"></a><code>procedure <b>glfwSetMonitorUserPointer</b>(monitor: <a  href="Neslib.Glfw3.html#PGLFWmonitor">PGLFWmonitor</a>; value: Pointer); cdecl  external GLFW3_LIB name _PU + 'glfwSetMonitorUserPointer';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Sets the user pointer of the specified monitor.
+
+<p>This function sets the user-defined pointer of the specified monitor. The current value is retained until the monitor is disconnected. The initial value is <code>nil</code>.
+
+<p>This function may be called from the monitor callback, even for a monitor that is being disconnected.
+
+<p>Parameter: monitor: The monitor whose pointer to set. value: The new value.
+
+<p>Possible errors include <a class="normal" href="Neslib.Glfw3.html#GLFW_NOT_INITIALIZED">GLFW_NOT_INITIALIZED</a>.
+
+<p>This function may be called from any thread. Access is not synchronized.
+
+<p> Added in version 3.3.</p>
+<h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="Neslib.Glfw3.html#glfwGetMonitorUserPointer">glfwGetMonitorUserPointer</a></dt>
+  <dd>Returns the user pointer of the specified monitor.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="glfwGetMonitorUserPointer"></a><code>function <b>glfwGetMonitorUserPointer</b>(monitor: <a  href="Neslib.Glfw3.html#PGLFWmonitor">PGLFWmonitor</a>): Pointer; cdecl  external GLFW3_LIB name _PU + 'glfwGetMonitorUserPointer';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns the user pointer of the specified monitor.
+
+<p>This function returns the current value of the user-defined pointer of the specified monitor. The initial value is <code>nil</code>.
+
+<p>This function may be called from the monitor callback, even for a monitor that is being disconnected.
+
+<p>
+
+<p>Possible errors include <a class="normal" href="Neslib.Glfw3.html#GLFW_NOT_INITIALIZED">GLFW_NOT_INITIALIZED</a>.
+
+<p>This function may be called from any thread. Access is not synchronized.
+
+<p> Added in version 3.3.</p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>monitor</dt>
+<dd>The monitor whose pointer to return.</dd>
+</dl>
+<h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="Neslib.Glfw3.html#glfwSetMonitorUserPointer">glfwSetMonitorUserPointer</a></dt>
+  <dd>Sets the user pointer of the specified monitor.</dd>
+</dl>
+</td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -1672,6 +2116,47 @@ Sets the specified window hint to the desired value.
 </dl>
 <h6 class="description_section">See also</h6>
 <dl class="see_also">
+  <dt><a class="normal" href="Neslib.Glfw3.html#glfwDefaultWindowHints">glfwDefaultWindowHints</a></dt>
+  <dd>Resets all window hints to their default values.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="glfwWindowHintString"></a><code>procedure <b>glfwWindowHintString</b>(hint: Integer; const value: PAnsiChar); cdecl  external GLFW3_LIB name _PU + 'glfwWindowHintString';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Sets the specified window hint to the desired value.
+
+<p>This function sets hints for the next call to <a class="normal" href="Neslib.Glfw3.html#glfwCreateWindow">glfwCreateWindow</a>. The hints, once set, retain their values until changed by a call to this function or <a class="normal" href="Neslib.Glfw3.html#glfwDefaultWindowHints">glfwDefaultWindowHints</a>, or until the library is terminated.
+
+<p>Only string type hints can be set with this function. Integer value hints are set with <a class="normal" href="Neslib.Glfw3.html#glfwWindowHint">glfwWindowHint</a>.
+
+<p>This function does not check whether the specified hint values are valid. If you set hints to invalid values this will instead be reported by the next call to <a class="normal" href="Neslib.Glfw3.html#glfwCreateWindow">glfwCreateWindow</a>.
+
+<p>Some hints are platform specific. These may be set on any platform but they will only affect their specific platform. Other platforms will ignore them. Setting these hints requires no platform specific headers or functions.
+
+<p> 
+
+<p>Possible errors include <a class="normal" href="Neslib.Glfw3.html#GLFW_NOT_INITIALIZED">GLFW_NOT_INITIALIZED</a> and <a class="normal" href="Neslib.Glfw3.html#GLFW_INVALID_ENUM">GLFW_INVALID_ENUM</a>.
+
+<p>The specified string is copied before this function returns.
+
+<p>This function must only be called from the main thread.
+
+<p>  Added in version 3.3.</p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>hint</dt>
+<dd>The window hint to set.</dd>
+<dt>value</dt>
+<dd>The new value of the window hint.</dd>
+</dl>
+<h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="Neslib.Glfw3.html#glfwWindowHint">glfwWindowHint</a></dt>
+  <dd>Sets the specified window hint to the desired value.</dd>
   <dt><a class="normal" href="Neslib.Glfw3.html#glfwDefaultWindowHints">glfwDefaultWindowHints</a></dt>
   <dd>Resets all window hints to their default values.</dd>
 </dl>
@@ -2200,6 +2685,114 @@ Retrieves the size of the frame of the window.
 </table>
 <table class="detail wide_list">
 <tr class="list">
+<td class="itemcode"><a name="glfwGetWindowContentScale"></a><code>procedure <b>glfwGetWindowContentScale</b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; xscale, yscale: PSingle); cdecl  external GLFW3_LIB name _PU + 'glfwGetWindowContentScale';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Retrieves the content scale for the specified window.
+
+<p>This function retrieves the content scale for the specified window. The content scale is the ratio between the current DPI and the platform's default DPI. This is especially important for text and any UI elements. If the pixel dimensions of your UI scaled by this look appropriate on your machine then it should appear at a reasonable size on other machines regardless of their DPI and scaling settings. This relies on the system DPI and scaling settings being somewhat correct.
+
+<p>On systems where each monitors can have its own content scale, the window content scale will depend on which monitor the system considers the window to be on.
+
+<p>  
+
+<p>Possible errors include <a class="normal" href="Neslib.Glfw3.html#GLFW_NOT_INITIALIZED">GLFW_NOT_INITIALIZED</a> and <a class="normal" href="Neslib.Glfw3.html#GLFW_PLATFORM_ERROR">GLFW_PLATFORM_ERROR</a>.
+
+<p>This function must only be called from the main thread.
+
+<p>  Added in version 3.3.</p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>window</dt>
+<dd>The window to query.</dd>
+<dt>xscale</dt>
+<dd>Where to store the x-axis content scale, or <code>nil</code>.</dd>
+<dt>yscale</dt>
+<dd>Where to store the y-axis content scale, or <code>nil</code>.</dd>
+</dl>
+<h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="Neslib.Glfw3.html#glfwSetWindowContentScaleCallback">glfwSetWindowContentScaleCallback</a></dt>
+  <dd>Sets the window content scale callback for the specified window.</dd>
+  <dt><a class="normal" href="Neslib.Glfw3.html#glfwGetMonitorContentScale">glfwGetMonitorContentScale</a></dt>
+  <dd>Retrieves the content scale for the specified monitor.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="glfwGetWindowOpacity"></a><code>function <b>glfwGetWindowOpacity</b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>): Single; cdecl  external GLFW3_LIB name _PU + 'glfwGetWindowOpacity';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns the opacity of the whole window.
+
+<p>This function returns the opacity of the window, including any decorations.
+
+<p>The opacity (or alpha) value is a positive finite number between zero and one, where zero is fully transparent and one is fully opaque. If the system does not support whole window transparency, this function always returns one.
+
+<p>The initial opacity value for newly created windows is one.
+
+<p>
+
+<p> Possible errors include <a class="normal" href="Neslib.Glfw3.html#GLFW_NOT_INITIALIZED">GLFW_NOT_INITIALIZED</a> and <a class="normal" href="Neslib.Glfw3.html#GLFW_PLATFORM_ERROR">GLFW_PLATFORM_ERROR</a>.
+
+<p>This function must only be called from the main thread.
+
+<p> Added in version 3.3.</p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>window</dt>
+<dd>The window to query.</dd>
+</dl>
+<h6 class="description_section">Returns</h6>
+<p class="return">The opacity value of the specified window.</p><h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="Neslib.Glfw3.html#glfwSetWindowOpacity">glfwSetWindowOpacity</a></dt>
+  <dd>Sets the opacity of the whole window.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="glfwSetWindowOpacity"></a><code>procedure <b>glfwSetWindowOpacity</b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; opacity: Single); cdecl  external GLFW3_LIB name _PU + 'glfwSetWindowOpacity';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Sets the opacity of the whole window.
+
+<p>This function sets the opacity of the window, including any decorations.
+
+<p>The opacity (or alpha) value is a positive finite number between zero and one, where zero is fully transparent and one is fully opaque.
+
+<p>The initial opacity value for newly created windows is one.
+
+<p>A window created with framebuffer transparency may not use whole window transparency. The results of doing this are undefined.
+
+<p> 
+
+<p>Possible errors include <a class="normal" href="Neslib.Glfw3.html#GLFW_NOT_INITIALIZED">GLFW_NOT_INITIALIZED</a> and <a class="normal" href="Neslib.Glfw3.html#GLFW_PLATFORM_ERROR">GLFW_PLATFORM_ERROR</a>.
+
+<p>This function must only be called from the main thread.
+
+<p> Added in version 3.3.</p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>window</dt>
+<dd>The window to set the opacity for.</dd>
+<dt>opacity</dt>
+<dd>The desired opacity of the specified window.</dd>
+</dl>
+<h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="Neslib.Glfw3.html#glfwGetWindowOpacity">glfwGetWindowOpacity</a></dt>
+  <dd>Returns the opacity of the whole window.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
 <td class="itemcode"><a name="glfwIconifyWindow"></a><code>procedure <b>glfwIconifyWindow</b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>); cdecl  external GLFW3_LIB name _PU + 'glfwIconifyWindow';</code></td>
 </tr>
 <tr><td colspan="1">
@@ -2385,6 +2978,34 @@ Brings the specified window to front and sets input focus.
 </table>
 <table class="detail wide_list">
 <tr class="list">
+<td class="itemcode"><a name="glfwRequestWindowAttention"></a><code>procedure <b>glfwRequestWindowAttention</b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>); cdecl  external GLFW3_LIB name _PU + 'glfwRequestWindowAttention';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Requests user attention to the specified window.
+
+<p>This function requests user attention to the specified window. On platforms where this is not supported, attention is requested to the application as a whole.
+
+<p>Once the user has given attention, usually by focusing the window or application, the system will end the request automatically.
+
+<p>
+
+<p>Possible errors include <a class="normal" href="Neslib.Glfw3.html#GLFW_NOT_INITIALIZED">GLFW_NOT_INITIALIZED</a> and <a class="normal" href="Neslib.Glfw3.html#GLFW_PLATFORM_ERROR">GLFW_PLATFORM_ERROR</a>.
+
+<p>MacOS: Attention is requested to the application as a whole, not the specific window.
+
+<p>This function must only be called from the main thread.
+
+<p>Added in version 3.3.</p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>window</dt>
+<dd>The window to request attention to.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
 <td class="itemcode"><a name="glfwGetWindowMonitor"></a><code>function <b>glfwGetWindowMonitor</b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>): <a  href="Neslib.Glfw3.html#PGLFWmonitor">PGLFWmonitor</a>; cdecl  external GLFW3_LIB name _PU + 'glfwGetWindowMonitor';</code></td>
 </tr>
 <tr><td colspan="1">
@@ -2494,6 +3115,47 @@ Returns an attribute of the specified window.
 </dl>
 <h6 class="description_section">Returns</h6>
 <p class="return">The value of the attribute, or zero if an error occurred.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="glfwSetWindowAttrib"></a><code>procedure <b>glfwSetWindowAttrib</b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; attrib, value: Integer); cdecl  external GLFW3_LIB name _PU + 'glfwSetWindowAttrib';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Sets an attribute of the specified window.
+
+<p>This function sets the value of an attribute of the specified window.
+
+<p>The supported attributes are <a class="normal" href="Neslib.Glfw3.html#GLFW_DECORATED">GLFW_DECORATED</a>, <a class="normal" href="Neslib.Glfw3.html#GLFW_RESIZABLE">GLFW_RESIZABLE</a>, <a class="normal" href="Neslib.Glfw3.html#GLFW_FLOATING">GLFW_FLOATING</a>, <a class="normal" href="Neslib.Glfw3.html#GLFW_AUTO_ICONIFY">GLFW_AUTO_ICONIFY</a> and <a class="normal" href="Neslib.Glfw3.html#GLFW_FOCUS_ON_SHOW">GLFW_FOCUS_ON_SHOW</a>.
+
+<p>Some of these attributes are ignored for full screen windows. The new value will take effect if the window is later made windowed.
+
+<p>Some of these attributes are ignored for windowed mode windows. The new value will take effect if the window is later made full screen.
+
+<p>  
+
+<p>Possible errors include <a class="normal" href="Neslib.Glfw3.html#GLFW_NOT_INITIALIZED">GLFW_NOT_INITIALIZED</a>, <a class="normal" href="Neslib.Glfw3.html#GLFW_INVALID_ENUM">GLFW_INVALID_ENUM</a>, <a class="normal" href="Neslib.Glfw3.html#GLFW_INVALID_VALUE">GLFW_INVALID_VALUE</a> and <a class="normal" href="Neslib.Glfw3.html#GLFW_PLATFORM_ERROR">GLFW_PLATFORM_ERROR</a>.
+
+<p>Calling <a class="normal" href="Neslib.Glfw3.html#glfwGetWindowAttrib">glfwGetWindowAttrib</a> will always return the latest value, even if that value is ignored by the current mode of the window.
+
+<p>This function must only be called from the main thread.
+
+<p> Added in version 3.3.</p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>window</dt>
+<dd>The window to set the attribute for.</dd>
+<dt>attrib</dt>
+<dd>A supported window attribute.</dd>
+<dt>value</dt>
+<dd><code><a class="normal" href="Neslib.Glfw3.html#GLFW_TRUE">GLFW_TRUE</a></code> or <code><a class="normal" href="Neslib.Glfw3.html#GLFW_FALSE">GLFW_FALSE</a></code>.</dd>
+</dl>
+<h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="Neslib.Glfw3.html#glfwGetWindowAttrib">glfwGetWindowAttrib</a></dt>
+  <dd>Returns an attribute of the specified window.</dd>
+</dl>
+</td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -2730,6 +3392,33 @@ Sets the iconify callback for the specified window.
 </table>
 <table class="detail wide_list">
 <tr class="list">
+<td class="itemcode"><a name="glfwSetWindowMaximizeCallback"></a><code>function <b>glfwSetWindowMaximizeCallback</b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; cbfun: <a  href="Neslib.Glfw3.html#TGLFWwindowmaximizefun">TGLFWwindowmaximizefun</a>): <a  href="Neslib.Glfw3.html#TGLFWwindowmaximizefun">TGLFWwindowmaximizefun</a>; cdecl  external GLFW3_LIB name _PU + 'glfwSetWindowMaximizeCallback';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Sets the maximize callback for the specified window.
+
+<p>This function sets the maximization callback of the specified window, which is called when the window is maximized or restored.
+
+<p> 
+
+<p> Possible errors include <a class="normal" href="Neslib.Glfw3.html#GLFW_NOT_INITIALIZED">GLFW_NOT_INITIALIZED</a>.
+
+<p>This function must only be called from the main thread.
+
+<p>Added in version 3.3.</p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>window</dt>
+<dd>The window whose callback to set.</dd>
+<dt>callback</dt>
+<dd>The new callback, or <code>nil</code> to remove the currently set callback.</dd>
+</dl>
+<h6 class="description_section">Returns</h6>
+<p class="return">The previously set callback, or <code>nil</code> if no callback was set or the library had not been initialized.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
 <td class="itemcode"><a name="glfwSetFramebufferSizeCallback"></a><code>function <b>glfwSetFramebufferSizeCallback</b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; cbfun: <a  href="Neslib.Glfw3.html#TGLFWframebuffersizefun">TGLFWframebuffersizefun</a>): <a  href="Neslib.Glfw3.html#TGLFWframebuffersizefun">TGLFWframebuffersizefun</a>; cdecl  external GLFW3_LIB name _PU + 'glfwSetFramebufferSizeCallback';</code></td>
 </tr>
 <tr><td colspan="1">
@@ -2754,6 +3443,38 @@ Sets the framebuffer resize callback for the specified window.
 </dl>
 <h6 class="description_section">Returns</h6>
 <p class="return">The previously set callback, or <code>nil</code> if no callback was set or the library had not been initialized.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="glfwSetWindowContentScaleCallback"></a><code>function <b>glfwSetWindowContentScaleCallback</b>(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; cbfun: <a  href="Neslib.Glfw3.html#TGLFWwindowcontentscalefun">TGLFWwindowcontentscalefun</a>): <a  href="Neslib.Glfw3.html#TGLFWwindowcontentscalefun">TGLFWwindowcontentscalefun</a>; cdecl  external GLFW3_LIB name _PU + 'glfwSetWindowContentScaleCallback';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Sets the window content scale callback for the specified window.
+
+<p>This function sets the window content scale callback of the specified window, which is called when the content scale of the specified window changes.
+
+<p> 
+
+<p> Possible errors include <a class="normal" href="Neslib.Glfw3.html#GLFW_NOT_INITIALIZED">GLFW_NOT_INITIALIZED</a>.
+
+<p>This function must only be called from the main thread.
+
+<p> Added in version 3.3.</p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>window</dt>
+<dd>The window whose callback to set.</dd>
+<dt>callback</dt>
+<dd>The new callback, or <code>nil</code> to remove the currently set callback.</dd>
+</dl>
+<h6 class="description_section">Returns</h6>
+<p class="return">The previously set callback, or <code>nil</code> if no callback was set or the library had not been initialized.</p><h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="Neslib.Glfw3.html#glfwGetWindowContentScale">glfwGetWindowContentScale</a></dt>
+  <dd>Retrieves the content scale for the specified window.</dd>
+</dl>
+</td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -2970,6 +3691,31 @@ Sets an input option for the specified window.
 </table>
 <table class="detail wide_list">
 <tr class="list">
+<td class="itemcode"><a name="glfwRawMouseMotionSupported"></a><code>function <b>glfwRawMouseMotionSupported</b>: Integer; cdecl  external GLFW3_LIB name _PU + 'glfwRawMouseMotionSupported';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns whether raw mouse motion is supported.
+
+<p>This function returns whether raw mouse motion is supported on the current system. This status does not change after GLFW has been initialized so you only need to check this once. If you attempt to enable raw motion on a system that does not support it, <a class="normal" href="Neslib.Glfw3.html#GLFW_PLATFORM_ERROR">GLFW_PLATFORM_ERROR</a> will be emitted.
+
+<p>Raw mouse motion is closer to the actual motion of the mouse across a surface. It is not affected by the scaling and acceleration applied to the motion of the desktop cursor. That processing is suitable for a cursor while raw motion is better for controlling for example a 3D camera. Because of this, raw mouse motion is only provided when the cursor is disabled.
+
+<p> Possible errors include <a class="normal" href="Neslib.Glfw3.html#GLFW_NOT_INITIALIZED">GLFW_NOT_INITIALIZED</a>.
+
+<p>This function must only be called from the main thread.
+
+<p> Added in version 3.3.</p>
+<h6 class="description_section">Returns</h6>
+<p class="return"><code><a class="normal" href="Neslib.Glfw3.html#GLFW_TRUE">GLFW_TRUE</a></code> if raw mouse motion is supported on the current machine, or <code><a class="normal" href="Neslib.Glfw3.html#GLFW_FALSE">GLFW_FALSE</a></code> otherwise.</p><h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="Neslib.Glfw3.html#glfwSetInputMode">glfwSetInputMode</a></dt>
+  <dd>Sets an input option for the specified window.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
 <td class="itemcode"><a name="glfwGetKeyName"></a><code>function <b>glfwGetKeyName</b>(key: Integer; scancode: Integer): PAnsiChar; cdecl  external GLFW3_LIB name _PU + 'glfwGetKeyName';</code></td>
 </tr>
 <tr><td colspan="1">
@@ -3026,6 +3772,33 @@ Returns the localized name of the specified printable key.
 </dl>
 <h6 class="description_section">Returns</h6>
 <p class="return">The localized name of the key, or <code>nil</code>.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="glfwGetKeyScancode"></a><code>function <b>glfwGetKeyScancode</b>(key: Integer): Integer; cdecl  external GLFW3_LIB name _PU + 'glfwGetKeyScancode';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns the platform-specific scancode of the specified key.
+
+<p>This function returns the platform-specific scancode of the specified key.
+
+<p>If the key is <code><a class="normal" href="Neslib.Glfw3.html#GLFW_KEY_UNKNOWN">GLFW_KEY_UNKNOWN</a></code> or does not exist on the keyboard this method will return <code>-1</code>.
+
+<p>
+
+<p> Possible errors include <a class="normal" href="Neslib.Glfw3.html#GLFW_NOT_INITIALIZED">GLFW_NOT_INITIALIZED</a>, <a class="normal" href="Neslib.Glfw3.html#GLFW_INVALID_ENUM">GLFW_INVALID_ENUM</a> and <a class="normal" href="Neslib.Glfw3.html#GLFW_PLATFORM_ERROR">GLFW_PLATFORM_ERROR</a>.
+
+<p>This function may be called from any thread.
+
+<p>Added in version 3.3.</p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>key</dt>
+<dd>Any named key</dd>
+</dl>
+<h6 class="description_section">Returns</h6>
+<p class="return">The platform-specific scancode for the key, or <code>-1</code> if an error occurred.</p></td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -3627,6 +4400,41 @@ Returns the state of all buttons of the specified joystick.
 </table>
 <table class="detail wide_list">
 <tr class="list">
+<td class="itemcode"><a name="glfwGetJoystickHats"></a><code>function <b>glfwGetJoystickHats</b>(joy: Integer; out count: Integer): PByte; cdecl  external GLFW3_LIB name _PU + 'glfwGetJoystickHats';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns the state of all hats of the specified joystick.
+
+<p>This function returns the state of all hats of the specified joystick. Each element in the array is one of the following values:
+
+<p>Name | Value &mdash;- | &mdash;&ndash; <a class="normal" href="Neslib.Glfw3.html#GLFW_HAT_CENTERED">GLFW_HAT_CENTERED</a> | 0 <a class="normal" href="Neslib.Glfw3.html#GLFW_HAT_UP">GLFW_HAT_UP</a> | 1 <a class="normal" href="Neslib.Glfw3.html#GLFW_HAT_RIGHT">GLFW_HAT_RIGHT</a> | 2 <a class="normal" href="Neslib.Glfw3.html#GLFW_HAT_DOWN">GLFW_HAT_DOWN</a> | 4 <a class="normal" href="Neslib.Glfw3.html#GLFW_HAT_LEFT">GLFW_HAT_LEFT</a> | 8 <a class="normal" href="Neslib.Glfw3.html#GLFW_HAT_RIGHT_UP">GLFW_HAT_RIGHT_UP</a> | <a class="normal" href="Neslib.Glfw3.html#GLFW_HAT_RIGHT">GLFW_HAT_RIGHT</a> or <a class="normal" href="Neslib.Glfw3.html#GLFW_HAT_UP">GLFW_HAT_UP</a> <a class="normal" href="Neslib.Glfw3.html#GLFW_HAT_RIGHT_DOWN">GLFW_HAT_RIGHT_DOWN</a> | <a class="normal" href="Neslib.Glfw3.html#GLFW_HAT_RIGHT">GLFW_HAT_RIGHT</a> or <a class="normal" href="Neslib.Glfw3.html#GLFW_HAT_DOWN">GLFW_HAT_DOWN</a> <a class="normal" href="Neslib.Glfw3.html#GLFW_HAT_LEFT_UP">GLFW_HAT_LEFT_UP</a> | <a class="normal" href="Neslib.Glfw3.html#GLFW_HAT_LEFT">GLFW_HAT_LEFT</a> or <a class="normal" href="Neslib.Glfw3.html#GLFW_HAT_UP">GLFW_HAT_UP</a> <a class="normal" href="Neslib.Glfw3.html#GLFW_HAT_LEFT_DOWN">GLFW_HAT_LEFT_DOWN</a> | <a class="normal" href="Neslib.Glfw3.html#GLFW_HAT_LEFT">GLFW_HAT_LEFT</a> or <a class="normal" href="Neslib.Glfw3.html#GLFW_HAT_DOWN">GLFW_HAT_DOWN</a>
+
+<p>The diagonal directions are bitwise combinations of the primary (up, right, down and left) directions and you can test for these individually by ANDing it with the corresponding direction.
+
+<p>If the specified joystick is not present this function will return <code>nil</code> but will not generate an error. This can be used instead of first calling <a class="normal" href="Neslib.Glfw3.html#glfwJoystickPresent">glfwJoystickPresent</a>.
+
+<p> 
+
+<p> Possible errors include <a class="normal" href="Neslib.Glfw3.html#GLFW_NOT_INITIALIZED">GLFW_NOT_INITIALIZED</a>, <a class="normal" href="Neslib.Glfw3.html#GLFW_INVALID_ENUM">GLFW_INVALID_ENUM</a> and <a class="normal" href="Neslib.Glfw3.html#GLFW_PLATFORM_ERROR">GLFW_PLATFORM_ERROR</a>.
+
+<p>The returned array is allocated and freed by GLFW. You should not free it yourself. It is valid until the specified joystick is disconnected, this function is called again for that joystick or the library is terminated.
+
+<p>This function must only be called from the main thread.
+
+<p>Added in version 3.3.</p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>jid</dt>
+<dd>The joystick to query.</dd>
+<dt>count</dt>
+<dd>Where to store the number of hat states in the returned array. This is set to zero if the joystick is not present or an error occurred.</dd>
+</dl>
+<h6 class="description_section">Returns</h6>
+<p class="return">An array of hat states, or <code>nil</code> if the joystick is not present or an error occurred.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
 <td class="itemcode"><a name="glfwGetJoystickName"></a><code>function <b>glfwGetJoystickName</b>(joy: Integer): PAnsiChar; cdecl  external GLFW3_LIB name _PU + 'glfwGetJoystickName';</code></td>
 </tr>
 <tr><td colspan="1">
@@ -3656,6 +4464,135 @@ Returns the name of the specified joystick.
 </table>
 <table class="detail wide_list">
 <tr class="list">
+<td class="itemcode"><a name="glfwGetJoystickGUID"></a><code>function <b>glfwGetJoystickGUID</b>(joy: Integer): PAnsiChar; cdecl  external GLFW3_LIB name _PU + 'glfwGetJoystickGUID';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns the SDL compatible GUID of the specified joystick.
+
+<p>This function returns the SDL compatible GUID, as a UTF-8 encoded hexadecimal string, of the specified joystick. The returned string is allocated and freed by GLFW. You should not free it yourself.
+
+<p>The GUID is what connects a joystick to a gamepad mapping. A connected joystick will always have a GUID even if there is no gamepad mapping assigned to it.
+
+<p>If the specified joystick is not present this function will return <code>nil</code> but will not generate an error. This can be used instead of first calling <a class="normal" href="Neslib.Glfw3.html#glfwJoystickPresent">glfwJoystickPresent</a>.
+
+<p>The GUID uses the format introduced in SDL 2.0.5. This GUID tries to uniquely identify the make and model of a joystick but does not identify a specific unit, e.g. all wired Xbox 360 controllers will have the same GUID on that platform. The GUID for a unit may vary between platforms depending on what hardware information the platform specific APIs provide.
+
+<p>
+
+<p> Possible errors include <a class="normal" href="Neslib.Glfw3.html#GLFW_NOT_INITIALIZED">GLFW_NOT_INITIALIZED</a>, <a class="normal" href="Neslib.Glfw3.html#GLFW_INVALID_ENUM">GLFW_INVALID_ENUM</a> and <a class="normal" href="Neslib.Glfw3.html#GLFW_PLATFORM_ERROR">GLFW_PLATFORM_ERROR</a>.
+
+<p>The returned string is allocated and freed by GLFW. You should not free it yourself. It is valid until the specified joystick is disconnected or the library is terminated.
+
+<p>This function must only be called from the main thread.
+
+<p>Added in version 3.3.</p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>jid</dt>
+<dd>The joystick to query.</dd>
+</dl>
+<h6 class="description_section">Returns</h6>
+<p class="return">The UTF-8 encoded GUID of the joystick, or <code>nil</code> if the joystick is not present or an error occurred.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="glfwSetJoystickUserPointer"></a><code>procedure <b>glfwSetJoystickUserPointer</b>(joy: Integer; value: Pointer); cdecl  external GLFW3_LIB name _PU + 'glfwSetJoystickUserPointer';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Sets the user pointer of the specified joystick.
+
+<p>This function sets the user-defined pointer of the specified joystick. The current value is retained until the joystick is disconnected. The initial value is <code>nil</code>.
+
+<p>This function may be called from the joystick callback, even for a joystick that is being disconnected.
+
+<p> 
+
+<p>Possible errors include <a class="normal" href="Neslib.Glfw3.html#GLFW_NOT_INITIALIZED">GLFW_NOT_INITIALIZED</a>.
+
+<p>This function may be called from any thread. Access is not synchronized.
+
+<p> Added in version 3.3.</p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>jid</dt>
+<dd>The joystick whose pointer to set.</dd>
+<dt>value</dt>
+<dd>The new value.</dd>
+</dl>
+<h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="Neslib.Glfw3.html#glfwGetJoystickUserPointer">glfwGetJoystickUserPointer</a></dt>
+  <dd>Returns the user pointer of the specified joystick.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="glfwGetJoystickUserPointer"></a><code>function <b>glfwGetJoystickUserPointer</b>(joy: Integer): Pointer; cdecl  external GLFW3_LIB name _PU + 'glfwGetJoystickUserPointer';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns the user pointer of the specified joystick.
+
+<p>This function returns the current value of the user-defined pointer of the specified joystick. The initial value is <code>nil</code>.
+
+<p>This function may be called from the joystick callback, even for a joystick that is being disconnected.
+
+<p>
+
+<p>Possible errors include <a class="normal" href="Neslib.Glfw3.html#GLFW_NOT_INITIALIZED">GLFW_NOT_INITIALIZED</a>.
+
+<p>This function may be called from any thread. Access is not synchronized.
+
+<p> Added in version 3.3.</p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>jid</dt>
+<dd>The joystick whose pointer to return.</dd>
+</dl>
+<h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="Neslib.Glfw3.html#glfwSetJoystickUserPointer">glfwSetJoystickUserPointer</a></dt>
+  <dd>Sets the user pointer of the specified joystick.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="glfwJoystickIsGamepad"></a><code>function <b>glfwJoystickIsGamepad</b>(joy: Integer): Integer; cdecl  external GLFW3_LIB name _PU + 'glfwJoystickIsGamepad';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns whether the specified joystick has a gamepad mapping.
+
+<p>This function returns whether the specified joystick is both present and has a gamepad mapping.
+
+<p>If the specified joystick is present but does not have a gamepad mapping this function will return <code><a class="normal" href="Neslib.Glfw3.html#GLFW_FALSE">GLFW_FALSE</a></code> but will not generate an error. Call <a class="normal" href="Neslib.Glfw3.html#glfwJoystickPresent">glfwJoystickPresent</a> to check if a joystick is present regardless of whether it has a mapping.
+
+<p>
+
+<p> Possible errors include <a class="normal" href="Neslib.Glfw3.html#GLFW_NOT_INITIALIZED">GLFW_NOT_INITIALIZED</a> and <a class="normal" href="Neslib.Glfw3.html#GLFW_INVALID_ENUM">GLFW_INVALID_ENUM</a>.
+
+<p>This function must only be called from the main thread.
+
+<p> Added in version 3.3.</p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>jid</dt>
+<dd>The joystick to query.</dd>
+</dl>
+<h6 class="description_section">Returns</h6>
+<p class="return"><code><a class="normal" href="Neslib.Glfw3.html#GLFW_TRUE">GLFW_TRUE</a></code> if a joystick is both present and has a gamepad mapping, or <code><a class="normal" href="Neslib.Glfw3.html#GLFW_FALSE">GLFW_FALSE</a></code> otherwise.</p><h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="Neslib.Glfw3.html#glfwGetGamepadState">glfwGetGamepadState</a></dt>
+  <dd>Retrieves the state of the specified joystick remapped as a gamepad.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
 <td class="itemcode"><a name="glfwSetJoystickCallback"></a><code>function <b>glfwSetJoystickCallback</b>(cbfun: <a  href="Neslib.Glfw3.html#TGLFWjoystickfun">TGLFWjoystickfun</a>): <a  href="Neslib.Glfw3.html#TGLFWjoystickfun">TGLFWjoystickfun</a>; cdecl  external GLFW3_LIB name _PU + 'glfwSetJoystickCallback';</code></td>
 </tr>
 <tr><td colspan="1">
@@ -3678,6 +4615,114 @@ Sets the joystick configuration callback.
 </dl>
 <h6 class="description_section">Returns</h6>
 <p class="return">The previously set callback, or <code>nil</code> if no callback was set or the library had not been initialized.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="glfwUpdateGamepadMappings"></a><code>function <b>glfwUpdateGamepadMappings</b>(const str: PAnsiString): Integer; cdecl  external GLFW3_LIB name _PU + 'glfwUpdateGamepadMappings';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Adds the specified SDL_GameControllerDB gamepad mappings.
+
+<p>This function parses the specified ASCII encoded string and updates the internal list with any gamepad mappings it finds. This string may contain either a single gamepad mapping or many mappings separated by newlines. The parser supports the full format of the `gamecontrollerdb.txt` source file including empty lines and comments.
+
+<p>If there is already a gamepad mapping for a given GUID in the internal list, it will be replaced by the one passed to this function. If the library is terminated and re-initialized the internal list will revert to the built-in default.
+
+<p>
+
+<p> Possible errors include <a class="normal" href="Neslib.Glfw3.html#GLFW_NOT_INITIALIZED">GLFW_NOT_INITIALIZED</a> and <a class="normal" href="Neslib.Glfw3.html#GLFW_INVALID_VALUE">GLFW_INVALID_VALUE</a>.
+
+<p>This function must only be called from the main thread.
+
+<p>  Added in version 3.3.</p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>str</dt>
+<dd>The string containing the gamepad mappings.</dd>
+</dl>
+<h6 class="description_section">Returns</h6>
+<p class="return"><code><a class="normal" href="Neslib.Glfw3.html#GLFW_TRUE">GLFW_TRUE</a></code> if successful, or <code><a class="normal" href="Neslib.Glfw3.html#GLFW_FALSE">GLFW_FALSE</a></code> if an erroroccurred.</p><h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="Neslib.Glfw3.html#glfwJoystickIsGamepad">glfwJoystickIsGamepad</a></dt>
+  <dd>Returns whether the specified joystick has a gamepad mapping.</dd>
+  <dt><a class="normal" href="Neslib.Glfw3.html#glfwGetGamepadName">glfwGetGamepadName</a></dt>
+  <dd>Returns the human-readable gamepad name for the specified joystick.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="glfwGetGamepadName"></a><code>function <b>glfwGetGamepadName</b>(jid: Integer): PAnsiString; cdecl  external GLFW3_LIB name _PU + 'glfwGetGamepadName';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns the human-readable gamepad name for the specified joystick.
+
+<p>This function returns the human-readable name of the gamepad from the gamepad mapping assigned to the specified joystick.
+
+<p>If the specified joystick is not present or does not have a gamepad mapping this function will return <code>nil</code> but will not generate an error. Call <a class="normal" href="Neslib.Glfw3.html#glfwJoystickPresent">glfwJoystickPresent</a> to check whether it is present regardless of whether it has a mapping.
+
+<p>
+
+<p> Possible errors include <a class="normal" href="Neslib.Glfw3.html#GLFW_NOT_INITIALIZED">GLFW_NOT_INITIALIZED</a> and <a class="normal" href="Neslib.Glfw3.html#GLFW_INVALID_ENUM">GLFW_INVALID_ENUM</a>.
+
+<p>The returned string is allocated and freed by GLFW. You should not free it yourself. It is valid until the specified joystick is disconnected, the gamepad mappings are updated or the library is terminated.
+
+<p>This function must only be called from the main thread.
+
+<p> Added in version 3.3.</p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>jid</dt>
+<dd>The joystick to query.</dd>
+</dl>
+<h6 class="description_section">Returns</h6>
+<p class="return">The UTF-8 encoded name of the gamepad, or <code>nil</code> if the joystick is not present, does not have a mapping or an erroroccurred.</p><h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="Neslib.Glfw3.html#glfwJoystickIsGamepad">glfwJoystickIsGamepad</a></dt>
+  <dd>Returns whether the specified joystick has a gamepad mapping.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="glfwGetGamepadState"></a><code>function <b>glfwGetGamepadState</b>(jid: Integer; state: <a  href="Neslib.Glfw3.html#PGLFWgamepadstate">PGLFWgamepadstate</a>): Integer; cdecl  external GLFW3_LIB name _PU + 'glfwGetGamepadState';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Retrieves the state of the specified joystick remapped as a gamepad.
+
+<p>This function retrieves the state of the specified joystick remapped to an Xbox-like gamepad.
+
+<p>If the specified joystick is not present or does not have a gamepad mapping this function will return <code><a class="normal" href="Neslib.Glfw3.html#GLFW_FALSE">GLFW_FALSE</a></code> but will not generate an error. Call <a class="normal" href="Neslib.Glfw3.html#glfwJoystickPresent">glfwJoystickPresent</a> to check whether it is present regardless of whether it has a mapping.
+
+<p>The Guide button may not be available for input as it is often hooked by the system or the Steam client.
+
+<p>Not all devices have all the buttons or axes provided by <a class="normal" href="Neslib.Glfw3.TGLFWgamepadstate.html">TGLFWgamepadstate</a>. Unavailable buttons and axes will always report <code><a class="normal" href="Neslib.Glfw3.html#GLFW_RELEASE">GLFW_RELEASE</a></code> and 0.0 respectively.
+
+<p> 
+
+<p> Possible errors include <a class="normal" href="Neslib.Glfw3.html#GLFW_NOT_INITIALIZED">GLFW_NOT_INITIALIZED</a> and <a class="normal" href="Neslib.Glfw3.html#GLFW_INVALID_ENUM">GLFW_INVALID_ENUM</a>.
+
+<p>This function must only be called from the main thread.
+
+<p>  Added in version 3.3.</p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>jid</dt>
+<dd>The joystick to query.</dd>
+<dt>state</dt>
+<dd>The gamepad input state of the joystick.</dd>
+</dl>
+<h6 class="description_section">Returns</h6>
+<p class="return"><code><a class="normal" href="Neslib.Glfw3.html#GLFW_TRUE">GLFW_TRUE</a></code> if successful, or <code><a class="normal" href="Neslib.Glfw3.html#GLFW_FALSE">GLFW_FALSE</a></code> if no joystick is connected, it has no gamepad mapping or an error occurred.</p><h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="Neslib.Glfw3.html#glfwUpdateGamepadMappings">glfwUpdateGamepadMappings</a></dt>
+  <dd>Adds the specified SDL_GameControllerDB gamepad mappings.</dd>
+  <dt><a class="normal" href="Neslib.Glfw3.html#glfwJoystickIsGamepad">glfwJoystickIsGamepad</a></dt>
+  <dd>Returns whether the specified joystick has a gamepad mapping.</dd>
+</dl>
+</td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -4449,6 +5494,31 @@ The function signature for window iconify/restore callbacks.
 </table>
 <table class="detail wide_list">
 <tr class="list">
+<td class="itemcode"><a name="TGLFWwindowmaximizefun"></a><code><b>TGLFWwindowmaximizefun</b> = procedure(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; maximized: Integer); cdecl;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+The function pointer type for window maximize callbacks.
+
+<p> 
+
+<p> Added in version 3.3.</p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>window</dt>
+<dd>The window that was maximized or restored.</dd>
+<dt>maximized</dt>
+<dd><code><a class="normal" href="Neslib.Glfw3.html#GLFW_TRUE">GLFW_TRUE</a></code> if the window was maximized, or <code><a class="normal" href="Neslib.Glfw3.html#GLFW_FALSE">GLFW_FALSE</a></code> if it was restored.</dd>
+</dl>
+<h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="Neslib.Glfw3.html#glfwSetWindowMaximizeCallback">glfwSetWindowMaximizeCallback</a></dt>
+  <dd>Sets the maximize callback for the specified window.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
 <td class="itemcode"><a name="TGLFWframebuffersizefun"></a><code><b>TGLFWframebuffersizefun</b> = procedure(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; width, height: Integer); cdecl;</code></td>
 </tr>
 <tr><td colspan="1">
@@ -4471,6 +5541,35 @@ The function signature for framebuffer resize callbacks.
 <dl class="see_also">
   <dt><a class="normal" href="Neslib.Glfw3.html#glfwSetFramebufferSizeCallback">glfwSetFramebufferSizeCallback</a></dt>
   <dd>Sets the framebuffer resize callback for the specified window.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="TGLFWwindowcontentscalefun"></a><code><b>TGLFWwindowcontentscalefun</b> = procedure(window: <a  href="Neslib.Glfw3.html#PGLFWwindow">PGLFWwindow</a>; xscale, yscale: Single); cdecl;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+The function pointer type for window content scale callbacks.
+
+<p>This is the function pointer type for window content scale callbacks.
+
+<p>  
+
+<p> Added in version 3.3.</p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>window</dt>
+<dd>The window whose content scale changed.</dd>
+<dt>xscale</dt>
+<dd>The new x-axis content scale of the window.</dd>
+<dt>yscale</dt>
+<dd>The new y-axis content scale of the window.</dd>
+</dl>
+<h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="Neslib.Glfw3.html#glfwSetWindowContentScaleCallback">glfwSetWindowContentScaleCallback</a></dt>
+  <dd>Sets the window content scale callback for the specified window.</dd>
 </dl>
 </td></tr>
 </table>
@@ -4784,6 +5883,20 @@ The function signature for joystick configuration callbacks.
 <tr><td colspan="1">
 &nbsp;</td></tr>
 </table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="PGLFWgamepadstate"></a><code><b>PGLFWgamepadstate</b> = &circ;<a  href="Neslib.Glfw3.TGLFWgamepadstate.html">TGLFWgamepadstate</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="PPGLFWgamepadstate"></a><code><b>PPGLFWgamepadstate</b> = &circ;<a  href="Neslib.Glfw3.html#PGLFWgamepadstate">PGLFWgamepadstate</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
 <h3 class="detail">Constants</h3>
 <table class="detail wide_list">
 <tr class="list">
@@ -4796,7 +5909,7 @@ The major version number of the GLFW library. This is incremented when the API i
 </table>
 <table class="detail wide_list">
 <tr class="list">
-<td class="itemcode"><a name="GLFW_VERSION_MINOR"></a><code><b>GLFW_VERSION_MINOR</b> = 2;</code></td>
+<td class="itemcode"><a name="GLFW_VERSION_MINOR"></a><code><b>GLFW_VERSION_MINOR</b> = 3;</code></td>
 </tr>
 <tr><td colspan="1">
 <p>
@@ -4807,7 +5920,7 @@ The minor version number of the GLFW library.
 </table>
 <table class="detail wide_list">
 <tr class="list">
-<td class="itemcode"><a name="GLFW_VERSION_REVISION"></a><code><b>GLFW_VERSION_REVISION</b> = 1;</code></td>
+<td class="itemcode"><a name="GLFW_VERSION_REVISION"></a><code><b>GLFW_VERSION_REVISION</b> = 7;</code></td>
 </tr>
 <tr><td colspan="1">
 <p>
@@ -4864,6 +5977,71 @@ The key or mouse button was pressed.</p>
 <p>
 The key was held down until it repeated.</p>
 </td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_HAT_CENTERED"></a><code><b>GLFW_HAT_CENTERED</b>   = 0;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Joystick hat states.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_HAT_UP"></a><code><b>GLFW_HAT_UP</b>         = 1;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_HAT_RIGHT"></a><code><b>GLFW_HAT_RIGHT</b>      = 2;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_HAT_DOWN"></a><code><b>GLFW_HAT_DOWN</b>       = 4;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_HAT_LEFT"></a><code><b>GLFW_HAT_LEFT</b>       = 8;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_HAT_RIGHT_UP"></a><code><b>GLFW_HAT_RIGHT_UP</b>   = <a  href="Neslib.Glfw3.html#GLFW_HAT_RIGHT">GLFW_HAT_RIGHT</a> or <a  href="Neslib.Glfw3.html#GLFW_HAT_UP">GLFW_HAT_UP</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_HAT_RIGHT_DOWN"></a><code><b>GLFW_HAT_RIGHT_DOWN</b> = <a  href="Neslib.Glfw3.html#GLFW_HAT_RIGHT">GLFW_HAT_RIGHT</a> or <a  href="Neslib.Glfw3.html#GLFW_HAT_DOWN">GLFW_HAT_DOWN</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_HAT_LEFT_UP"></a><code><b>GLFW_HAT_LEFT_UP</b>    = <a  href="Neslib.Glfw3.html#GLFW_HAT_LEFT">GLFW_HAT_LEFT</a>  or <a  href="Neslib.Glfw3.html#GLFW_HAT_UP">GLFW_HAT_UP</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_HAT_LEFT_DOWN"></a><code><b>GLFW_HAT_LEFT_DOWN</b>  = <a  href="Neslib.Glfw3.html#GLFW_HAT_LEFT">GLFW_HAT_LEFT</a>  or <a  href="Neslib.Glfw3.html#GLFW_HAT_DOWN">GLFW_HAT_DOWN</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -5763,6 +6941,24 @@ If this bit is set one or more Super keys were held down.</p>
 </table>
 <table class="detail wide_list">
 <tr class="list">
+<td class="itemcode"><a name="GLFW_MOD_CAPS_LOCK"></a><code><b>GLFW_MOD_CAPS_LOCK</b> = $0010;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+If this bit is set the Caps Lock key is enabled and the <a class="normal" href="Neslib.Glfw3.html#GLFW_LOCK_KEY_MODS">GLFW_LOCK_KEY_MODS</a> input mode is set.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_MOD_NUM_LOCK"></a><code><b>GLFW_MOD_NUM_LOCK</b> = $0020;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+If this bit is set the Num Lock key is enabled and the <a class="normal" href="Neslib.Glfw3.html#GLFW_LOCK_KEY_MODS">GLFW_LOCK_KEY_MODS</a> input mode is set.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
 <td class="itemcode"><a name="GLFW_MOUSE_BUTTON_1"></a><code><b>GLFW_MOUSE_BUTTON_1</b> = 0;</code></td>
 </tr>
 <tr><td colspan="1">
@@ -5970,6 +7166,208 @@ Joysticks</p>
 </table>
 <table class="detail wide_list">
 <tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_BUTTON_A"></a><code><b>GLFW_GAMEPAD_BUTTON_A</b>            = 0;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Gamepad buttons.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_BUTTON_B"></a><code><b>GLFW_GAMEPAD_BUTTON_B</b>            = 1;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_BUTTON_X"></a><code><b>GLFW_GAMEPAD_BUTTON_X</b>            = 2;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_BUTTON_Y"></a><code><b>GLFW_GAMEPAD_BUTTON_Y</b>            = 3;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_BUTTON_LEFT_BUMPER"></a><code><b>GLFW_GAMEPAD_BUTTON_LEFT_BUMPER</b>  = 4;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_BUTTON_RIGHT_BUMPER"></a><code><b>GLFW_GAMEPAD_BUTTON_RIGHT_BUMPER</b> = 5;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_BUTTON_BACK"></a><code><b>GLFW_GAMEPAD_BUTTON_BACK</b>         = 6;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_BUTTON_START"></a><code><b>GLFW_GAMEPAD_BUTTON_START</b>        = 7;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_BUTTON_GUIDE"></a><code><b>GLFW_GAMEPAD_BUTTON_GUIDE</b>        = 8;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_BUTTON_LEFT_THUMB"></a><code><b>GLFW_GAMEPAD_BUTTON_LEFT_THUMB</b>   = 9;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_BUTTON_RIGHT_THUMB"></a><code><b>GLFW_GAMEPAD_BUTTON_RIGHT_THUMB</b>  = 10;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_BUTTON_DPAD_UP"></a><code><b>GLFW_GAMEPAD_BUTTON_DPAD_UP</b>      = 11;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_BUTTON_DPAD_RIGHT"></a><code><b>GLFW_GAMEPAD_BUTTON_DPAD_RIGHT</b>   = 12;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_BUTTON_DPAD_DOWN"></a><code><b>GLFW_GAMEPAD_BUTTON_DPAD_DOWN</b>    = 13;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_BUTTON_DPAD_LEFT"></a><code><b>GLFW_GAMEPAD_BUTTON_DPAD_LEFT</b>    = 14;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_BUTTON_LAST"></a><code><b>GLFW_GAMEPAD_BUTTON_LAST</b>         = <a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_DPAD_LEFT">GLFW_GAMEPAD_BUTTON_DPAD_LEFT</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_BUTTON_CROSS"></a><code><b>GLFW_GAMEPAD_BUTTON_CROSS</b>    = <a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_A">GLFW_GAMEPAD_BUTTON_A</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_BUTTON_CIRCLE"></a><code><b>GLFW_GAMEPAD_BUTTON_CIRCLE</b>   = <a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_B">GLFW_GAMEPAD_BUTTON_B</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_BUTTON_SQUARE"></a><code><b>GLFW_GAMEPAD_BUTTON_SQUARE</b>   = <a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_X">GLFW_GAMEPAD_BUTTON_X</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_BUTTON_TRIANGLE"></a><code><b>GLFW_GAMEPAD_BUTTON_TRIANGLE</b> = <a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_BUTTON_Y">GLFW_GAMEPAD_BUTTON_Y</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_AXIS_LEFT_X"></a><code><b>GLFW_GAMEPAD_AXIS_LEFT_X</b>        = 0;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Gamepad axes.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_AXIS_LEFT_Y"></a><code><b>GLFW_GAMEPAD_AXIS_LEFT_Y</b>        = 1;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_AXIS_RIGHT_X"></a><code><b>GLFW_GAMEPAD_AXIS_RIGHT_X</b>       = 2;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_AXIS_RIGHT_Y"></a><code><b>GLFW_GAMEPAD_AXIS_RIGHT_Y</b>       = 3;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_AXIS_LEFT_TRIGGER"></a><code><b>GLFW_GAMEPAD_AXIS_LEFT_TRIGGER</b>  = 4;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_AXIS_RIGHT_TRIGGER"></a><code><b>GLFW_GAMEPAD_AXIS_RIGHT_TRIGGER</b> = 5;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_GAMEPAD_AXIS_LAST"></a><code><b>GLFW_GAMEPAD_AXIS_LAST</b>          = <a  href="Neslib.Glfw3.html#GLFW_GAMEPAD_AXIS_RIGHT_TRIGGER">GLFW_GAMEPAD_AXIS_RIGHT_TRIGGER</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_NO_ERROR"></a><code><b>GLFW_NO_ERROR</b> = 0;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+No error has occurred.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
 <td class="itemcode"><a name="GLFW_NOT_INITIALIZED"></a><code><b>GLFW_NOT_INITIALIZED</b> = $00010001;</code></td>
 </tr>
 <tr><td colspan="1">
@@ -6154,6 +7552,34 @@ The specified window does not have an OpenGL or OpenGL ES context.
 <table class="detail wide_list">
 <tr class="list">
 <td class="itemcode"><a name="GLFW_MAXIMIZED"></a><code><b>GLFW_MAXIMIZED</b> = $00020008;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_CENTER_CURSOR"></a><code><b>GLFW_CENTER_CURSOR</b> = $00020009;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_TRANSPARENT_FRAMEBUFFER"></a><code><b>GLFW_TRANSPARENT_FRAMEBUFFER</b> = $0002000A;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_HOVERED"></a><code><b>GLFW_HOVERED</b> = $0002000B;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_FOCUS_ON_SHOW"></a><code><b>GLFW_FOCUS_ON_SHOW</b> = $0002000C;</code></td>
 </tr>
 <tr><td colspan="1">
 &nbsp;</td></tr>
@@ -6349,6 +7775,48 @@ The specified window does not have an OpenGL or OpenGL ES context.
 </table>
 <table class="detail wide_list">
 <tr class="list">
+<td class="itemcode"><a name="GLFW_SCALE_TO_MONITOR"></a><code><b>GLFW_SCALE_TO_MONITOR</b> = $0002200C;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_COCOA_RETINA_FRAMEBUFFER"></a><code><b>GLFW_COCOA_RETINA_FRAMEBUFFER</b> = $00023001;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_COCOA_FRAME_NAME"></a><code><b>GLFW_COCOA_FRAME_NAME</b> = $00023002;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_COCOA_GRAPHICS_SWITCHING"></a><code><b>GLFW_COCOA_GRAPHICS_SWITCHING</b> = $00023003;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_X11_CLASS_NAME"></a><code><b>GLFW_X11_CLASS_NAME</b> = $00024001;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_X11_INSTANCE_NAME"></a><code><b>GLFW_X11_INSTANCE_NAME</b> = $00024002;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
 <td class="itemcode"><a name="GLFW_NO_API"></a><code><b>GLFW_NO_API</b> = 0;</code></td>
 </tr>
 <tr><td colspan="1">
@@ -6433,6 +7901,20 @@ The specified window does not have an OpenGL or OpenGL ES context.
 </table>
 <table class="detail wide_list">
 <tr class="list">
+<td class="itemcode"><a name="GLFW_LOCK_KEY_MODS"></a><code><b>GLFW_LOCK_KEY_MODS</b> = $00033004;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_RAW_MOUSE_MOTION"></a><code><b>GLFW_RAW_MOUSE_MOTION</b> = $00033005;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
 <td class="itemcode"><a name="GLFW_CURSOR_NORMAL"></a><code><b>GLFW_CURSOR_NORMAL</b> = $00034001;</code></td>
 </tr>
 <tr><td colspan="1">
@@ -6483,6 +7965,13 @@ The specified window does not have an OpenGL or OpenGL ES context.
 <table class="detail wide_list">
 <tr class="list">
 <td class="itemcode"><a name="GLFW_EGL_CONTEXT_API"></a><code><b>GLFW_EGL_CONTEXT_API</b> = $00036002;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_OSMESA_CONTEXT_API"></a><code><b>GLFW_OSMESA_CONTEXT_API</b> = $00036003;</code></td>
 </tr>
 <tr><td colspan="1">
 &nbsp;</td></tr>
@@ -6551,6 +8040,27 @@ The vertical resize arrow shape.</p>
 <table class="detail wide_list">
 <tr class="list">
 <td class="itemcode"><a name="GLFW_DISCONNECTED"></a><code><b>GLFW_DISCONNECTED</b> = $00040002;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_JOYSTICK_HAT_BUTTONS"></a><code><b>GLFW_JOYSTICK_HAT_BUTTONS</b> = $00050001;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_COCOA_CHDIR_RESOURCES"></a><code><b>GLFW_COCOA_CHDIR_RESOURCES</b> = $00051001;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GLFW_COCOA_MENUBAR"></a><code><b>GLFW_COCOA_MENUBAR</b> = $00051002;</code></td>
 </tr>
 <tr><td colspan="1">
 &nbsp;</td></tr>
