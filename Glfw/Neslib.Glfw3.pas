@@ -633,22 +633,20 @@ type
   { Opaque monitor object.
 
     Added in version 3.0. }
-  PGLFWmonitor = Pointer;
-  PPGLFWmonitor = ^PGLFWmonitor;
+  TGLFWmonitor = THandle;
+  PGLFWmonitor = ^TGLFWmonitor;
 
 type
   { Opaque window object.
 
     Added in version 3.0. }
-  PGLFWwindow = Pointer;
-  PPGLFWwindow = ^PGLFWwindow;
+  TGLFWwindow = THandle;
 
 type
   { Opaque cursor object.
 
     Added in version 3.1. }
-  PGLFWcursor = Pointer;
-  PPGLFWcursor = ^PGLFWcursor;
+  TGLFWcursor = THandle;
 
 type
   { The function signature for error callbacks.
@@ -677,7 +675,7 @@ type
       glfwSetWindowPosCallback
 
     Added in version 3.0. }
-  TGLFWwindowposfun = procedure(window: PGLFWwindow; xpos, ypos: Integer); cdecl;
+  TGLFWwindowposfun = procedure(window: TGLFWwindow; xpos, ypos: Integer); cdecl;
 
 type
   { The function signature for window resize callbacks.
@@ -691,7 +689,7 @@ type
       glfwSetWindowSizeCallback
 
     Added in version 1.0. GLFW3 added window handle parameter. }
-  TGLFWwindowsizefun = procedure(window: PGLFWwindow; width, height: Integer); cdecl;
+  TGLFWwindowsizefun = procedure(window: TGLFWwindow; width, height: Integer); cdecl;
 
 type
   { The function signature for window close callbacks.
@@ -703,7 +701,7 @@ type
       glfwSetWindowCloseCallback
 
     Added in version 2.5. GLFW3 added window handle parameter. }
-  TGLFWwindowclosefun = procedure(window: PGLFWwindow); cdecl;
+  TGLFWwindowclosefun = procedure(window: TGLFWwindow); cdecl;
 
 type
   { The function signature for window content refresh callbacks.
@@ -715,7 +713,7 @@ type
       glfwSetWindowRefreshCallback
 
     Added in version 2.5. GLFW3 added window handle parameter. }
-  TGLFWwindowrefreshfun = procedure(window: PGLFWwindow); cdecl;
+  TGLFWwindowrefreshfun = procedure(window: TGLFWwindow); cdecl;
 
 type
   { The function signature for window focus/defocus callbacks.
@@ -729,7 +727,7 @@ type
       glfwSetWindowFocusCallback
 
     Added in version 3.0. }
-  TGLFWwindowfocusfun = procedure(window: PGLFWwindow; focused: Integer); cdecl;
+  TGLFWwindowfocusfun = procedure(window: TGLFWwindow; focused: Integer); cdecl;
 
 type
   { The function signature for window iconify/restore callbacks.
@@ -743,7 +741,7 @@ type
       glfwSetWindowIconifyCallback
 
     Added in version 3.0. }
-  TGLFWwindowiconifyfun = procedure(window: PGLFWwindow; iconified: Integer); cdecl;
+  TGLFWwindowiconifyfun = procedure(window: TGLFWwindow; iconified: Integer); cdecl;
 
 type
   { The function pointer type for window maximize callbacks.
@@ -757,7 +755,7 @@ type
       glfwSetWindowMaximizeCallback
 
     Added in version 3.3. }
-  TGLFWwindowmaximizefun = procedure(window: PGLFWwindow; maximized: Integer); cdecl;
+  TGLFWwindowmaximizefun = procedure(window: TGLFWwindow; maximized: Integer); cdecl;
 
 { ? End of 3.3.7 }
 
@@ -773,7 +771,7 @@ type
       glfwSetFramebufferSizeCallback
 
     Added in version 3.0. }
-  TGLFWframebuffersizefun = procedure(window: PGLFWwindow; width, height: Integer); cdecl;
+  TGLFWframebuffersizefun = procedure(window: TGLFWwindow; width, height: Integer); cdecl;
 
 type
   { The function pointer type for window content scale callbacks.
@@ -789,7 +787,7 @@ type
       glfwSetWindowContentScaleCallback
 
     Added in version 3.3. }
-  TGLFWwindowcontentscalefun = procedure(window: PGLFWwindow; xscale, yscale: Single); cdecl;
+  TGLFWwindowcontentscalefun = procedure(window: TGLFWwindow; xscale, yscale: Single); cdecl;
 
 type
   { The function signature for mouse button callbacks.
@@ -805,7 +803,7 @@ type
 
     Added in version 1.0. GLFW3 added window handle and modifier mask
     parameters. }
-  TGLFWmousebuttonfun = procedure(window: PGLFWwindow; button, action, mods: Integer); cdecl;
+  TGLFWmousebuttonfun = procedure(window: TGLFWwindow; button, action, mods: Integer); cdecl;
 
 type
   { The function signature for cursor position callbacks.
@@ -821,7 +819,7 @@ type
       glfwSetCursorPosCallback
 
     Added in version 3.0. Replaces <tt>TGLFWmouseposfun</tt>. }
-  TGLFWcursorposfun = procedure(window: PGLFWwindow; xpos, ypos: Double); cdecl;
+  TGLFWcursorposfun = procedure(window: TGLFWwindow; xpos, ypos: Double); cdecl;
 
 type
   { The function signature for cursor enter/leave callbacks.
@@ -835,7 +833,7 @@ type
       glfwSetCursorEnterCallback
 
     Added in version 3.0. }
-  TGLFWcursorenterfun = procedure(window: PGLFWwindow; entered: Integer); cdecl;
+  TGLFWcursorenterfun = procedure(window: TGLFWwindow; entered: Integer); cdecl;
 
 type
   { The function signature for scroll callbacks.
@@ -849,7 +847,7 @@ type
       glfwSetScrollCallback
 
     Added in version 3.0. Replaces <tt>TGLFWmousewheelfun</tt>. }
-  TGLFWscrollfun = procedure(window: PGLFWwindow; xoffset, yoffset: Double); cdecl;
+  TGLFWscrollfun = procedure(window: TGLFWwindow; xoffset, yoffset: Double); cdecl;
 
 type
   { The function signature for keyboard key callbacks.
@@ -866,7 +864,7 @@ type
 
     Added in version 1.0. GLFW3 added window handle, scancode and modifier mask
     parameters. }
-  TGLFWkeyfun = procedure(window: PGLFWwindow; key, scancode, action, mods: Integer); cdecl;
+  TGLFWkeyfun = procedure(window: TGLFWwindow; key, scancode, action, mods: Integer); cdecl;
 
 type
   { The function signature for Unicode character callbacks.
@@ -879,7 +877,7 @@ type
       glfwSetCharCallback
 
     Added in version 2.4. GLFW3 added window handle parameter. }
-  TGLFWcharfun = procedure(window: PGLFWwindow; codepoint: Cardinal); cdecl;
+  TGLFWcharfun = procedure(window: TGLFWwindow; codepoint: Cardinal); cdecl;
 
 type
   { The function signature for Unicode character with modifiers
@@ -895,7 +893,7 @@ type
       glfwSetCharModsCallback
 
     Added in version 3.1. }
-  TGLFWcharmodsfun = procedure(window: PGLFWwindow; codepoint: Cardinal; mods: Integer); cdecl;
+  TGLFWcharmodsfun = procedure(window: TGLFWwindow; codepoint: Cardinal; mods: Integer); cdecl;
 
 type
   { The function signature for file drop callbacks.
@@ -909,7 +907,7 @@ type
       glfwSetDropCallback
 
     Added in version 3.1. }
-  TGLFWdropfun = procedure(window: PGLFWwindow; count: Integer; const paths: PPAnsiChar); cdecl;
+  TGLFWdropfun = procedure(window: TGLFWwindow; count: Integer; const paths: PPAnsiChar); cdecl;
 
 type
   { The function signature for monitor configuration callbacks.
@@ -922,7 +920,7 @@ type
       glfwSetMonitorCallback
 
     Added in version 3.0. }
-  TGLFWmonitorfun = procedure(monitor: PGLFWmonitor; event: Integer); cdecl;
+  TGLFWmonitorfun = procedure(monitor: TGLFWmonitor; event: Integer); cdecl;
 
 type
   { The function signature for joystick configuration callbacks.
@@ -1235,7 +1233,7 @@ function glfwSetErrorCallback(cbfun: TGLFWerrorfun): TGLFWerrorfun;
     glfwGetPrimaryMonitor
 
   Added in version 3.0. }
-function glfwGetMonitors(out count: Integer): PPGLFWmonitor;
+function glfwGetMonitors(out count: Integer): PGLFWmonitor;
   cdecl external GLFW3_LIB name _PU + 'glfwGetMonitors';
 
 { Returns the primary monitor.
@@ -1257,7 +1255,7 @@ function glfwGetMonitors(out count: Integer): PPGLFWmonitor;
     glfwGetMonitors
 
   Added in version 3.0. }
-function glfwGetPrimaryMonitor(): PGLFWmonitor;
+function glfwGetPrimaryMonitor(): TGLFWmonitor;
   cdecl external GLFW3_LIB name _PU + 'glfwGetPrimaryMonitor';
 
 { Returns the position of the monitor's viewport on the virtual screen.
@@ -1278,7 +1276,7 @@ function glfwGetPrimaryMonitor(): PGLFWmonitor;
   This function must only be called from the main thread.
 
   Added in version 3.0. }
-procedure glfwGetMonitorPos(monitor: PGLFWmonitor; xpos, ypos: PInteger);
+procedure glfwGetMonitorPos(monitor: TGLFWmonitor; xpos, ypos: PInteger);
   cdecl external GLFW3_LIB name _PU + 'glfwGetMonitorPos';
 
 { Retrieves the work area of the monitor.
@@ -1305,7 +1303,7 @@ procedure glfwGetMonitorPos(monitor: PGLFWmonitor; xpos, ypos: PInteger);
   This function must only be called from the main thread.
 
   Added in version 3.3. }
-procedure glfwGetMonitorWorkarea(monitor: PGLFWmonitor; xpos, ypos, width, height: PInteger);
+procedure glfwGetMonitorWorkarea(monitor: TGLFWmonitor; xpos, ypos, width, height: PInteger);
   cdecl external GLFW3_LIB name _PU + 'glfwGetMonitorWorkarea';
 
 { Returns the physical size of the monitor.
@@ -1335,7 +1333,7 @@ procedure glfwGetMonitorWorkarea(monitor: PGLFWmonitor; xpos, ypos, width, heigh
   This function must only be called from the main thread.
 
   Added in version 3.0. }
-procedure glfwGetMonitorPhysicalSize(monitor: PGLFWmonitor; widthMM, heightMM: PInteger);
+procedure glfwGetMonitorPhysicalSize(monitor: TGLFWmonitor; widthMM, heightMM: PInteger);
   cdecl external GLFW3_LIB name _PU + 'glfwGetMonitorPhysicalSize';
 
 { Retrieves the content scale for the specified monitor.
@@ -1363,7 +1361,7 @@ procedure glfwGetMonitorPhysicalSize(monitor: PGLFWmonitor; widthMM, heightMM: P
     glfwGetWindowContentScale
     
   Added in version 3.3. }
-procedure glfwGetMonitorContentScale(monitor: PGLFWmonitor; xscale, yscale: PSingle);
+procedure glfwGetMonitorContentScale(monitor: TGLFWmonitor; xscale, yscale: PSingle);
   cdecl external GLFW3_LIB name _PU + 'glfwGetMonitorContentScale';
 
 { Returns the name of the specified monitor.
@@ -1388,7 +1386,7 @@ procedure glfwGetMonitorContentScale(monitor: PGLFWmonitor; xscale, yscale: PSin
   This function must only be called from the main thread.
 
   Added in version 3.0. }
-function glfwGetMonitorName(monitor: PGLFWmonitor): PAnsiChar;
+function glfwGetMonitorName(monitor: TGLFWmonitor): PAnsiChar;
   cdecl external GLFW3_LIB name _PU + 'glfwGetMonitorName';
 
 { Sets the user pointer of the specified monitor.
@@ -1412,7 +1410,7 @@ function glfwGetMonitorName(monitor: PGLFWmonitor): PAnsiChar;
     glfwGetMonitorUserPointer
 
   Added in version 3.3. }
-procedure glfwSetMonitorUserPointer(monitor: PGLFWmonitor; value: Pointer);
+procedure glfwSetMonitorUserPointer(monitor: TGLFWmonitor; value: Pointer);
   cdecl external GLFW3_LIB name _PU + 'glfwSetMonitorUserPointer';
 
 { Returns the user pointer of the specified monitor.
@@ -1434,7 +1432,7 @@ procedure glfwSetMonitorUserPointer(monitor: PGLFWmonitor; value: Pointer);
     glfwSetMonitorUserPointer
 
   Added in version 3.3. }
-function glfwGetMonitorUserPointer(monitor: PGLFWmonitor): Pointer;
+function glfwGetMonitorUserPointer(monitor: TGLFWmonitor): Pointer;
   cdecl external GLFW3_LIB name _PU + 'glfwGetMonitorUserPointer';
 
 { Sets the monitor configuration callback.
@@ -1488,7 +1486,7 @@ function glfwSetMonitorCallback(cbfun: TGLFWmonitorfun): TGLFWmonitorfun;
 
   Added in version 1.0. GLFW3 changed to return an array of modes for a specific
   monitor. }
-function glfwGetVideoModes(monitor: PGLFWmonitor; out count: Integer): PGLFWvidmode;
+function glfwGetVideoModes(monitor: TGLFWmonitor; out count: Integer): PGLFWvidmode;
   cdecl external GLFW3_LIB name _PU + 'glfwGetVideoModes';
 
 { Returns the current mode of the specified monitor.
@@ -1515,7 +1513,7 @@ function glfwGetVideoModes(monitor: PGLFWmonitor; out count: Integer): PGLFWvidm
     glfwGetVideoModes
 
   Added in version 3.0. Replaces <tt>glfwGetDesktopMode</tt>. }
-function glfwGetVideoMode(monitor: PGLFWmonitor): PGLFWvidmode;
+function glfwGetVideoMode(monitor: TGLFWmonitor): PGLFWvidmode;
   cdecl external GLFW3_LIB name _PU + 'glfwGetVideoMode';
 
 { Generates a gamma ramp and sets it for the specified monitor.
@@ -1534,7 +1532,7 @@ function glfwGetVideoMode(monitor: PGLFWmonitor): PGLFWvidmode;
   This function must only be called from the main thread.
 
   Added in version 3.0. }
-procedure glfwSetGamma(monitor: PGLFWmonitor; gamma: Single);
+procedure glfwSetGamma(monitor: TGLFWmonitor; gamma: Single);
   cdecl external GLFW3_LIB name _PU + 'glfwSetGamma';
 
 { Returns the current gamma ramp for the specified monitor.
@@ -1557,7 +1555,7 @@ procedure glfwSetGamma(monitor: PGLFWmonitor; gamma: Single);
   This function must only be called from the main thread.
 
   Added in version 3.0. }
-function glfwGetGammaRamp(monitor: PGLFWmonitor): PGLFWgammaramp;
+function glfwGetGammaRamp(monitor: TGLFWmonitor): PGLFWgammaramp;
   cdecl external GLFW3_LIB name _PU + 'glfwGetGammaRamp';
 
 { Sets the current gamma ramp for the specified monitor.
@@ -1582,7 +1580,7 @@ function glfwGetGammaRamp(monitor: PGLFWmonitor): PGLFWgammaramp;
   This function must only be called from the main thread.
 
   Added in version 3.0. }
-procedure glfwSetGammaRamp(monitor: PGLFWmonitor; const ramp: PGLFWgammaramp);
+procedure glfwSetGammaRamp(monitor: TGLFWmonitor; const ramp: PGLFWgammaramp);
   cdecl external GLFW3_LIB name _PU + 'glfwSetGammaRamp';
 
 { Resets all window hints to their default values.
@@ -1757,7 +1755,7 @@ procedure glfwWindowHintString(hint: Integer; const value: PAnsiChar);
     glfwDestroyWindow
 
   Added in version 3.0.  Replaces <tt>glfwOpenWindow</tt>. }
-function glfwCreateWindow(width: Integer; height: Integer; const title: PAnsiChar; monitor: PGLFWmonitor; share: PGLFWwindow): PGLFWwindow;
+function glfwCreateWindow(width: Integer; height: Integer; const title: PAnsiChar; monitor: TGLFWmonitor; share: TGLFWwindow): TGLFWwindow;
   cdecl external GLFW3_LIB name _PU + 'glfwCreateWindow';
 
 { Destroys the specified window and its context.
@@ -1784,7 +1782,7 @@ function glfwCreateWindow(width: Integer; height: Integer; const title: PAnsiCha
     glfwCreateWindow
 
   Added in version 3.0.  Replaces <tt>glfwCloseWindow</tt>. }
-procedure glfwDestroyWindow(window: PGLFWwindow);
+procedure glfwDestroyWindow(window: TGLFWwindow);
   cdecl external GLFW3_LIB name _PU + 'glfwDestroyWindow';
 
 { Checks the close flag of the specified window.
@@ -1802,7 +1800,7 @@ procedure glfwDestroyWindow(window: PGLFWwindow);
   This function may be called from any thread.  Access is not synchronized.
 
   Added in version 3.0. }
-function glfwWindowShouldClose(window: PGLFWwindow): Integer;
+function glfwWindowShouldClose(window: TGLFWwindow): Integer;
   cdecl external GLFW3_LIB name _PU + 'glfwWindowShouldClose';
 
 { Sets the close flag of the specified window.
@@ -1820,7 +1818,7 @@ function glfwWindowShouldClose(window: PGLFWwindow): Integer;
   This function may be called from any thread.  Access is not synchronized.
 
   Added in version 3.0. }
-procedure glfwSetWindowShouldClose(window: PGLFWwindow; value: Integer);
+procedure glfwSetWindowShouldClose(window: TGLFWwindow; value: Integer);
   cdecl external GLFW3_LIB name _PU + 'glfwSetWindowShouldClose';
 
 { Sets the title of the specified window.
@@ -1840,7 +1838,7 @@ procedure glfwSetWindowShouldClose(window: PGLFWwindow; value: Integer);
   This function must only be called from the main thread.
 
   Added in version 1.0. GLFW3 Added window handle parameter. }
-procedure glfwSetWindowTitle(window: PGLFWwindow; const title: PAnsiChar);
+procedure glfwSetWindowTitle(window: TGLFWwindow; const title: PAnsiChar);
   cdecl external GLFW3_LIB name _PU + 'glfwSetWindowTitle';
 
 { Sets the icon for the specified window.
@@ -1874,7 +1872,7 @@ procedure glfwSetWindowTitle(window: PGLFWwindow; const title: PAnsiChar);
   This function must only be called from the main thread.
 
   Added in version 3.2. }
-procedure glfwSetWindowIcon(window: PGLFWwindow; count: Integer; const images: PGLFWimage);
+procedure glfwSetWindowIcon(window: TGLFWwindow; count: Integer; const images: PGLFWimage);
   cdecl external GLFW3_LIB name _PU + 'glfwSetWindowIcon';
 
 { Retrieves the position of the client area of the specified window.
@@ -1900,7 +1898,7 @@ procedure glfwSetWindowIcon(window: PGLFWwindow; count: Integer; const images: P
     glfwSetWindowPos
 
   Added in version 3.0. }
-procedure glfwGetWindowPos(window: PGLFWwindow; xpos, ypos: PInteger);
+procedure glfwGetWindowPos(window: TGLFWwindow; xpos, ypos: PInteger);
   cdecl external GLFW3_LIB name _PU + 'glfwGetWindowPos';
 
 { Sets the position of the client area of the specified window.
@@ -1928,7 +1926,7 @@ procedure glfwGetWindowPos(window: PGLFWwindow; xpos, ypos: PInteger);
     glfwGetWindowPos
 
   Added in version 1.0. GLFW3 added window handle parameter. }
-procedure glfwSetWindowPos(window: PGLFWwindow; xpos, ypos: Integer);
+procedure glfwSetWindowPos(window: TGLFWwindow; xpos, ypos: Integer);
   cdecl external GLFW3_LIB name _PU + 'glfwSetWindowPos';
 
 { Retrieves the size of the client area of the specified window.
@@ -1955,7 +1953,7 @@ procedure glfwSetWindowPos(window: PGLFWwindow; xpos, ypos: Integer);
     glfwSetWindowSize
 
   Added in version 1.0. GLFW3 added window handle parameter. }
-procedure glfwGetWindowSize(window: PGLFWwindow; width, height: PInteger);
+procedure glfwGetWindowSize(window: TGLFWwindow; width, height: PInteger);
   cdecl external GLFW3_LIB name _PU + 'glfwGetWindowSize';
 
 { Sets the size limits of the specified window.
@@ -1994,7 +1992,7 @@ procedure glfwGetWindowSize(window: PGLFWwindow; width, height: PInteger);
     glfwSetWindowAspectRatio
 
   Added in version 3.2. }
-procedure glfwSetWindowSizeLimits(window: PGLFWwindow; minwidth, minheight, maxwidth, maxheight: Integer);
+procedure glfwSetWindowSizeLimits(window: TGLFWwindow; minwidth, minheight, maxwidth, maxheight: Integer);
   cdecl external GLFW3_LIB name _PU + 'glfwSetWindowSizeLimits';
 
 { Sets the aspect ratio of the specified window.
@@ -2033,7 +2031,7 @@ procedure glfwSetWindowSizeLimits(window: PGLFWwindow; minwidth, minheight, maxw
     glfwSetWindowSizeLimits
 
   Added in version 3.2. }
-procedure glfwSetWindowAspectRatio(window: PGLFWwindow; numer, denom: Integer);
+procedure glfwSetWindowAspectRatio(window: TGLFWwindow; numer, denom: Integer);
   cdecl external GLFW3_LIB name _PU + 'glfwSetWindowAspectRatio';
 
 { Sets the size of the client area of the specified window.
@@ -2068,7 +2066,7 @@ procedure glfwSetWindowAspectRatio(window: PGLFWwindow; numer, denom: Integer);
     glfwSetWindowMonitor
 
   Added in version 1.0. GLFW3 added window handle parameter. }
-procedure glfwSetWindowSize(window: PGLFWwindow; width, height: Integer);
+procedure glfwSetWindowSize(window: TGLFWwindow; width, height: Integer);
   cdecl external GLFW3_LIB name _PU + 'glfwSetWindowSize';
 
 { Retrieves the size of the framebuffer of the specified window.
@@ -2095,7 +2093,7 @@ procedure glfwSetWindowSize(window: PGLFWwindow; width, height: Integer);
     glfwSetFramebufferSizeCallback
 
   Added in version 3.0. }
-procedure glfwGetFramebufferSize(window: PGLFWwindow; width, height: PInteger);
+procedure glfwGetFramebufferSize(window: TGLFWwindow; width, height: PInteger);
   cdecl external GLFW3_LIB name _PU + 'glfwGetFramebufferSize';
 
 { Retrieves the size of the frame of the window.
@@ -2128,7 +2126,7 @@ procedure glfwGetFramebufferSize(window: PGLFWwindow; width, height: PInteger);
   This function must only be called from the main thread.
 
   Added in version 3.1. }
-procedure glfwGetWindowFrameSize(window: PGLFWwindow; left, top, right, bottom: PInteger);
+procedure glfwGetWindowFrameSize(window: TGLFWwindow; left, top, right, bottom: PInteger);
   cdecl external GLFW3_LIB name _PU + 'glfwGetWindowFrameSize';
 
 { Retrieves the content scale for the specified window.
@@ -2159,7 +2157,7 @@ procedure glfwGetWindowFrameSize(window: PGLFWwindow; left, top, right, bottom: 
     glfwGetMonitorContentScale
 
   Added in version 3.3. }
-procedure glfwGetWindowContentScale(window: PGLFWwindow; xscale, yscale: PSingle);
+procedure glfwGetWindowContentScale(window: TGLFWwindow; xscale, yscale: PSingle);
   cdecl external GLFW3_LIB name _PU + 'glfwGetWindowContentScale';
 
 { Returns the opacity of the whole window.
@@ -2186,7 +2184,7 @@ procedure glfwGetWindowContentScale(window: PGLFWwindow; xscale, yscale: PSingle
     glfwSetWindowOpacity
 
   Added in version 3.3. }
-function glfwGetWindowOpacity(window: PGLFWwindow): Single;
+function glfwGetWindowOpacity(window: TGLFWwindow): Single;
   cdecl external GLFW3_LIB name _PU + 'glfwGetWindowOpacity';
 
 { Sets the opacity of the whole window.
@@ -2213,7 +2211,7 @@ function glfwGetWindowOpacity(window: PGLFWwindow): Single;
     glfwGetWindowOpacity
 
   Added in version 3.3. }
-procedure glfwSetWindowOpacity(window: PGLFWwindow; opacity: Single);
+procedure glfwSetWindowOpacity(window: TGLFWwindow; opacity: Single);
   cdecl external GLFW3_LIB name _PU + 'glfwSetWindowOpacity';
 
 { Iconifies the specified window.
@@ -2237,7 +2235,7 @@ procedure glfwSetWindowOpacity(window: PGLFWwindow; opacity: Single);
     glfwMaximizeWindow
 
   Added in version 2.1. GLFW3 added window handle parameter. }
-procedure glfwIconifyWindow(window: PGLFWwindow);
+procedure glfwIconifyWindow(window: TGLFWwindow);
   cdecl external GLFW3_LIB name _PU + 'glfwIconifyWindow';
 
 { Restores the specified window.
@@ -2261,7 +2259,7 @@ procedure glfwIconifyWindow(window: PGLFWwindow);
     glfwMaximizeWindow
 
   Added in version 2.1. GLFW3 added window handle parameter. }
-procedure glfwRestoreWindow(window: PGLFWwindow);
+procedure glfwRestoreWindow(window: TGLFWwindow);
   cdecl external GLFW3_LIB name _PU + 'glfwRestoreWindow';
 
 { Maximizes the specified window.
@@ -2283,7 +2281,7 @@ procedure glfwRestoreWindow(window: PGLFWwindow);
     glfwRestoreWindow
 
   Added in GLFW 3.2. }
-procedure glfwMaximizeWindow(window: PGLFWwindow);
+procedure glfwMaximizeWindow(window: TGLFWwindow);
   cdecl external GLFW3_LIB name _PU + 'glfwMaximizeWindow';
 
 { Makes the specified window visible.
@@ -2303,7 +2301,7 @@ procedure glfwMaximizeWindow(window: PGLFWwindow);
     glfwHideWindow
 
   Added in version 3.0. }
-procedure glfwShowWindow(window: PGLFWwindow);
+procedure glfwShowWindow(window: TGLFWwindow);
   cdecl external GLFW3_LIB name _PU + 'glfwShowWindow';
 
 { Hides the specified window.
@@ -2323,7 +2321,7 @@ procedure glfwShowWindow(window: PGLFWwindow);
     glfwShowWindow
 
   Added in version 3.0. }
-procedure glfwHideWindow(window: PGLFWwindow);
+procedure glfwHideWindow(window: TGLFWwindow);
   cdecl external GLFW3_LIB name _PU + 'glfwHideWindow';
 
 { Brings the specified window to front and sets input focus.
@@ -2346,7 +2344,7 @@ procedure glfwHideWindow(window: PGLFWwindow);
   This function must only be called from the main thread.
 
   Added in version 3.2. }
-procedure glfwFocusWindow(window: PGLFWwindow);
+procedure glfwFocusWindow(window: TGLFWwindow);
   cdecl external GLFW3_LIB name _PU + 'glfwFocusWindow';
 
 { Requests user attention to the specified window.
@@ -2369,7 +2367,7 @@ procedure glfwFocusWindow(window: PGLFWwindow);
   This function must only be called from the main thread.
 
   Added in version 3.3. }
-procedure glfwRequestWindowAttention(window: PGLFWwindow);
+procedure glfwRequestWindowAttention(window: TGLFWwindow);
   cdecl external GLFW3_LIB name _PU + 'glfwRequestWindowAttention';
 
 { Returns the monitor that the window uses for full screen mode.
@@ -2392,7 +2390,7 @@ procedure glfwRequestWindowAttention(window: PGLFWwindow);
     glfwSetWindowMonitor
 
   Added in version 3.0. }
-function glfwGetWindowMonitor(window: PGLFWwindow): PGLFWmonitor;
+function glfwGetWindowMonitor(window: TGLFWwindow): TGLFWmonitor;
   cdecl external GLFW3_LIB name _PU + 'glfwGetWindowMonitor';
 
 { Sets the mode, monitor, video mode and placement of a window.
@@ -2438,7 +2436,7 @@ function glfwGetWindowMonitor(window: PGLFWwindow): PGLFWmonitor;
     glfwSetWindowSize
 
   Added in version 3.2. }
-procedure glfwSetWindowMonitor(window: PGLFWwindow; monitor: PGLFWmonitor; xpos, ypos, width, height, refreshRate: Integer);
+procedure glfwSetWindowMonitor(window: TGLFWwindow; monitor: TGLFWmonitor; xpos, ypos, width, height, refreshRate: Integer);
   cdecl external GLFW3_LIB name _PU + 'glfwSetWindowMonitor';
 
 { Returns an attribute of the specified window.
@@ -2467,7 +2465,7 @@ procedure glfwSetWindowMonitor(window: PGLFWwindow; monitor: PGLFWmonitor; xpos,
 
   Added in version 3.0.  Replaces <tt>glfwGetWindowParam</tt> and
   <tt>glfwGetGLVersion</tt>. }
-function glfwGetWindowAttrib(window: PGLFWwindow; attrib: Integer): Integer;
+function glfwGetWindowAttrib(window: TGLFWwindow; attrib: Integer): Integer;
   cdecl external GLFW3_LIB name _PU + 'glfwGetWindowAttrib';
 
 { Sets an attribute of the specified window.
@@ -2500,7 +2498,7 @@ function glfwGetWindowAttrib(window: PGLFWwindow; attrib: Integer): Integer;
     glfwGetWindowAttrib
 
   Added in version 3.3. }
-procedure glfwSetWindowAttrib(window: PGLFWwindow; attrib, value: Integer);
+procedure glfwSetWindowAttrib(window: TGLFWwindow; attrib, value: Integer);
   cdecl external GLFW3_LIB name _PU + 'glfwSetWindowAttrib';
 
 { Sets the user pointer of the specified window.
@@ -2522,7 +2520,7 @@ procedure glfwSetWindowAttrib(window: PGLFWwindow; attrib, value: Integer);
     glfwGetWindowUserPointer
 
   Added in version 3.0. }
-procedure glfwSetWindowUserPointer(window: PGLFWwindow; pointer: Pointer);
+procedure glfwSetWindowUserPointer(window: TGLFWwindow; pointer: Pointer);
   cdecl external GLFW3_LIB name _PU + 'glfwSetWindowUserPointer';
 
 { Returns the user pointer of the specified window.
@@ -2541,7 +2539,7 @@ procedure glfwSetWindowUserPointer(window: PGLFWwindow; pointer: Pointer);
     glfwSetWindowUserPointer
 
   Added in version 3.0. }
-function glfwGetWindowUserPointer(window: PGLFWwindow): Pointer;
+function glfwGetWindowUserPointer(window: TGLFWwindow): Pointer;
   cdecl external GLFW3_LIB name _PU + 'glfwGetWindowUserPointer';
 
 { Sets the position callback for the specified window.
@@ -2564,7 +2562,7 @@ function glfwGetWindowUserPointer(window: PGLFWwindow): Pointer;
   This function must only be called from the main thread.
 
   Added in version 3.0. }
-function glfwSetWindowPosCallback(window: PGLFWwindow; cbfun: TGLFWwindowposfun): TGLFWwindowposfun;
+function glfwSetWindowPosCallback(window: TGLFWwindow; cbfun: TGLFWwindowposfun): TGLFWwindowposfun;
   cdecl external GLFW3_LIB name _PU + 'glfwSetWindowPosCallback';
 
 { Sets the size callback for the specified window.
@@ -2586,7 +2584,7 @@ function glfwSetWindowPosCallback(window: PGLFWwindow; cbfun: TGLFWwindowposfun)
   This function must only be called from the main thread.
 
   Added in version 1.0. GLFW3 added window handle parameter and return value. }
-function glfwSetWindowSizeCallback(window: PGLFWwindow; cbfun: TGLFWwindowsizefun): TGLFWwindowsizefun;
+function glfwSetWindowSizeCallback(window: TGLFWwindow; cbfun: TGLFWwindowsizefun): TGLFWwindowsizefun;
   cdecl external GLFW3_LIB name _PU + 'glfwSetWindowSizeCallback';
 
 { Sets the close callback for the specified window.
@@ -2617,7 +2615,7 @@ function glfwSetWindowSizeCallback(window: PGLFWwindow; cbfun: TGLFWwindowsizefu
   This function must only be called from the main thread.
 
   Added in version 2.5. GLFW3 added window handle parameter and return value. }
-function glfwSetWindowCloseCallback(window: PGLFWwindow; cbfun: TGLFWwindowclosefun): TGLFWwindowclosefun;
+function glfwSetWindowCloseCallback(window: TGLFWwindow; cbfun: TGLFWwindowclosefun): TGLFWwindowclosefun;
   cdecl external GLFW3_LIB name _PU + 'glfwSetWindowCloseCallback';
 
 { Sets the refresh callback for the specified window.
@@ -2644,7 +2642,7 @@ function glfwSetWindowCloseCallback(window: PGLFWwindow; cbfun: TGLFWwindowclose
   This function must only be called from the main thread.
 
   Added in version 2.5. GLFW3 added window handle parameter and return value. }
-function glfwSetWindowRefreshCallback(window: PGLFWwindow; cbfun: TGLFWwindowrefreshfun): TGLFWwindowrefreshfun;
+function glfwSetWindowRefreshCallback(window: TGLFWwindow; cbfun: TGLFWwindowrefreshfun): TGLFWwindowrefreshfun;
   cdecl external GLFW3_LIB name _PU + 'glfwSetWindowRefreshCallback';
 
 { Sets the focus callback for the specified window.
@@ -2671,7 +2669,7 @@ function glfwSetWindowRefreshCallback(window: PGLFWwindow; cbfun: TGLFWwindowref
   This function must only be called from the main thread.
 
   Added in version 3.0. }
-function glfwSetWindowFocusCallback(window: PGLFWwindow; cbfun: TGLFWwindowfocusfun): TGLFWwindowfocusfun;
+function glfwSetWindowFocusCallback(window: TGLFWwindow; cbfun: TGLFWwindowfocusfun): TGLFWwindowfocusfun;
   cdecl external GLFW3_LIB name _PU + 'glfwSetWindowFocusCallback';
 
 { Sets the iconify callback for the specified window.
@@ -2693,7 +2691,7 @@ function glfwSetWindowFocusCallback(window: PGLFWwindow; cbfun: TGLFWwindowfocus
   This function must only be called from the main thread.
 
   Added in version 3.0. }
-function glfwSetWindowIconifyCallback(window: PGLFWwindow; cbfun: TGLFWwindowiconifyfun): TGLFWwindowiconifyfun;
+function glfwSetWindowIconifyCallback(window: TGLFWwindow; cbfun: TGLFWwindowiconifyfun): TGLFWwindowiconifyfun;
   cdecl external GLFW3_LIB name _PU + 'glfwSetWindowIconifyCallback';
 
 { Sets the maximize callback for the specified window.
@@ -2715,7 +2713,7 @@ function glfwSetWindowIconifyCallback(window: PGLFWwindow; cbfun: TGLFWwindowico
   This function must only be called from the main thread.
 
   Added in version 3.3. }
-function glfwSetWindowMaximizeCallback(window: PGLFWwindow; cbfun: TGLFWwindowmaximizefun): TGLFWwindowmaximizefun;
+function glfwSetWindowMaximizeCallback(window: TGLFWwindow; cbfun: TGLFWwindowmaximizefun): TGLFWwindowmaximizefun;
   cdecl external GLFW3_LIB name _PU + 'glfwSetWindowMaximizeCallback';
 
 { Sets the framebuffer resize callback for the specified window.
@@ -2737,7 +2735,7 @@ function glfwSetWindowMaximizeCallback(window: PGLFWwindow; cbfun: TGLFWwindowma
   This function must only be called from the main thread.
 
   Added in version 3.0. }
-function glfwSetFramebufferSizeCallback(window: PGLFWwindow; cbfun: TGLFWframebuffersizefun): TGLFWframebuffersizefun;
+function glfwSetFramebufferSizeCallback(window: TGLFWwindow; cbfun: TGLFWframebuffersizefun): TGLFWframebuffersizefun;
   cdecl external GLFW3_LIB name _PU + 'glfwSetFramebufferSizeCallback';
 
 { Sets the window content scale callback for the specified window.
@@ -2762,7 +2760,7 @@ function glfwSetFramebufferSizeCallback(window: PGLFWwindow; cbfun: TGLFWframebu
     glfwGetWindowContentScale
 
   Added in version 3.3. }
-function glfwSetWindowContentScaleCallback(window: PGLFWwindow; cbfun: TGLFWwindowcontentscalefun): TGLFWwindowcontentscalefun;
+function glfwSetWindowContentScaleCallback(window: TGLFWwindow; cbfun: TGLFWwindowcontentscalefun): TGLFWwindowcontentscalefun;
   cdecl external GLFW3_LIB name _PU + 'glfwSetWindowContentScaleCallback';
 
 { Processes all pending events.
@@ -2921,7 +2919,7 @@ procedure glfwPostEmptyEvent();
     glfwSetInputMode
 
   Added in version 3.0. }
-function glfwGetInputMode(window: PGLFWwindow; mode: Integer): Integer;
+function glfwGetInputMode(window: TGLFWwindow; mode: Integer): Integer;
   cdecl external GLFW3_LIB name _PU + 'glfwGetInputMode';
 
 { Sets an input option for the specified window.
@@ -2969,7 +2967,7 @@ function glfwGetInputMode(window: PGLFWwindow; mode: Integer): Integer;
     glfwGetInputMode
 
   Added in version 3.0.  Replaces <tt>glfwEnable</tt> and <tt>glfwDisable</tt>. }
-procedure glfwSetInputMode(window: PGLFWwindow; mode, value: Integer);
+procedure glfwSetInputMode(window: TGLFWwindow; mode, value: Integer);
   cdecl external GLFW3_LIB name _PU + 'glfwSetInputMode';
 
 { Returns whether raw mouse motion is supported.
@@ -3112,7 +3110,7 @@ function glfwGetKeyScancode(key: Integer): Integer;
   This function must only be called from the main thread.
 
   Added in version 1.0. GLFW3 added window handle parameter. }
-function glfwGetKey(window: PGLFWwindow; key: Integer): Integer;
+function glfwGetKey(window: TGLFWwindow; key: Integer): Integer;
   cdecl external GLFW3_LIB name _PU + 'glfwGetKey';
 
 { Returns the last reported state of a mouse button for the specified
@@ -3138,7 +3136,7 @@ function glfwGetKey(window: PGLFWwindow; key: Integer): Integer;
   This function must only be called from the main thread.
 
   Added in version 1.0. GLFW3 added window handle parameter. }
-function glfwGetMouseButton(window: PGLFWwindow; button: Integer): Integer;
+function glfwGetMouseButton(window: TGLFWwindow; button: Integer): Integer;
   cdecl external GLFW3_LIB name _PU + 'glfwGetMouseButton';
 
 { Retrieves the position of the cursor relative to the client area of
@@ -3174,7 +3172,7 @@ function glfwGetMouseButton(window: PGLFWwindow; button: Integer): Integer;
     glfwSetCursorPos
 
   Added in version 3.0.  Replaces <tt>glfwGetMousePos</tt>. }
-procedure glfwGetCursorPos(window: PGLFWwindow; xpos, ypos: PDouble);
+procedure glfwGetCursorPos(window: TGLFWwindow; xpos, ypos: PDouble);
   cdecl external GLFW3_LIB name _PU + 'glfwGetCursorPos';
 
 { Sets the position of the cursor, relative to the client area of the
@@ -3209,7 +3207,7 @@ procedure glfwGetCursorPos(window: PGLFWwindow; xpos, ypos: PDouble);
     glfwGetCursorPos
 
   Added in version 3.0.  Replaces <tt>glfwSetMousePos</tt>. }
-procedure glfwSetCursorPos(window: PGLFWwindow; xpos, ypos: Double);
+procedure glfwSetCursorPos(window: TGLFWwindow; xpos, ypos: Double);
   cdecl external GLFW3_LIB name _PU + 'glfwSetCursorPos';
 
 { Creates a custom cursor.
@@ -3248,7 +3246,7 @@ procedure glfwSetCursorPos(window: PGLFWwindow; xpos, ypos: Double);
     glfwCreateStandardCursor
 
   Added in version 3.1. }
-function glfwCreateCursor(const image: PGLFWimage; xhot: Integer; yhot: Integer): PGLFWcursor;
+function glfwCreateCursor(const image: PGLFWimage; xhot: Integer; yhot: Integer): TGLFWcursor;
   cdecl external GLFW3_LIB name _PU + 'glfwCreateCursor';
 
 { Creates a cursor with a standard shape.
@@ -3273,7 +3271,7 @@ function glfwCreateCursor(const image: PGLFWimage; xhot: Integer; yhot: Integer)
     glfwCreateCursor
 
   Added in version 3.1. }
-function glfwCreateStandardCursor(shape: Integer): PGLFWcursor;
+function glfwCreateStandardCursor(shape: Integer): TGLFWcursor;
   cdecl external GLFW3_LIB name _PU + 'glfwCreateStandardCursor';
 
 { Destroys a cursor.
@@ -3295,7 +3293,7 @@ function glfwCreateStandardCursor(shape: Integer): PGLFWcursor;
     glfwCreateCursor
 
   Added in version 3.1. }
-procedure glfwDestroyCursor(cursor: PGLFWcursor);
+procedure glfwDestroyCursor(cursor: TGLFWcursor);
   cdecl external GLFW3_LIB name _PU + 'glfwDestroyCursor';
 
 { Sets the cursor for the window.
@@ -3317,7 +3315,7 @@ procedure glfwDestroyCursor(cursor: PGLFWcursor);
   This function must only be called from the main thread.
 
   Added in version 3.1. }
-procedure glfwSetCursor(window: PGLFWwindow; cursor: PGLFWcursor);
+procedure glfwSetCursor(window: TGLFWwindow; cursor: TGLFWcursor);
   cdecl external GLFW3_LIB name _PU + 'glfwSetCursor';
 
 { Sets the key callback.
@@ -3358,7 +3356,7 @@ procedure glfwSetCursor(window: PGLFWwindow; cursor: PGLFWcursor);
   This function must only be called from the main thread.
 
   Added in version 1.0. GLFW3 added window handle parameter and return value. }
-function glfwSetKeyCallback(window: PGLFWwindow; cbfun: TGLFWkeyfun): TGLFWkeyfun;
+function glfwSetKeyCallback(window: TGLFWwindow; cbfun: TGLFWkeyfun): TGLFWkeyfun;
   cdecl external GLFW3_LIB name _PU + 'glfwSetKeyCallback';
 
 { Sets the Unicode character callback.
@@ -3392,7 +3390,7 @@ function glfwSetKeyCallback(window: PGLFWwindow; cbfun: TGLFWkeyfun): TGLFWkeyfu
   This function must only be called from the main thread.
 
   Added in version 2.4. GLFW3 added window handle parameter and return value. }
-function glfwSetCharCallback(window: PGLFWwindow; cbfun: TGLFWcharfun): TGLFWcharfun;
+function glfwSetCharCallback(window: TGLFWwindow; cbfun: TGLFWcharfun): TGLFWcharfun;
   cdecl external GLFW3_LIB name _PU + 'glfwSetCharCallback';
 
 { Sets the Unicode character with modifiers callback.
@@ -3424,7 +3422,7 @@ function glfwSetCharCallback(window: PGLFWwindow; cbfun: TGLFWcharfun): TGLFWcha
   This function must only be called from the main thread.
 
   Added in version 3.1. }
-function glfwSetCharModsCallback(window: PGLFWwindow; cbfun: TGLFWcharmodsfun): TGLFWcharmodsfun;
+function glfwSetCharModsCallback(window: TGLFWwindow; cbfun: TGLFWcharmodsfun): TGLFWcharmodsfun;
   cdecl external GLFW3_LIB name _PU + 'glfwSetCharModsCallback';
 
 { Sets the mouse button callback.
@@ -3452,7 +3450,7 @@ function glfwSetCharModsCallback(window: PGLFWwindow; cbfun: TGLFWcharmodsfun): 
   This function must only be called from the main thread.
 
   Added in version 1.0. GLFW3 added window handle parameter and return value. }
-function glfwSetMouseButtonCallback(window: PGLFWwindow; cbfun: TGLFWmousebuttonfun): TGLFWmousebuttonfun;
+function glfwSetMouseButtonCallback(window: TGLFWwindow; cbfun: TGLFWmousebuttonfun): TGLFWmousebuttonfun;
   cdecl external GLFW3_LIB name _PU + 'glfwSetMouseButtonCallback';
 
 { Sets the cursor position callback.
@@ -3476,7 +3474,7 @@ function glfwSetMouseButtonCallback(window: PGLFWwindow; cbfun: TGLFWmousebutton
   This function must only be called from the main thread.
 
   Added in version 3.0.  Replaces <tt>glfwSetMousePosCallback</tt>. }
-function glfwSetCursorPosCallback(window: PGLFWwindow; cbfun: TGLFWcursorposfun): TGLFWcursorposfun;
+function glfwSetCursorPosCallback(window: TGLFWwindow; cbfun: TGLFWcursorposfun): TGLFWcursorposfun;
   cdecl external GLFW3_LIB name _PU + 'glfwSetCursorPosCallback';
 
 { Sets the cursor enter/exit callback.
@@ -3499,7 +3497,7 @@ function glfwSetCursorPosCallback(window: PGLFWwindow; cbfun: TGLFWcursorposfun)
   This function must only be called from the main thread.
 
   Added in version 3.0. }
-function glfwSetCursorEnterCallback(window: PGLFWwindow; cbfun: TGLFWcursorenterfun): TGLFWcursorenterfun;
+function glfwSetCursorEnterCallback(window: TGLFWwindow; cbfun: TGLFWcursorenterfun): TGLFWcursorenterfun;
   cdecl external GLFW3_LIB name _PU + 'glfwSetCursorEnterCallback';
 
 { Sets the scroll callback.
@@ -3525,7 +3523,7 @@ function glfwSetCursorEnterCallback(window: PGLFWwindow; cbfun: TGLFWcursorenter
   This function must only be called from the main thread.
 
   Added in version 3.0.  Replaces <tt>glfwSetMouseWheelCallback</tt>. }
-function glfwSetScrollCallback(window: PGLFWwindow; cbfun: TGLFWscrollfun): TGLFWscrollfun;
+function glfwSetScrollCallback(window: TGLFWwindow; cbfun: TGLFWscrollfun): TGLFWscrollfun;
   cdecl external GLFW3_LIB name _PU + 'glfwSetScrollCallback';
 
 { Sets the file drop callback.
@@ -3552,7 +3550,7 @@ function glfwSetScrollCallback(window: PGLFWwindow; cbfun: TGLFWscrollfun): TGLF
   This function must only be called from the main thread.
 
   Added in version 3.1. }
-function glfwSetDropCallback(window: PGLFWwindow; cbfun: TGLFWdropfun): TGLFWdropfun;
+function glfwSetDropCallback(window: TGLFWwindow; cbfun: TGLFWdropfun): TGLFWdropfun;
   cdecl external GLFW3_LIB name _PU + 'glfwSetDropCallback';
 
 { Returns whether the specified joystick is present.
@@ -3972,7 +3970,7 @@ function glfwGetGamepadState(jid: Integer; state: PGLFWgamepadstate): Integer;
     glfwGetClipboardString
 
   Added in version 3.0. }
-procedure glfwSetClipboardString(window: PGLFWwindow; const text: PAnsiChar);
+procedure glfwSetClipboardString(window: TGLFWwindow; const text: PAnsiChar);
   cdecl external GLFW3_LIB name _PU + 'glfwSetClipboardString';
 
 { Returns the contents of the clipboard as a string.
@@ -4001,7 +3999,7 @@ procedure glfwSetClipboardString(window: PGLFWwindow; const text: PAnsiChar);
     glfwSetClipboardString
 
   Added in version 3.0. }
-function glfwGetClipboardString(window: PGLFWwindow): PAnsiChar;
+function glfwGetClipboardString(window: TGLFWwindow): PAnsiChar;
   cdecl external GLFW3_LIB name _PU + 'glfwGetClipboardString';
 
 { Returns the value of the GLFW timer.
@@ -4109,7 +4107,7 @@ function glfwGetTimerFrequency(): UInt64;
     glfwGetCurrentContext
 
   Added in version 3.0. }
-procedure glfwMakeContextCurrent(window: PGLFWwindow);
+procedure glfwMakeContextCurrent(window: TGLFWwindow);
   cdecl external GLFW3_LIB name _PU + 'glfwMakeContextCurrent';
 
 { Returns the window whose context is current on the calling thread.
@@ -4128,7 +4126,7 @@ procedure glfwMakeContextCurrent(window: PGLFWwindow);
     glfwMakeContextCurrent
 
   Added in version 3.0. }
-function glfwGetCurrentContext(): PGLFWwindow;
+function glfwGetCurrentContext(): TGLFWwindow;
   cdecl external GLFW3_LIB name _PU + 'glfwGetCurrentContext';
 
 { Swaps the front and back buffers of the specified window.
@@ -4156,7 +4154,7 @@ function glfwGetCurrentContext(): PGLFWwindow;
     glfwSwapInterval
 
   Added in version 1.0. GLFW3 added window handle parameter. }
-procedure glfwSwapBuffers(window: PGLFWwindow);
+procedure glfwSwapBuffers(window: TGLFWwindow);
   cdecl external GLFW3_LIB name _PU + 'glfwSwapBuffers';
 
 { Sets the swap interval for the current context.
@@ -4362,7 +4360,7 @@ function glfwGetRequiredInstanceExtensions(out count: UInt32): PPAnsiChar;
   synchronized.
 
   Added in version 3.1. }
-function glfwGetWin32Adapter(monitor: PGLFWmonitor): PAnsiChar;
+function glfwGetWin32Adapter(monitor: TGLFWmonitor): PAnsiChar;
   cdecl external GLFW3_LIB name _PU + 'glfwGetWin32Adapter';
 
 { Returns the display device name of the specified monitor.
@@ -4375,7 +4373,7 @@ function glfwGetWin32Adapter(monitor: PGLFWmonitor): PAnsiChar;
   synchronized.
 
   Added in version 3.1. }
-function glfwGetWin32Monitor(monitor: PGLFWmonitor): PAnsiChar;
+function glfwGetWin32Monitor(monitor: TGLFWmonitor): PAnsiChar;
   cdecl external GLFW3_LIB name _PU + 'glfwGetWin32Monitor';
 
 { Returns the <tt>HWND</tt> of the specified window.
@@ -4387,7 +4385,7 @@ function glfwGetWin32Monitor(monitor: PGLFWmonitor): PAnsiChar;
   synchronized.
 
   Added in version 3.0. }
-function glfwGetWin32Window(window: PGLFWwindow): HWND;
+function glfwGetWin32Window(window: TGLFWwindow): HWND;
   cdecl external GLFW3_LIB name _PU + 'glfwGetWin32Window';
 
 { Returns the <tt>HGLRC</tt> of the specified window.
@@ -4399,7 +4397,7 @@ function glfwGetWin32Window(window: PGLFWwindow): HWND;
   synchronized.
 
   Added in version 3.0. }
-function glfwGetWGLContext(window: PGLFWwindow): HGLRC;
+function glfwGetWGLContext(window: TGLFWwindow): HGLRC;
   cdecl external GLFW3_LIB name _PU + 'glfwGetWGLContext';
 {$ENDIF}
 
@@ -4413,7 +4411,7 @@ function glfwGetWGLContext(window: PGLFWwindow): HGLRC;
   synchronized.
 
   Added in version 3.1. }
-function glfwGetCocoaMonitor(monitor: PGLFWmonitor): CGDirectDisplayID;
+function glfwGetCocoaMonitor(monitor: TGLFWmonitor): CGDirectDisplayID;
   cdecl external GLFW3_LIB name _PU + 'glfwGetCocoaMonitor';
 
 { Returns the <tt>NSWindow</tt> of the specified window.
@@ -4425,7 +4423,7 @@ function glfwGetCocoaMonitor(monitor: PGLFWmonitor): CGDirectDisplayID;
   synchronized.
 
   Added in version 3.0. }
-function glfwGetCocoaWindow(window: PGLFWwindow): Id;
+function glfwGetCocoaWindow(window: TGLFWwindow): Id;
   cdecl external GLFW3_LIB name _PU + 'glfwGetCocoaWindow';
 
 { Returns the <tt>NSOpenGLContext</tt> of the specified window.
@@ -4437,7 +4435,7 @@ function glfwGetCocoaWindow(window: PGLFWwindow): Id;
   synchronized.
 
   Added in version 3.0. }
-function glfwGetNSGLContext(window: PGLFWwindow): Id;
+function glfwGetNSGLContext(window: TGLFWwindow): Id;
   cdecl external GLFW3_LIB name _PU + 'glfwGetNSGLContext';
 {$ENDIF}
 {$ENDREGION 'glfw3native.h'}

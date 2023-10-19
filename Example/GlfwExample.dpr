@@ -55,7 +55,7 @@ begin
   raise Exception.CreateFmt('GLFW Error %d: %s', [error, Desc]);
 end;
 
-procedure KeyCallback(window: PGLFWwindow; key, scancode, action, mods: Integer); cdecl;
+procedure KeyCallback(window: TGLFWwindow; key, scancode, action, mods: Integer); cdecl;
 begin
   if (key = GLFW_KEY_ESCAPE) and (action = GLFW_PRESS) then
     glfwSetWindowShouldClose(window, GLFW_TRUE);
@@ -63,7 +63,7 @@ end;
 
 procedure Run;
 var
-  Window: PGLFWwindow;
+  Window: TGLFWwindow;
   VertexBuffer, VertexShader, FragmentShader, ShaderProgram: GLuint;
   MVPLocation, VPosLocation, VColLocation: GLint;
   Source: PAnsiChar;
@@ -78,8 +78,8 @@ begin
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
 
-  Window := glfwCreateWindow(640, 480, 'Simple example', nil, nil);
-  if (Window = nil) then
+  Window := glfwCreateWindow(640, 480, 'Simple example', 0, 0);
+  if (Window = 0) then
   begin
     glfwTerminate;
     raise Exception.Create('Unable to create GLFW window');
