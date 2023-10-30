@@ -108,7 +108,7 @@ const
 
     This is incremented when a bug fix release is made that does not contain any
     API changes. }
-  GLFW_VERSION_REVISION = 7;
+  GLFW_VERSION_REVISION = 8;
 
 const
   { One.
@@ -1859,7 +1859,8 @@ procedure glfwSetWindowTitle(window: TGLFWwindow; const title: PAnsiChar);
     images: The images to create the icon from.  This is ignored if
       count is zero.
 
-  Possible errors include GLFW_NOT_INITIALIZED and GLFW_PLATFORM_ERROR.
+  Possible errors include @ref GLFW_NOT_INITIALIZED, GLFW_INVALID_VALUE and
+  GLFW_PLATFORM_ERROR.
 
   The specified image data is copied before this function returns.
 
@@ -2220,8 +2221,9 @@ procedure glfwSetWindowOpacity(window: TGLFWwindow; opacity: Single);
   previously restored.  If the window is already iconified, this function does
   nothing.
 
-  If the specified window is a full screen window, the original monitor
-  resolution is restored until the window is restored.
+  If the specified window is a full screen window, GLFW restores the original
+  video mode of the monitor. The window's desired video mode is set again when
+  the window is restored.
 
   Parameters:
     window: The window to iconify.
@@ -2244,8 +2246,8 @@ procedure glfwIconifyWindow(window: TGLFWwindow);
   (minimized) or maximized.  If the window is already restored, this function
   does nothing.
 
-  If the specified window is a full screen window, the resolution chosen for
-  the window is restored on the selected monitor.
+  If the specified window is an iconified full screen window, its desired video
+  mode is set again for its monitor when the window is restored.
 
   Parameters:
     window: The window to restore.
@@ -3081,8 +3083,8 @@ function glfwGetKeyScancode(key: Integer): Integer;
 
   This function returns the last state reported for the specified key to the
   specified window.  The returned state is one of <tt>GLFW_PRESS</tt> or
-  <tt>GLFW_RELEASE</tt>.  The higher-level action <tt>GLFW_REPEAT</tt> is only
-  reported to the key callback.
+  <tt>GLFW_RELEASE</tt>.  The action <tt>GLFW_REPEAT</tt> is only reported to
+  the key callback.
 
   If the <tt>GLFW_STICKY_KEYS</tt> input mode is enabled, this function returns
   <tt>GLFW_PRESS</tt> the first time you call it for a key that was pressed,
@@ -3232,7 +3234,8 @@ procedure glfwSetCursorPos(window: TGLFWwindow; xpos, ypos: Double);
   Returns:
     The handle of the created cursor, or <tt>nil</tt> if an error occurred.
 
-  Possible errors include GLFW_NOT_INITIALIZED and GLFW_PLATFORM_ERROR.
+  Possible errors include GLFW_NOT_INITIALIZED, GLFW_INVALID_VALUE and
+  GLFW_PLATFORM_ERROR.
 
   The specified image data is copied before this function
   returns.
